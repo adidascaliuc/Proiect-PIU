@@ -47,7 +47,16 @@ namespace Targ_De_Masini
 
         public void Compara(Masina m1)
         {
-
+            if(this.pret > m1.pret)
+            {
+                Console.WriteLine("Masina "+this.numeFirma+" "+this.model+" este mai scumpa decat masina "
+                    + m1.numeFirma + " " + m1.model + " cu " + (float)(this.pret - m1.pret) + "$");
+            }
+            else
+            {
+                Console.WriteLine("Masina " + m1.numeFirma + " " + m1.model + " este mai scumpa decat masina "
+                    + this.numeFirma + " " + this.model + " cu " + (m1.pret - this.pret));
+            }
         }
         
 

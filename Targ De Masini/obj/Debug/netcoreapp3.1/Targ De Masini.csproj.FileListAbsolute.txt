@@ -11,3 +11,16 @@ C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De 
 C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.dll
 C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.pdb
 C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.genruntimeconfig.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.exe
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.deps.json
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.runtimeconfig.json
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.runtimeconfig.dev.json
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.pdb
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csprojAssemblyReference.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CoreCompileInputs.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfoInputs.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfo.cs
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.pdb
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.genruntimeconfig.cache

@@ -22,7 +22,7 @@ namespace Targ_De_Masini
             Console.WriteLine(p3.ConversieLaSir());
 
             //Instantierea unui obiect de tip Persoana cu parametrii introdusi de la tastatura
-            Console.WriteLine("Introduceti pe rand numele, prenumele si ce tip de persoana sunteti(Cumparator/Vanzator): ");
+            Console.WriteLine("Introduceti pe rand numele, prenumele, tipul de persoana (Cumparator/Vanzator) si bugetul: ");
             Persoana p4 = new Persoana(Console.ReadLine(), Console.ReadLine(), Console.ReadLine(), Double.Parse(Console.ReadLine()));
             Console.WriteLine(p4.ConversieLaSir());
             p2.Compara(p3);
@@ -48,6 +48,8 @@ namespace Targ_De_Masini
             Masina m4 = new Masina(Console.ReadLine(), Console.ReadLine(), Convert.ToInt32(Console.ReadLine()), Console.ReadLine(), Convert.ToDouble(Console.ReadLine()));
             Console.Write("\n");
             Console.WriteLine(m4.ConversieLaSir());
+
+            m2.Compara(m3);
 
         }   
 
