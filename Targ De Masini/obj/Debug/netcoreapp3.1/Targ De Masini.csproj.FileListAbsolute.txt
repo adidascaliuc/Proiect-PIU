@@ -1,0 +1,13 @@
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.exe
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.deps.json
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.runtimeconfig.json
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.runtimeconfig.dev.json
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.pdb
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csprojAssemblyReference.cache
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CoreCompileInputs.cache
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfoInputs.cache
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfo.cs
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.dll
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.pdb
+C:\Users\Adi\Desktop\PIU\Proiect\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.genruntimeconfig.cache
