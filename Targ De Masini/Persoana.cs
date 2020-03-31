@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Targ_De_Masini
@@ -10,6 +11,8 @@ namespace Targ_De_Masini
         int PRENUME = 1;
         int TIPPERSOANA = 2;
         int BUGET = 3;
+        string SEPARATOR_FISIER = " ";
+        int PAS_ALOCARE = 1;
 
         
         
@@ -17,7 +20,7 @@ namespace Targ_De_Masini
         //parametrii auto-implemented
         public string nume { set; get; }
         public string prenume { set; get; }
-        public string tipPersoana { set; get; }
+        public TipPersoana tipPersoana { set; get; }
         public string numeComplet { get{ return nume +" "+ prenume; } }
         double buget;
 
@@ -25,16 +28,16 @@ namespace Targ_De_Masini
         {
             nume = string.Empty;
             prenume = string.Empty;
-            tipPersoana = string.Empty;
+            tipPersoana = TipPersoana.None;
             buget = 0.0f;
    
         }
 
-        public Persoana(string nume, string prenume, string tipPersoana, double buget) //constructor cu parametrii
+        public Persoana(string nume, string prenume, int tipPersoana, double buget) //constructor cu parametrii
         {
             this.nume = nume;
             this.prenume = prenume;
-            this.tipPersoana = tipPersoana;
+            this.tipPersoana = (TipPersoana) Convert.ToInt32( tipPersoana );
             this.buget = buget;
 
         }
@@ -45,8 +48,8 @@ namespace Targ_De_Masini
             string[] date = s.Split( );
             nume = date[NUME];
             prenume = date[PRENUME];
-            tipPersoana = date[TIPPERSOANA];
-            buget = Double.Parse(date[BUGET]);
+            tipPersoana = (TipPersoana) Convert.ToInt32( date[TIPPERSOANA] );
+            buget = Double.Parse( date[BUGET] );
 
         }
 
@@ -54,7 +57,7 @@ namespace Targ_De_Masini
         {
             if(p1.buget > this.buget)
             {
-                Console.WriteLine(p1.tipPersoana+"ul " + p1.numeComplet + " este mai bogat decat " + this.tipPersoana.ToLower() + "ul " +
+                Console.WriteLine(p1.tipPersoana+"ul " + p1.numeComplet + " este mai bogat decat " + this.tipPersoana.ToString().ToLower() + "ul " +
                     this.numeComplet + " cu " + ((float)(p1.buget-this.buget)), .2f);
             }
             else
@@ -62,6 +65,79 @@ namespace Targ_De_Masini
                 Console.WriteLine(this.tipPersoana + "ul " + this.numeComplet + " este mai bogat decat " + p1.tipPersoana + "ul " +
                     p1.numeComplet + " cu " + ((float)(this.buget - p1.buget)), .2f);
             }
+        }
+
+        public static int optTipPersoana()
+        {
+            Console.WriteLine("Ati venit in calitate de ?\n" +
+                              "Alegeti o optiune: ");
+            Console.WriteLine("1. Cumparator\n" +
+                              "2. Vanzator\n");
+            int opt = Convert.ToInt32( Console.ReadLine() );
+
+            return opt;
+        }
+
+        public void wrtFile(string numeFisier)
+        {
+            try
+            {
+                using (StreamWriter swFisierText = new StreamWriter(numeFisier, true))
+                {
+                    swFisierText.WriteLine(this.ConversieLaSir_PentruFisier());
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch(Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+
+        /*public Persoana readFile(out int nrPersoane)
+        {
+            Persoana[] persoane = new Persoana[PAS_ALOCARE];
+            nrPersoane = 0;
+
+            try
+            {   Console.WriteLine("Introduceti numele fisierului: ");
+                string numeFisier = Console.ReadLine();
+                using (StreamReader sr = new StreamReader(numeFisier))
+                {
+                    string linie;
+                    int numarLinie = 0;
+                    while(( linie = sr.ReadLine()) != null)
+                    {
+                        persoane[numarLinie++] = new Persoana(linie);
+                        if(numarLinie == PAS_ALOCARE)
+                        {
+                            Array.Resize(ref persoane, numarLinie + PAS_ALOCARE);
+                        }
+                    }
+                    nrPersoane = numarLinie;
+                }
+            }
+            catch(IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj " + eIO.Message);
+            }
+            catch(Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return persoane;
+        }*/
+
+
+        public string ConversieLaSir_PentruFisier()
+        { 
+            string date = string.Format("{1}{0}{2}{0}{3}", SEPARATOR_FISIER, numeComplet, tipPersoana, buget);
+
+            return date;
         }
 
         public string ConversieLaSir() //Afiseaza date despre persoana

@@ -8,7 +8,7 @@ namespace Targ_De_Masini
         public string numeFirma { set; get; }
         public string model { set; get; }
         public int anFabricatie { set; get; }
-        public string culoare { set; get; }
+        public Culoare culoare { set; get; }
         public double pret { set; get; }
       
 
@@ -18,18 +18,18 @@ namespace Targ_De_Masini
             numeFirma = string.Empty;
             model = string.Empty;
             anFabricatie = 0;
-            culoare = string.Empty;
+            culoare = Culoare.None;
             pret = 0;
         }
 
         //constructor cu parametrii
-        public Masina(string numeFirma, string model, int anFabricatie, string culoare, double pret)
+        public Masina(string numeFirma, string model, int anFabricatie, int culoare, double pret)
         {
            
             this.numeFirma = numeFirma;
             this.model = model;
             this.anFabricatie = anFabricatie;
-            this.culoare = culoare;
+            this.culoare = (Culoare) culoare;
             this.pret = pret;
 
         }
@@ -40,7 +40,7 @@ namespace Targ_De_Masini
             numeFirma = date[0];
             model = date[1];
             anFabricatie = Convert.ToInt32(date[2]);
-            culoare = date[3];
+            culoare = (Culoare) Convert.ToInt32( date[3] );
             pret = Convert.ToDouble(date[4]);
 
         }
@@ -59,6 +59,17 @@ namespace Targ_De_Masini
             }
         }
         
+        public static int optCuloare()
+        {
+            Console.WriteLine("Alegeti o optiune: ");
+            Console.WriteLine("1. Alb\n" +
+                              "2. Negru\n" +
+                              "3. Rosu\n" +
+                              "4. Albastru\n" +
+                              "5. Verde\n");
+            int opt = Convert.ToInt32( Console.ReadLine() );
+            return opt;
+        }
 
         public string ConversieLaSir() //Afiseaza date despre masina
         {
