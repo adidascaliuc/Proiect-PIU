@@ -75,12 +75,18 @@ namespace Targ_De_Masini
                             "numerele din fata si sa introduceti suma): \n" +
                             "1. Aer Conditionat\n" +
                             "2. Optiuni Volan\n" +
-                            "4. Scaune De Piele\n" +
-                            "8. Modul Bengos\n" +
-                            "16. Navigatie\n" +
-                            "32. Cutie Automata\n");
+                            "3. Scaune De Piele\n" +
+                            "4. Modul Bengos\n" +
+                            "5. Navigatie\n" +
+                            "6. Cutie Automata\n");
 
-                        int optiuni = Convert.ToInt32(Console.ReadLine());
+                        string[] date = Console.ReadLine().Split(' ');
+                        int optiuni = 0;
+                        foreach(string data in date)
+                        {
+                            optiuni += Convert.ToInt32( Math.Pow(Convert.ToDouble(data),2) );
+                        }
+
                         Console.WriteLine("Introduceti pretul masinii: ");
                         double pret = Convert.ToDouble(Console.ReadLine());
 
@@ -177,12 +183,17 @@ namespace Targ_De_Masini
                             "numerele din fata si sa introduceti suma): \n" +
                             "1. Aer Conditionat\n" +
                             "2. Optiuni Volan\n" +
-                            "4. Scaune De Piele\n" +
-                            "8. Modul Bengos\n" +
-                            "16. Navigatie\n" +
-                            "32. Cutie Automata\n");
+                            "3. Scaune De Piele\n" +
+                            "4. Modul Bengos\n" +
+                            "5. Navigatie\n" +
+                            "6. Cutie Automata\n");
 
-                                optiuni = Convert.ToInt32(Console.ReadLine());
+                                string[] datee = Console.ReadLine().Split(' ');
+                                optiuni = 0;
+                                foreach (string data in datee)
+                                {
+                                    optiuni += Convert.ToInt32(Math.Pow(Convert.ToDouble(data), 2));
+                                }
                                 masini[index].OPTIUNI = (Optiuni)optiuni;
                             }
                             if (mod == 6)
@@ -262,10 +273,7 @@ namespace Targ_De_Masini
                         }
 
                         break;
-
-                    case "F":
-                        break;
-
+                            
                     case "X":
                         return;
                     
