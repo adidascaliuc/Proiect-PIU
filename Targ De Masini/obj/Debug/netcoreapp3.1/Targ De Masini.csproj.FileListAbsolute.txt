@@ -18,9 +18,22 @@ D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.runt
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.pdb
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csprojAssemblyReference.cache
-D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CoreCompileInputs.cache
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfoInputs.cache
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.AssemblyInfo.cs
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.pdb
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.genruntimeconfig.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CoreCompileInputs.cache
+D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CopyComplete
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll.config

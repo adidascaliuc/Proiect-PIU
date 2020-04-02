@@ -6,9 +6,16 @@ namespace Targ_De_Masini
     {
         static void Main(string[] args)
         {
-            int nrPersoane = 0, nrMasini = 0;
+            int nrPersoane = 0;
+            int nrMasini = 0;
+
             Persoana[] persoane = new Persoana[50];
-            Masina[] masini = new Masina[50];
+            Masina[] masini;
+
+
+            IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
+            
+            masini = adminMasini.GetMasini(out nrMasini);
 
             while (true)
             {
@@ -16,12 +23,13 @@ namespace Targ_De_Masini
                     "M - adauga masina\n" +
                     "A - afiseaza persoane\n" +
                     "N - afiseaza masini\n" +
+                    "O - modifica masina\n" +
                     "C - citeste din fisier\n" +
-                    "S - salveaza in fisier\n" +
                     "X - Iesire\n");
                 Console.WriteLine("Alegeti o optiune: ");
                 string opt = Console.ReadLine();
-                switch (opt.ToUpper()) {
+                switch (opt.ToUpper())
+                {
                     case "P":
                         Console.WriteLine("Introduceti numele persoanei: ");
                         string nume = Console.ReadLine();
@@ -35,7 +43,7 @@ namespace Targ_De_Masini
                         int tipPersoana = Convert.ToInt32(Console.ReadLine());
 
                         Console.WriteLine("Introduceti bugetul: ");
-                        int buget = Convert.ToInt32( Console.ReadLine() );
+                        int buget = Convert.ToInt32(Console.ReadLine());
                         persoane[nrPersoane++] = new Persoana(nume, prenume, tipPersoana, buget);
 
                         break;
@@ -48,7 +56,7 @@ namespace Targ_De_Masini
                         string model = Console.ReadLine();
 
                         Console.WriteLine("Introduceti anul fabricatiei: ");
-                        int anF = Convert.ToInt32( Console.ReadLine() );
+                        int anF = Convert.ToInt32(Console.ReadLine());
 
                         Console.WriteLine("Alegeti o culoare: \n" +
                             "1. Alb\n" +
@@ -56,29 +64,116 @@ namespace Targ_De_Masini
                             "3. Rosu\n" +
                             "4. Albastru\n" +
                             "5. Verde\n");
-                        int culoare = Convert.ToInt32( Console.ReadLine() );
+                        int culoare = Convert.ToInt32(Console.ReadLine());
 
+                        Console.WriteLine("Alegeti optiunile\n" +
+                            "(Pentru a alege optiuni multiple va rugam sa adunati\n" +
+                            "numerele din fata si sa introduceti suma): \n" +
+                            "1. Aer Conditionat\n" +
+                            "2. Optiuni Volan\n" +
+                            "4. Scaune De Piele\n" +
+                            "8. Modul Bengos\n" +
+                            "16. Navigatie\n" +
+                            "32. Cutie Automata\n");
+
+                        int optiuni = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Introduceti pretul masinii: ");
-                        double pret = Convert.ToDouble( Console.ReadLine() );
+                        double pret = Convert.ToDouble(Console.ReadLine());
 
-                        masini[nrMasini++] = new Masina(firma, model, anF, culoare, pret);
+                        adminMasini.AddMasina(masini[nrMasini++] = new Masina(firma, model, anF, culoare, optiuni, pret));
 
                         break;
 
                     case "A":
                         Console.WriteLine("Avem introduse " + nrPersoane + " persoane.");
-                        for(int i=0; i<nrPersoane; i++)
+                        for (int i = 0; i < nrPersoane; i++)
                         {
-                            Console.WriteLine((i+1) + ". " + persoane[i].ConversieLaSir());
+                            Console.WriteLine((i + 1) + ". " + persoane[i].ConversieLaSir());
                         }
 
                         break;
 
                     case "N":
                         Console.WriteLine("Avem in stoc " + nrMasini + " masini.");
-                        for(int i=0; i<nrMasini; i++)
+                        for (int i = 0; i < nrMasini; i++)
                         {
-                            Console.WriteLine((i+1) + ". " + masini[i].ConversieLaSir());
+                            Console.WriteLine("ID "+(i + 1) + "# " + masini[i].ConversieLaSir());
+                        }
+
+                        break;
+                    case "O":
+                        Console.WriteLine("Introduceti indexul masinii pe care doriti sa o modificati: ");
+                        int index = Convert.ToInt32( Console.ReadLine() ) - 1;
+                        bool another = true;
+                        while (another)
+                        {
+                            Console.WriteLine("Ce doriti sa modificati?\n" +
+                                "1. Firma\n" +
+                                "2. Model\n" +
+                                "3. An Fabricatie\n" +
+                                "4. Culoare\n" +
+                                "5. Optiuni\n" +
+                                "6.Pret");
+                            int mod = Convert.ToInt32( Console.ReadLine() );
+                            if(mod == 1)
+                            {
+                                Console.WriteLine("Reintroduceti firma: ");
+                                masini[index].NumeFirma = Console.ReadLine();
+                            }
+                            if (mod == 2)
+                            {
+                                Console.WriteLine("Reintroduceti modelul: ");
+                                masini[index].Model = Console.ReadLine();
+                            }
+                            if (mod == 3)
+                            {
+                                Console.WriteLine("Reintroduceti anul fabricatiei: ");
+                                masini[index].AnFabricatie = Convert.ToInt32( Console.ReadLine() );
+                            }
+                            if (mod == 4)
+                            {
+                                Console.WriteLine("Reintroduceti culoarea: ");
+                                Console.WriteLine("Alegeti o culoare: \n" +
+                            "1. Alb\n" +
+                            "2. Negru\n" +
+                            "3. Rosu\n" +
+                            "4. Albastru\n" +
+                            "5. Verde\n");
+                                culoare = Convert.ToInt32(Console.ReadLine());
+                                masini[index].CULOARE = (Culoare)culoare;
+                            }
+                            if (mod == 5)
+                            {
+                                Console.WriteLine("Reintroduceti optiunile: ");
+                                Console.WriteLine("Alegeti optiunile\n" +
+                            "(Pentru a alege optiuni multiple va rugam sa adunati\n" +
+                            "numerele din fata si sa introduceti suma): \n" +
+                            "1. Aer Conditionat\n" +
+                            "2. Optiuni Volan\n" +
+                            "4. Scaune De Piele\n" +
+                            "8. Modul Bengos\n" +
+                            "16. Navigatie\n" +
+                            "32. Cutie Automata\n");
+
+                                optiuni = Convert.ToInt32(Console.ReadLine());
+                                masini[index].OPTIUNI = (Optiuni)optiuni;
+                            }
+                            if (mod == 6)
+                            {
+                                Console.WriteLine("Reintroduceti pretul: ");
+                                masini[index].Pret = Convert.ToDouble( Console.ReadLine() );
+                            }
+                            Console.WriteLine("Doriti sa mai schimbati ceva?[Y/N]");
+                            string answer = Console.ReadLine().ToUpper();
+                            if(answer == "Y")
+                            {
+                                another = true;
+                            }
+                            else
+                            {
+                                another = false;
+                            }
+
                         }
 
                         break;
@@ -86,22 +181,13 @@ namespace Targ_De_Masini
                     case "C":
                         break;
 
-                    case "S":
-                        break;
-
                     case "X":
                         return;
-                        break;
-
+                    
                     default:
                         break;
                 }
-
-            }
-            
-
-
+            }            
         }   
-
     }
 }

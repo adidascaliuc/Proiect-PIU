@@ -13,10 +13,7 @@ namespace Targ_De_Masini
         int BUGET = 3;
         string SEPARATOR_FISIER = " ";
         int PAS_ALOCARE = 1;
-
-        
-        
-        
+       
         //parametrii auto-implemented
         public string nume { set; get; }
         public string prenume { set; get; }
@@ -57,17 +54,17 @@ namespace Targ_De_Masini
         {
             if(p1.buget > this.buget)
             {
-                return 1;
+                return -1;
                 //Console.WriteLine(p1.tipPersoana+"ul " + p1.numeComplet + " este mai bogat decat " + this.tipPersoana.ToString().ToLower() + "ul " +
                 //    this.numeComplet + " cu " + ((float)(p1.buget-this.buget)), .2f);
             }
             else if(p1.buget < this.buget)
             {
-                return 2;
+                return 1;
                 //Console.WriteLine(this.tipPersoana + "ul " + this.numeComplet + " este mai bogat decat " + p1.tipPersoana + "ul " +
                 //    p1.numeComplet + " cu " + ((float)(this.buget - p1.buget)), .2f);
             }
-            return 3; //Acelasi buget
+            return 0; //Acelasi buget
         }
 
 
