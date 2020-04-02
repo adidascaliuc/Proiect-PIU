@@ -84,9 +84,9 @@ namespace Targ_De_Masini
                         int optiuni = 0;
                         foreach(string data in date)
                         {
-                            optiuni += Convert.ToInt32( Math.Pow(Convert.ToDouble(data),2) );
+                            optiuni += Convert.ToInt32( Math.Pow(Convert.ToDouble(data)-1,2) );
                         }
-
+                        
                         Console.WriteLine("Introduceti pretul masinii: ");
                         double pret = Convert.ToDouble(Console.ReadLine());
 
@@ -192,7 +192,7 @@ namespace Targ_De_Masini
                                 optiuni = 0;
                                 foreach (string data in datee)
                                 {
-                                    optiuni += Convert.ToInt32(Math.Pow(Convert.ToDouble(data), 2));
+                                    optiuni += Convert.ToInt32(Math.Pow(2, Convert.ToDouble(data)-1));
                                 }
                                 masini[index].OPTIUNI = (Optiuni)optiuni;
                             }
