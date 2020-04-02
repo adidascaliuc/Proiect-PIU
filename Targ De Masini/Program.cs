@@ -22,9 +22,11 @@ namespace Targ_De_Masini
                 Console.WriteLine("P - adauga persoana\n" +
                     "M - adauga masina\n" +
                     "A - afiseaza persoane\n" +
+                    "C - compara 2 persoane\n" +
                     "N - afiseaza masini\n" +
                     "O - modifica masina\n" +
-                    "C - citeste din fisier\n" +
+                    "R - modificare persoana\n" +
+                    "F - citeste din fisier\n" +
                     "X - Iesire\n");
                 Console.WriteLine("Alegeti o optiune: ");
                 string opt = Console.ReadLine();
@@ -39,7 +41,7 @@ namespace Targ_De_Masini
 
                         Console.WriteLine("Ati venit in calitate de: \n" +
                             "1. Cumparator\n" +
-                            "2.Vanzator\n");
+                            "2. Vanzator\n");
                         int tipPersoana = Convert.ToInt32(Console.ReadLine());
 
                         Console.WriteLine("Introduceti bugetul: ");
@@ -88,16 +90,39 @@ namespace Targ_De_Masini
                         Console.WriteLine("Avem introduse " + nrPersoane + " persoane.");
                         for (int i = 0; i < nrPersoane; i++)
                         {
-                            Console.WriteLine((i + 1) + ". " + persoane[i].ConversieLaSir());
+                            Console.WriteLine("ID " + " #" + (i + 1) +  persoane[i].ConversieLaSir());
                         }
 
                         break;
+                    case "C":
+                        Console.WriteLine("Introduceti id-ul primei persoane: ");
+                        int id1 = Convert.ToInt32( Console.ReadLine() ) - 1;
 
+                        Console.WriteLine("Introduceti id-ul pntru a doua persoana: ");
+                        int id2 = Convert.ToInt32( Console.ReadLine() ) - 1;
+                        int rezultat = persoane[id1].Compara(persoane[id2]);
+
+                        if(rezultat == 1)
+                        {
+                            Console.WriteLine(persoane[id1].tipPersoana+"ul " + persoane[id1].NumeComplet + " este mai bogat decat " + persoane[id2].tipPersoana.ToString().ToLower() + "ul " +
+                                persoane[id2].NumeComplet + " cu " + ((float)(persoane[id1].Buget- persoane[id2].Buget)), .2f);
+                        }
+
+                        if(rezultat == -1)
+                        {
+                            Console.WriteLine(persoane[id2].tipPersoana + "ul " + persoane[id2].NumeComplet + " este mai bogat decat " + persoane[id1].tipPersoana + "ul " +
+                                persoane[id1].NumeComplet + " cu " + ((float)(persoane[id2].Buget - persoane[id1].Buget)), .2f);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Persoanele au aceeasi suma de bani.");
+                        }
+                        break;
                     case "N":
                         Console.WriteLine("Avem in stoc " + nrMasini + " masini.");
                         for (int i = 0; i < nrMasini; i++)
                         {
-                            Console.WriteLine("ID "+(i + 1) + "# " + masini[i].ConversieLaSir());
+                            Console.WriteLine("ID "+ " #" + (i + 1) +  masini[i].ConversieLaSir());
                         }
 
                         break;
@@ -178,7 +203,65 @@ namespace Targ_De_Masini
 
                         break;
 
-                    case "C":
+                    case "R":
+                        bool anotherPers = true;
+                        Console.WriteLine("Introduceti ID-ul persoanei pe care doriti sa o modificati: ");
+                        int id = Convert.ToInt32(Console.ReadLine() ) - 1;
+
+                        while (anotherPers)
+                        {
+                            Console.WriteLine("Ce doriti sa modificati?\n");
+                            Console.WriteLine("1. Nume\n" +
+                                "2. Prenume\n" +
+                                "3. Tipul Persoanei\n" +
+                                "4. Buget\n");
+                            int optiune = Convert.ToInt32( Console.ReadLine() );
+
+                            if(optiune == 1)
+                            {
+                                Console.WriteLine("Reintroduceti numele: ");
+                                persoane[id].Nume = Console.ReadLine();
+                            }
+
+                            if (optiune == 2)
+                            {
+                                Console.WriteLine("Reintroduceti prenumele: ");
+                                persoane[id].Prenume = Console.ReadLine();
+                            }
+
+                            if (optiune == 3)
+                            {
+                                Console.WriteLine("Reintroduceti tipul de persoana: ");
+                                Console.WriteLine("Ati venit in calitate de: \n" +
+                                                "1. Cumparator\n" +
+                                                "2. Vanzator\n");
+                                tipPersoana = Convert.ToInt32(Console.ReadLine());
+                                persoane[id].tipPersoana = (TipPersoana)tipPersoana;
+                            }
+
+                            if (optiune == 4)
+                            {
+                                Console.WriteLine("Reintroduceti bugetul: ");
+                                persoane[id].Buget = Convert.ToDouble( Console.ReadLine() );
+                            }
+
+                            Console.WriteLine("Doriti sa mai faceti modificari? [Y/N]");
+                            string ans = Console.ReadLine().ToUpper();
+
+                            if(ans == "Y")
+                            {
+                                anotherPers = true;
+                            }
+                            else
+                            {
+                                anotherPers = false;
+                            }
+
+                        }
+
+                        break;
+
+                    case "F":
                         break;
 
                     case "X":
