@@ -4,15 +4,14 @@ using System.Text;
 
 namespace Targ_De_Masini
 {
-    [Flags]
     public enum Culoare
     {
         None = 0,
         Alb = 1,  // stiu ca sunt nonculori :))
         Negru = 2,  // stiu ca sunt nonculori :))
-        Rosu = 4,
-        Albastru = 8,
-        Verde = 16,
+        Rosu = 3,
+        Albastru = 4,
+        Verde = 5,
     }
 
     [Flags]

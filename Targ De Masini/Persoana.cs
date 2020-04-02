@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Targ_De_Masini
 {
-    class Persoana
+    public class Persoana
     {
         int NUME = 0;
         int PRENUME = 1;

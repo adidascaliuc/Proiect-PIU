@@ -7,15 +7,17 @@ namespace Targ_De_Masini
         static void Main(string[] args)
         {
             int nrPersoane = 0;
-            int nrMasini = 0;
+            int nrMasini;
 
             Persoana[] persoane = new Persoana[50];
             Masina[] masini;
 
 
             IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
+            IStocareData adminPersoane = StocareFactory.GetAdministratorStocare();
             
             masini = adminMasini.GetMasini(out nrMasini);
+            //persoane = adminPersoane.GetPersoane(out nrPersoane);
 
             while (true)
             {
@@ -90,7 +92,7 @@ namespace Targ_De_Masini
                         Console.WriteLine("Avem introduse " + nrPersoane + " persoane.");
                         for (int i = 0; i < nrPersoane; i++)
                         {
-                            Console.WriteLine("ID " + " #" + (i + 1) +  persoane[i].ConversieLaSir());
+                            Console.WriteLine("ID " + " #" + (i + 1) + "\n" + persoane[i].ConversieLaSir());
                         }
 
                         break;
@@ -122,7 +124,7 @@ namespace Targ_De_Masini
                         Console.WriteLine("Avem in stoc " + nrMasini + " masini.");
                         for (int i = 0; i < nrMasini; i++)
                         {
-                            Console.WriteLine("ID "+ " #" + (i + 1) +  masini[i].ConversieLaSir());
+                            Console.WriteLine("ID "+ " #" + (i + 1) +  "\n" + masini[i].ConversieLaSir());
                         }
 
                         break;

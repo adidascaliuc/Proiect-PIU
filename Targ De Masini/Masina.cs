@@ -80,7 +80,7 @@ namespace Targ_De_Masini
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(NumeFirma+";"+Model+";"+AnFabricatie+";"+CULOARE+";"+OPTIUNI+";"+Pret);
+            return string.Format(NumeFirma+" "+Model+" "+AnFabricatie+" "+Convert.ToInt32( CULOARE )+" "+Convert.ToInt32( OPTIUNI )+" "+Pret);
         }
     }
             
