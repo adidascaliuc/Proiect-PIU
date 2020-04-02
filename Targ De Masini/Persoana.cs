@@ -53,30 +53,23 @@ namespace Targ_De_Masini
 
         }
 
-        public void Compara(Persoana p1)
+        public int Compara(Persoana p1)
         {
             if(p1.buget > this.buget)
             {
-                Console.WriteLine(p1.tipPersoana+"ul " + p1.numeComplet + " este mai bogat decat " + this.tipPersoana.ToString().ToLower() + "ul " +
-                    this.numeComplet + " cu " + ((float)(p1.buget-this.buget)), .2f);
+                return 1;
+                //Console.WriteLine(p1.tipPersoana+"ul " + p1.numeComplet + " este mai bogat decat " + this.tipPersoana.ToString().ToLower() + "ul " +
+                //    this.numeComplet + " cu " + ((float)(p1.buget-this.buget)), .2f);
             }
-            else
+            else if(p1.buget < this.buget)
             {
-                Console.WriteLine(this.tipPersoana + "ul " + this.numeComplet + " este mai bogat decat " + p1.tipPersoana + "ul " +
-                    p1.numeComplet + " cu " + ((float)(this.buget - p1.buget)), .2f);
+                return 2;
+                //Console.WriteLine(this.tipPersoana + "ul " + this.numeComplet + " este mai bogat decat " + p1.tipPersoana + "ul " +
+                //    p1.numeComplet + " cu " + ((float)(this.buget - p1.buget)), .2f);
             }
+            return 3; //Acelasi buget
         }
 
-        public static int optTipPersoana()
-        {
-            Console.WriteLine("Ati venit in calitate de ?\n" +
-                              "Alegeti o optiune: ");
-            Console.WriteLine("1. Cumparator\n" +
-                              "2. Vanzator\n");
-            int opt = Convert.ToInt32( Console.ReadLine() );
-
-            return opt;
-        }
 
         public void wrtFile(string numeFisier)
         {
@@ -97,22 +90,23 @@ namespace Targ_De_Masini
             }
         }
 
-        /*public Persoana readFile(out int nrPersoane)
+        public Persoana[] readFile(out int nrPersoane)
         {
             Persoana[] persoane = new Persoana[PAS_ALOCARE];
             nrPersoane = 0;
 
             try
-            {   Console.WriteLine("Introduceti numele fisierului: ");
+            {
+                Console.WriteLine("Introduceti numele fisierului: ");
                 string numeFisier = Console.ReadLine();
                 using (StreamReader sr = new StreamReader(numeFisier))
                 {
                     string linie;
                     int numarLinie = 0;
-                    while(( linie = sr.ReadLine()) != null)
+                    while ((linie = sr.ReadLine()) != null)
                     {
                         persoane[numarLinie++] = new Persoana(linie);
-                        if(numarLinie == PAS_ALOCARE)
+                        if (numarLinie == PAS_ALOCARE)
                         {
                             Array.Resize(ref persoane, numarLinie + PAS_ALOCARE);
                         }
@@ -120,17 +114,18 @@ namespace Targ_De_Masini
                     nrPersoane = numarLinie;
                 }
             }
-            catch(IOException eIO)
+            catch (IOException eIO)
             {
                 throw new Exception("Eroare la deschiderea fisierului. Mesaj " + eIO.Message);
             }
-            catch(Exception eGen)
+            catch (Exception eGen)
             {
                 throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
             }
 
             return persoane;
-        }*/
+        }
+        
 
 
         public string ConversieLaSir_PentruFisier()

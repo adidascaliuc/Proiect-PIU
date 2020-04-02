@@ -5,76 +5,64 @@ namespace Targ_De_Masini
     //clasa Masina cu parametrii auto-implemented
     class Masina
     {
-        public string numeFirma { set; get; }
-        public string model { set; get; }
-        public int anFabricatie { set; get; }
-        public Culoare culoare { set; get; }
-        public double pret { set; get; }
+        public string NumeFirma { set; get; }
+        public string Model { set; get; }
+        public int AnFabricatie { set; get; }
+        public Culoare CULOARE { set; get; }
+        public double Pret { set; get; }
       
 
         //constructor implicit fara parametrii
         public Masina()
         {
-            numeFirma = string.Empty;
-            model = string.Empty;
-            anFabricatie = 0;
-            culoare = Culoare.None;
-            pret = 0;
+            NumeFirma = string.Empty;
+            Model = string.Empty;
+            AnFabricatie = 0;
+            CULOARE = Culoare.None;
+            Pret = 0;
         }
 
         //constructor cu parametrii
         public Masina(string numeFirma, string model, int anFabricatie, int culoare, double pret)
         {
            
-            this.numeFirma = numeFirma;
-            this.model = model;
-            this.anFabricatie = anFabricatie;
-            this.culoare = (Culoare) culoare;
-            this.pret = pret;
+            this.NumeFirma = numeFirma;
+            this.Model = model;
+            this.AnFabricatie = anFabricatie;
+            this.CULOARE = (Culoare) culoare;
+            this.Pret = pret;
 
         }
         //constructor sir de caractere
         public Masina(string s)
         {
             string[] date = s.Split(" ");
-            numeFirma = date[0];
-            model = date[1];
-            anFabricatie = Convert.ToInt32(date[2]);
-            culoare = (Culoare) Convert.ToInt32( date[3] );
-            pret = Convert.ToDouble(date[4]);
+            NumeFirma = date[0];
+            Model = date[1];
+            AnFabricatie = Convert.ToInt32( date[2] );
+            CULOARE = (Culoare) Convert.ToInt32( date[3] );
+            Pret = Convert.ToDouble( date[4] );
 
         }
 
-        public void Compara(Masina m1)
+        public int Compara(Masina m1)
         {
-            if(this.pret > m1.pret)
+            if(this.Pret > m1.Pret)
             {
-                Console.WriteLine("Masina "+this.numeFirma+" "+this.model+" este mai scumpa decat masina "
-                    + m1.numeFirma + " " + m1.model + " cu " + (float)(this.pret - m1.pret) + "$");
+                return 1;
+                
             }
             else
             {
-                Console.WriteLine("Masina " + m1.numeFirma + " " + m1.model + " este mai scumpa decat masina "
-                    + this.numeFirma + " " + this.model + " cu " + (m1.pret - this.pret));
+                return 2;
+                
             }
-        }
-        
-        public static int optCuloare()
-        {
-            Console.WriteLine("Alegeti o optiune: ");
-            Console.WriteLine("1. Alb\n" +
-                              "2. Negru\n" +
-                              "3. Rosu\n" +
-                              "4. Albastru\n" +
-                              "5. Verde\n");
-            int opt = Convert.ToInt32( Console.ReadLine() );
-            return opt;
         }
 
         public string ConversieLaSir() //Afiseaza date despre masina
         {
             string buff = "";
-            buff += "Masina: "+ numeFirma+ "\nModel: " + model + "\nAn Fabricatie: " + anFabricatie + "\nCuloare: " + culoare + "\nPret: " + pret + "$\n";
+            buff += "Masina: "+ NumeFirma+ "\nModel: " + Model + "\nAn Fabricatie: " + AnFabricatie + "\nCuloare: " + CULOARE + "\nPret: " + Pret + "$\n";
             return buff;
         }
         

@@ -7,6 +7,9 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "Targ De Masini/1.0.0": {
+        "dependencies": {
+          "NivelAccesDate": "1.0.0"
+        },
         "runtime": {
           "Targ De Masini.dll": {}
         }

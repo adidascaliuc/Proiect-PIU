@@ -6,4 +6,8 @@
     <RootNamespace>Targ_De_Masini</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NivelAccesDate\NivelAccesDate.csproj" />
+  </ItemGroup>
+
 </Project>
