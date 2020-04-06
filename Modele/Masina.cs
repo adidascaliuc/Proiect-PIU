@@ -1,6 +1,7 @@
 ﻿using System;
 
-namespace Targ_De_Masini
+namespace Modele
+
 {
     //clasa Masina cu parametrii auto-implemented
     public class Masina
@@ -47,7 +48,7 @@ namespace Targ_De_Masini
         //constructor sir de caractere
         public Masina(string s)
         {
-            string[] date = s.Split(" ");
+            string[] date = s.Split(' ');
             NumeFirma = date[NUMEFIRMA];
             Model = date[MODEL];
             AnFabricatie = Convert.ToInt32(date[ANFABRICATIE]);

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.IO;
+using Modele;
+using NivelAcces;
 
-
-namespace Targ_De_Masini
+namespace NivelAcces
 {
-    public class AdministrareMasini_FisierText : IStocareData
+    public class AdministrareMasini_FisierText : IStocareDataMasini
     {
             private const int PAS_ALOCARE = 10;
             string NumeFisier { get; set; }

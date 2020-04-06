@@ -1,0 +1,3 @@
+Dascaliuc Adi 1 10000
+Ionescu Ion 2 10000
+Gheorghidiu Dej 2 100000000

@@ -148,6 +148,27 @@
             "rid": "win"
           }
         }
+      },
+      "Modele/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Modele.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Modele.dll": {}
+        }
+      },
+      "NivelAcces/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Modele": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NivelAcces.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NivelAcces.dll": {}
+        }
       }
     }
   },
@@ -452,10 +473,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Modele/1.0.0": {
+      "type": "project",
+      "path": "../Modele/Modele.csproj",
+      "msbuildProject": "../Modele/Modele.csproj"
+    },
+    "NivelAcces/1.0.0": {
+      "type": "project",
+      "path": "../NivelAcces/NivelAcces.csproj",
+      "msbuildProject": "../NivelAcces/NivelAcces.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Modele >= 1.0.0",
+      "NivelAcces >= 1.0.0",
       "System.Configuration.ConfigurationManager >= 4.7.0"
     ]
   },
@@ -484,7 +517,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\GitHub\\Proiect-PIU\\Modele\\Modele.csproj": {
+              "projectPath": "D:\\GitHub\\Proiect-PIU\\Modele\\Modele.csproj"
+            },
+            "D:\\GitHub\\Proiect-PIU\\NivelAcces\\NivelAcces.csproj": {
+              "projectPath": "D:\\GitHub\\Proiect-PIU\\NivelAcces\\NivelAcces.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

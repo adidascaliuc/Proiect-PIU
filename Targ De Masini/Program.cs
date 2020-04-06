@@ -1,4 +1,6 @@
 ﻿using System;
+using Modele;
+using NivelAcces;
 
 namespace Targ_De_Masini 
 {
@@ -6,18 +8,18 @@ namespace Targ_De_Masini
     {
         static void Main(string[] args)
         {
-            int nrPersoane = 0;
+            int nrPersoane;
             int nrMasini;
 
-            Persoana[] persoane = new Persoana[50];
+            Persoana[] persoane;
             Masina[] masini;
 
 
-            IStocareData adminMasini = StocareFactory.GetAdministratorStocare();
-            IStocareData adminPersoane = StocareFactory.GetAdministratorStocare();
+            IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
+            IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
             
             masini = adminMasini.GetMasini(out nrMasini);
-            //persoane = adminPersoane.GetPersoane(out nrPersoane);
+            persoane = adminPersoane.GetPersoane(out nrPersoane);
 
             while (true)
             {
@@ -47,7 +49,7 @@ namespace Targ_De_Masini
 
                         Console.WriteLine("Introduceti bugetul: ");
                         int buget = Convert.ToInt32(Console.ReadLine());
-                        persoane[nrPersoane++] = new Persoana(nume, prenume, tipPersoana, buget);
+                        adminPersoane.AddPersoana(persoane[nrPersoane++] = new Persoana(nume, prenume, tipPersoana, buget));
 
                         break;
 
@@ -137,7 +139,9 @@ namespace Targ_De_Masini
                             else
                             {
                                 anotherPers = false;
+                                adminPersoane.AddPersoana(persoane[id]);
                             }
+                            
 
                         }
 

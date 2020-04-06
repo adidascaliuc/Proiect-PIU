@@ -1,21 +1,22 @@
 ﻿using System;
+using Modele;
 
-namespace Targ_De_Masini
+namespace NivelAcces
 {
-    public class AdministrarePersoane_FisierBinar// : IStocareData
+    public class AdministrareMasini_FisierBinar : IStocareDataMasini
     {
         string NumeFisier { get; set; }
-        public AdministrarePersoane_FisierBinar(string numeFisiser)
+        public AdministrareMasini_FisierBinar(string numeFisiser)
         {
             this.NumeFisier = NumeFisier;
         }
 
-        public void AddPersoana(Persoana p)
+        public void AddMasina(Masina m)
         {
             throw new Exception("Optiunea AddStudent nu este implementata");
         }
 
-        public Persoana[] GetPersoane(out int nrPersoane)
+        public Masina[] GetMasini(out int nrMasini)
         {
             throw new Exception("Optiunea GetStudenti nu este implementata");
         }

@@ -1,0 +1,6 @@
+D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.csprojAssemblyReference.cache
+D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.csproj.CoreCompileInputs.cache
+D:\GitHub\Proiect-PIU\Modele\bin\Debug\Modele.dll
+D:\GitHub\Proiect-PIU\Modele\bin\Debug\Modele.pdb
+D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.dll
+D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.pdb

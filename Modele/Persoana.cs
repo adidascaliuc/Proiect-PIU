@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 
-namespace Targ_De_Masini
+namespace Modele
 {
     public class Persoana
     {
@@ -67,7 +67,7 @@ namespace Targ_De_Masini
 
         public string ConversieLaSir_PentruFisier()
         { 
-            string date = string.Format("{1}{0}{2}{0}{3}", SEPARATOR_FISIER, NumeComplet, tipPersoana, Buget);
+            string date = string.Format("{1}{0}{2}{0}{3}{0}{4}", SEPARATOR_FISIER, Nume, Prenume, Convert.ToInt32(tipPersoana), Buget);
 
             return date;
         }

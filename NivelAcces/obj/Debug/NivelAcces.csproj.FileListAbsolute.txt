@@ -1,0 +1,9 @@
+D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csprojAssemblyReference.cache
+D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csproj.CoreCompileInputs.cache
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\NivelAcces.dll
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\NivelAcces.pdb
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\Modele.dll
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\Modele.pdb
+D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csproj.CopyComplete
+D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.dll
+D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.pdb

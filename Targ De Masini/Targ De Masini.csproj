@@ -10,4 +10,9 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Modele\Modele.csproj" />
+    <ProjectReference Include="..\NivelAcces\NivelAcces.csproj" />
+  </ItemGroup>
+
 </Project>

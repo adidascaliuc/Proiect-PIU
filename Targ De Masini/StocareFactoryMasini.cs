@@ -1,12 +1,13 @@
 ﻿using System.Configuration;
+using NivelAcces;
 
 namespace Targ_De_Masini
 {
-    public static class StocareFactory
+    public static class StocareFactoryMasini
     {
         private const string FORMAT_SALVARE = "FormatSalvare";
-        private const string NUME_FISIER = "NumeFisier";
-        public static IStocareData GetAdministratorStocare()
+        private const string NUME_FISIER = "NumeFisierMasini";
+        public static IStocareDataMasini GetAdministratorStocare()
         {
             var formatSalvare = ConfigurationManager.AppSettings[FORMAT_SALVARE];
             var numeFisier = ConfigurationManager.AppSettings[NUME_FISIER];

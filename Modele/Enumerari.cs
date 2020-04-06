@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Targ_De_Masini
+namespace Modele
 {
     public enum Culoare
     {
