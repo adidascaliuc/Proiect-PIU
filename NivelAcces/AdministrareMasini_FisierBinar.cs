@@ -6,7 +6,7 @@ namespace NivelAcces
     public class AdministrareMasini_FisierBinar : IStocareDataMasini
     {
         string NumeFisier { get; set; }
-        public AdministrareMasini_FisierBinar(string numeFisiser)
+        public AdministrareMasini_FisierBinar(string NumeFisiser)
         {
             this.NumeFisier = NumeFisier;
         }

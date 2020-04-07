@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.IO;
 using Modele;
 using NivelAcces;
 
@@ -73,7 +75,7 @@ namespace Targ_De_Masini
                         if (rezultat == 1)
                         {
                             Console.WriteLine(persoane[id1].tipPersoana + "ul " + persoane[id1].NumeComplet + " este mai bogat decat " + persoane[id2].tipPersoana.ToString().ToLower() + "ul " +
-                                persoane[id2].NumeComplet + " cu " + ((float)(persoane[id1].Buget - persoane[id2].Buget)), .2f);
+                                persoane[id2].NumeComplet + " cu " + ((float)(persoane[id1].Buget - persoane[id2].Buget)), .2f + "$");
                         }
 
                         if (rezultat == -1)
@@ -91,7 +93,7 @@ namespace Targ_De_Masini
                         bool anotherPers = true;
                         Console.WriteLine("Introduceti ID-ul persoanei pe care doriti sa o modificati: ");
                         int id = Convert.ToInt32(Console.ReadLine()) - 1;
-
+                        
                         while (anotherPers)
                         {
                             Console.WriteLine("Ce doriti sa modificati?\n");
@@ -139,7 +141,12 @@ namespace Targ_De_Masini
                             else
                             {
                                 anotherPers = false;
-                                adminPersoane.AddPersoana(persoane[id]);
+                                File.WriteAllText(ConfigurationManager.AppSettings["NumeFisierPersoane"] + ".txt", string.Empty);
+                                for (int i=0; i<nrPersoane; i++)
+                                {
+                                    adminPersoane.AddPersoana(persoane[i]);
+                                }
+                            
                             }
                             
 
@@ -273,6 +280,12 @@ namespace Targ_De_Masini
                             else
                             {
                                 another = false;
+                                File.WriteAllText(ConfigurationManager.AppSettings["NumeFisierMasini"] + "." + ConfigurationManager.AppSettings["NumeFormat"], string.Empty);
+                                for (int i = 0; i < nrMasini; i++)
+                                {
+                                    adminMasini.AddMasina(masini[i]);
+                                }
+
                             }
 
                         }
