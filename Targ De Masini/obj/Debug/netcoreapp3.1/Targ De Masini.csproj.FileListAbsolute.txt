@@ -36,8 +36,8 @@ D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\ne
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CoreCompileInputs.cache
 D:\GitHub\Proiect-PIU\Targ De Masini\obj\Debug\netcoreapp3.1\Targ De Masini.csproj.CopyComplete
-D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll.config
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Modele.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Modele.pdb
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.pdb
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.dll.config

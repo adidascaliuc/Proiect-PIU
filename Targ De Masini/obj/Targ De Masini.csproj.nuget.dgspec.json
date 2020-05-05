@@ -12,7 +12,7 @@
         "projectPath": "D:\\GitHub\\Proiect-PIU\\Modele\\Modele.csproj"
       },
       "frameworks": {
-        "net472": {}
+        "net461": {}
       }
     },
     "D:\\GitHub\\Proiect-PIU\\NivelAcces\\NivelAcces.csproj": {
@@ -22,7 +22,7 @@
         "projectName": "NivelAcces",
         "projectPath": "D:\\GitHub\\Proiect-PIU\\NivelAcces\\NivelAcces.csproj",
         "frameworks": {
-          "net472": {
+          "net461": {
             "projectReferences": {
               "D:\\GitHub\\Proiect-PIU\\Modele\\Modele.csproj": {
                 "projectPath": "D:\\GitHub\\Proiect-PIU\\Modele\\Modele.csproj"
@@ -32,7 +32,7 @@
         }
       },
       "frameworks": {
-        "net472": {}
+        "net461": {}
       }
     },
     "D:\\GitHub\\Proiect-PIU\\Targ De Masini\\Targ De Masini.csproj": {
@@ -41,11 +41,11 @@
         "projectUniqueName": "D:\\GitHub\\Proiect-PIU\\Targ De Masini\\Targ De Masini.csproj",
         "projectName": "Targ De Masini",
         "projectPath": "D:\\GitHub\\Proiect-PIU\\Targ De Masini\\Targ De Masini.csproj",
-        "packagesPath": "C:\\Users\\Adi\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Dascaliuc Adi\\.nuget\\packages\\",
         "outputPath": "D:\\GitHub\\Proiect-PIU\\Targ De Masini\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Adi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dascaliuc Adi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

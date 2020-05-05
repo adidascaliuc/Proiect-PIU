@@ -1,0 +1,13 @@
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\TargDeMasiniForm.exe.config
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\TargDeMasiniForm.exe
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\TargDeMasiniForm.pdb
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\Modele.dll
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\Modele.pdb
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csprojAssemblyReference.cache
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.Form1.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.Properties.Resources.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.GenerateResource.cache
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CoreCompileInputs.cache
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CopyComplete
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.exe
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.pdb
