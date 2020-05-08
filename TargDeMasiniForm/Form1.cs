@@ -206,32 +206,14 @@ namespace TargDeMasiniForm
         private void btnModificare_Click(object sender, EventArgs e)
         {
             List<Masina> masini = adminMasini.GetMasiniIndex(Convert.ToInt32(lBoxAfisare.SelectedIndex));
-
+            
 
             if (masini != null)
             {
-                Masina m = masini[0];
-
-                int modCuloare = ValidareCuloare();
-                int modOptiuni = ValidareOptiuni();
-                int validare = ValidareMasina();
-
-                if (validare == 0)
-                {
-                    m.NumeFirma = txtFirma.Text;
-                    m.Model = txtModel.Text;
-                    m.AnFabricatie = Convert.ToInt32(cBoxAnFabricatie.Text);
-                    m.CULOARE = (Culoare)modCuloare;
-                    m.OPTIUNI = (Optiuni)modOptiuni;
-                    m.Pret = Convert.ToDouble(txtPret.Text);
-
-                    adminMasini.UpdateMasina(m, lBoxAfisare.SelectedIndex);
-                    lblInfo.Text = "Masina modificata cu succes!";
-                }
-                else
-                {
-                    CodEroareMasina(validare);
-                }
+                Masina m = masini.Last();
+                ModificaForm modForm = new ModificaForm(m, lBoxAfisare.SelectedIndex);
+                modForm.Show();
+                lblInfo.Text = "Masina modificata cu succes!";
             }
             else
             {
@@ -244,44 +226,6 @@ namespace TargDeMasiniForm
         {
             List<Masina> masini = adminMasini.GetMasiniIndex(lBoxAfisare.SelectedIndex);
 
-            if (masini != null)
-            {
-                Masina m = masini.Last();
-                txtFirma.Text = m.NumeFirma;
-                txtModel.Text = m.Model;
-                cBoxAnFabricatie.Text = Convert.ToString(m.AnFabricatie);
-
-                if (Convert.ToInt32(m.CULOARE) == 1)
-                {
-                    radioAlb.Checked = true;
-                }
-                if (Convert.ToInt32(m.CULOARE) == 2)
-                {
-                    radioNegru.Checked = true;
-                }
-                if (Convert.ToInt32(m.CULOARE) == 3)
-                {
-                    radioRosu.Checked = true;
-                }
-                if (Convert.ToInt32(m.CULOARE) == 4)
-                {
-                    radioAlbastru.Checked = true;
-                }
-                if (Convert.ToInt32(m.CULOARE) == 5)
-                {
-                    radioVerde.Checked = true;
-                }
-                if (Convert.ToInt32(m.CULOARE) == 6)
-                {
-                    radioArgintiu.Checked = true;
-                }
-                txtPret.Text = Convert.ToString(m.Pret);
-            }
-            else
-            {
-                lBoxAfisare.Items.Clear();
-                lBoxAfisare.Items.Add("Selectati o masina!");
-            }
         }
 
         private void btnReset_MouseClick(object sender, MouseEventArgs e)
