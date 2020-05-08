@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Modele;
 
@@ -40,9 +41,9 @@ namespace NivelAcces
             }
         }
 
-        public Persoana[] GetPersoane(out int nrPersoane)
+        public List<Persoana> GetPersoane(out int nrPersoane)
         {
-            Persoana[] persoane = new Persoana[PAS_ALOCARE];
+            List<Persoana> persoane = new List<Persoana>();
 
             try
             {
@@ -56,10 +57,6 @@ namespace NivelAcces
                     while ((line = sr.ReadLine()) != null)
                     {
                         persoane[nrPersoane++] = new Persoana(line);
-                        if (nrPersoane == PAS_ALOCARE)
-                        {
-                            Array.Resize(ref persoane, nrPersoane + PAS_ALOCARE);
-                        }
                     }
                 }
             }

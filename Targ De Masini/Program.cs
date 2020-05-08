@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using Modele;
@@ -10,18 +11,18 @@ namespace Targ_De_Masini
     {
         static void Main(string[] args)
         {
-            int nrPersoane;
-            int nrMasini;
+            //int nrPersoane;
+            //int nrMasini;
 
-            Persoana[] persoane;
-            Masina[] masini;
+            List<Persoana> persoane = new List<Persoana>();
+            List<Masina> masini = new List<Masina>();
 
 
             IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
             IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
             
-            masini = adminMasini.GetMasini(out nrMasini);
-            persoane = adminPersoane.GetPersoane(out nrPersoane);
+            masini = adminMasini.GetMasini(out int nrMasini);
+            persoane = adminPersoane.GetPersoane(out int nrPersoane);
 
             while (true)
             {

@@ -1,2 +1,3 @@
 VW Tiguan 2012 2 7 10000
-Mercedes-Benz GLA 2002 3 21 10000
+Mercedes-Benz GLA 2012 3 21 10000
+Dacia Logan 2002 3 7 2000

@@ -12,6 +12,7 @@ namespace Modele
         Rosu = 3,
         Albastru = 4,
         Verde = 5,
+        Argintiu = 6,
     }
 
     [Flags]
@@ -21,7 +22,7 @@ namespace Modele
         AerConditionat = 1,
         OptiuniVolan = 2,
         ScaunePiele = 4,
-        ModBengos = 8,
+        GeamuriElectrice = 8,
         Navigatie = 16,
         CutieAutomata = 32,
     }

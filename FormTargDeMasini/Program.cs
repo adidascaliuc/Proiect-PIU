@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Drawing;
 using Modele;
 using NivelAcces;
-using Targ_De_Masini;
 
 namespace FormTargDeMasini
 {
@@ -17,6 +16,7 @@ namespace FormTargDeMasini
         [STAThread]
         static void Main()
         {
+            
             FormMasini form = new FormMasini();
             form.Show();
             Application.Run();
@@ -25,6 +25,8 @@ namespace FormTargDeMasini
         public class FormMasini : Form
         {
             IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
+            
+
             private Button btnAdauga;
             private Label lblFirma, lblModel, lblAnFabricatie, lblCuloare, lblOptiuni, lblPret, lblInfo, lblAbout;
             private TextBox txtFirma, txtModel, txtAnFabricatie, txtCuloare, txtOptiuni, txtPret;
@@ -140,9 +142,10 @@ namespace FormTargDeMasini
                     "1. AerConditionat\n" +
                     "2. OptiuniVolan\n" +
                     "4. ScaundePiele\n" +
-                    "8. ModBengos\n" +
-                    "16. Navigatie\n" +
-                    "32. CutieAutomata\n";
+                    "8. Gemuri Electrice" +
+                    "16. ModBengos\n" +
+                    "32. Navigatie\n" +
+                    "64. CutieAutomata\n";
 
                 lblAbout.Location = new Point(DIMENSIUNE_PAS_X, DIMENSIUNE_PAS_Y * 7);
                 this.Controls.Add(lblAbout);
@@ -152,10 +155,6 @@ namespace FormTargDeMasini
                 lblInfo.Text = "*** Masini ***\n";
                 lblInfo.AutoSize = true;
                 this.Controls.Add(lblInfo);
-
-
-
-
 
             }
 
@@ -169,7 +168,8 @@ namespace FormTargDeMasini
                     Masina m = new Masina(txtFirma.Text, txtModel.Text,Convert.ToInt16( txtAnFabricatie.Text ),Convert.ToInt16( txtCuloare.Text ), Convert.ToInt16( txtOptiuni.Text ), Convert.ToDouble( txtPret.Text ));
 
                     lblInfo.Text += m.ConversieLaSir() + "\n";
-                    //adminMasini.AddMasina(m);
+                  
+                    adminMasini.AddMasina(m);
 
                 }
                 else

@@ -11,3 +11,6 @@ D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CoreCom
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CopyComplete
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.exe
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.pdb
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\NivelAcces.dll
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\NivelAcces.pdb
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.ModificaForm.resources

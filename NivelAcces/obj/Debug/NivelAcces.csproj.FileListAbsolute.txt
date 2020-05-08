@@ -7,4 +7,3 @@ D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\Modele.pdb
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csproj.CopyComplete
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.dll
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.pdb
-D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\NivelAcces.dll.config

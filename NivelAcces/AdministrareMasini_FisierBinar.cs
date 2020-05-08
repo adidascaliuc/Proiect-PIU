@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Modele;
 
 namespace NivelAcces
@@ -13,12 +14,20 @@ namespace NivelAcces
 
         public void AddMasina(Masina m)
         {
-            throw new Exception("Optiunea AddStudent nu este implementata");
+            throw new Exception("Optiunea AddMasina nu este implementata");
         }
 
-        public Masina[] GetMasini(out int nrMasini)
+        public List<Masina> GetMasini(out int nrMasini)
         {
-            throw new Exception("Optiunea GetStudenti nu este implementata");
+            throw new Exception("Optiunea GetMasini nu este implementata");
+        }
+        public List<Masina> GetMasiniIndex(int index)
+        {
+            throw new Exception("Optiunea GetMasini nu este implementata");
+        }
+        public void UpdateMasina(Masina m, int index)
+        {
+            throw new Exception("Optiunea GetMasini nu este implementata");
         }
     }
 }

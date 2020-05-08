@@ -20,7 +20,7 @@ namespace Modele
         public Culoare CULOARE { set; get; }
         public Optiuni OPTIUNI { set; get; }
         public double Pret { set; get; }
-
+        public static int nrMasini = 0;
 
         //constructor implicit fara parametrii
         public Masina()
@@ -31,31 +31,33 @@ namespace Modele
             CULOARE = Culoare.None;
             OPTIUNI = Optiuni.None;
             Pret = 0;
+            nrMasini++;
         }
 
         //constructor cu parametrii
         public Masina(string numeFirma, string model, int anFabricatie, int culoare, int optiuni, double pret)
         {
-
             this.NumeFirma = numeFirma;
             this.Model = model;
             this.AnFabricatie = anFabricatie;
             this.CULOARE = (Culoare)culoare;
             this.OPTIUNI = (Optiuni)optiuni;
             this.Pret = pret;
+            nrMasini++;
+            
 
         }
         //constructor sir de caractere
         public Masina(string s)
         {
-            string[] date = s.Split(' ');
+            string[] date = s.Split(';');
             NumeFirma = date[NUMEFIRMA];
             Model = date[MODEL];
             AnFabricatie = Convert.ToInt32(date[ANFABRICATIE]);
             CULOARE = (Culoare)Convert.ToInt32(date[INDEXCULOARE]);
             OPTIUNI = (Optiuni)Convert.ToInt32(date[INDEXOPTIUNI]);
             Pret = Convert.ToDouble(date[PRET]);
-
+            nrMasini++;
         }
 
         public int Compara(Masina m1)
@@ -63,25 +65,21 @@ namespace Modele
             if (this.Pret > m1.Pret)
             {
                 return 1;
-
             }
             else
             {
                 return 2;
-
             }
         }
 
         public string ConversieLaSir() //Afiseaza date despre masina
-        {
-            string buff = "";
-            buff += "Masina: " + NumeFirma + "\nModel: " + Model + "\nAn Fabricatie: " + AnFabricatie + "\nCuloare: " + CULOARE + "\nOptiuni: " + OPTIUNI + "\nPret: " + Pret + "$\n";
-            return buff;
+        {          
+            return string.Format( "Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
         }
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(NumeFirma+" "+Model+" "+AnFabricatie+" "+Convert.ToInt32( CULOARE )+" "+Convert.ToInt32( OPTIUNI )+" "+Pret);
+            return string.Format(NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret);
         }
     }
             

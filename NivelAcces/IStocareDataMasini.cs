@@ -1,10 +1,13 @@
 ﻿using Modele;
+using System.Collections.Generic;
 
 namespace NivelAcces
 {
     public interface IStocareDataMasini
     {
         void AddMasina(Masina m);       
-        Masina[] GetMasini(out int nrMasini);
+        List<Masina> GetMasini(out int nrMasini);
+        List<Masina> GetMasiniIndex(int index);
+        void UpdateMasina(Masina m, int index);
     }
 }

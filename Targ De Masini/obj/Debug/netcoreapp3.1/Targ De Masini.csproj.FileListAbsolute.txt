@@ -40,4 +40,4 @@ D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Modele.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.dll
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Modele.pdb
 D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.pdb
-D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\NivelAcces.dll.config
+D:\GitHub\Proiect-PIU\Targ De Masini\bin\Debug\netcoreapp3.1\Targ De Masini.dll.config

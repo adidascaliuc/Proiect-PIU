@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using NivelAcces;
 
-namespace Targ_De_Masini
+namespace NivelAcces
 {
     public static class StocareFactoryPersoane
     {

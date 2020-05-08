@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Modele;
 
 namespace NivelAcces
@@ -16,7 +17,7 @@ namespace NivelAcces
             throw new Exception("Optiunea AddPersoane nu este implementata");
         }
 
-        public Persoana[] GetPersoane(out int nrPersoane)
+        public List<Persoana> GetPersoane(out int nrPersoane)
         {
             throw new Exception("Optiunea GetPersoane nu este implementata");
         }

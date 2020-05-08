@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,10 +53,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificaForm.Designer.cs">
+      <DependentUpon>ModificaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificaForm.resx">
+      <DependentUpon>ModificaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,6 +93,10 @@
     <ProjectReference Include="..\Modele\Modele.csproj">
       <Project>{76a84ce5-ae0c-4f5d-9727-9b315a941723}</Project>
       <Name>Modele</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NivelAcces\NivelAcces.csproj">
+      <Project>{c9cc677b-3c44-42aa-a042-ea0e44f787da}</Project>
+      <Name>NivelAcces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

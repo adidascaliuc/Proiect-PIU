@@ -10,4 +10,3 @@ D:\GitHub\Proiect-PIU\FormTargDeMasini\bin\Debug\Modele.pdb
 D:\GitHub\Proiect-PIU\FormTargDeMasini\obj\Debug\FormTargDeMasini.csproj.CopyComplete
 D:\GitHub\Proiect-PIU\FormTargDeMasini\bin\Debug\NivelAcces.dll
 D:\GitHub\Proiect-PIU\FormTargDeMasini\bin\Debug\NivelAcces.pdb
-D:\GitHub\Proiect-PIU\FormTargDeMasini\bin\Debug\NivelAcces.dll.config

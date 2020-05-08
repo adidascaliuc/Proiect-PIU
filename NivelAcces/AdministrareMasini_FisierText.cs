@@ -1,7 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Modele;
-using NivelAcces;
+
 
 namespace NivelAcces
 {
@@ -39,10 +40,46 @@ namespace NivelAcces
                     throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
                 }
             }
+        public void UpdateMasina(Masina m, int index)
+        {
+            List<Masina> masini = GetMasini(out int nrMasini);
+            int indexMasina = 0;
 
-            public Masina[] GetMasini(out int nrMasini)
+            try
             {
-                Masina[] masini = new Masina[PAS_ALOCARE];
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
+                {
+                    foreach (Masina msn in masini)
+                    {
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (indexMasina == index)
+                        {
+                            swFisierText.WriteLine(m.ConversieLaSir_PentruFisiere());
+                        }
+                        else
+                        {
+                            swFisierText.WriteLine(msn.ConversieLaSir_PentruFisiere());
+                        }
+                        indexMasina++;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+        }
+        public List<Masina> GetMasini(out int nrMasini)
+            {
+            Masina.nrMasini = 0;
+                List<Masina> masini = new List<Masina>();
 
                 try
                 {
@@ -55,11 +92,9 @@ namespace NivelAcces
                         //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                         while ((line = sr.ReadLine()) != null)
                         {
-                            masini[nrMasini++] = new Masina(line);
-                            if (nrMasini == PAS_ALOCARE)
-                            {
-                                Array.Resize(ref masini, nrMasini + PAS_ALOCARE);
-                            }
+                            Masina m = new Masina(line);
+                            masini.Add( m );
+                            nrMasini++;
                         }
                     }
                 }
@@ -74,5 +109,44 @@ namespace NivelAcces
 
                 return masini;
             }
+
+        public List<Masina> GetMasiniIndex(int index)
+        {
+            Masina.nrMasini = 0;
+            List<Masina> masini = new List<Masina>();
+
+            try
+            {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+                    int nrMasini = 0;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Masina m = new Masina(line);
+                        masini.Add(m);
+
+                        if(nrMasini == index)
+                        {
+                            return masini;
+                        }
+                        nrMasini++;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return null;
         }
+    }
 }
