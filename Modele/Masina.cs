@@ -6,13 +6,14 @@ namespace Modele
     //clasa Masina cu parametrii auto-implemented
     public class Masina
     {
-        int NUMEFIRMA = 0;
-        int MODEL = 1;
-        int ANFABRICATIE = 2;
-        int INDEXCULOARE = 3;
-        int INDEXOPTIUNI = 4;
-        int PRET = 5;
-
+        int ID = 0;
+        int NUMEFIRMA = 1;
+        int MODEL = 2;
+        int ANFABRICATIE = 3;
+        int INDEXCULOARE = 4;
+        int INDEXOPTIUNI = 5;
+        int PRET = 6;
+        
 
         public string NumeFirma { set; get; }
         public string Model { set; get; }
@@ -20,7 +21,22 @@ namespace Modele
         public Culoare CULOARE { set; get; }
         public Optiuni OPTIUNI { set; get; }
         public double Pret { set; get; }
-        public static int nrMasini = 0;
+        public int IdMasina  = 0;
+
+        public string SerieMasina = SerieUnica();
+
+        private static string SerieUnica()
+        {
+            string serie = "";
+            Random rnd = new Random();
+            string choose = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            for(int i=0; i<10; i++)
+            {
+                serie += choose[rnd.Next(choose.Length-1)];
+            }
+            return serie;
+        }
 
         //constructor implicit fara parametrii
         public Masina()
@@ -31,7 +47,8 @@ namespace Modele
             CULOARE = Culoare.None;
             OPTIUNI = Optiuni.None;
             Pret = 0;
-            nrMasini++;
+            IdMasina++;
+            
         }
 
         //constructor cu parametrii
@@ -43,8 +60,8 @@ namespace Modele
             this.CULOARE = (Culoare)culoare;
             this.OPTIUNI = (Optiuni)optiuni;
             this.Pret = pret;
-            nrMasini++;
-            
+            this.IdMasina++;
+
 
         }
         //constructor sir de caractere
@@ -53,11 +70,13 @@ namespace Modele
             string[] date = s.Split(';');
             NumeFirma = date[NUMEFIRMA];
             Model = date[MODEL];
-            AnFabricatie = Convert.ToInt32(date[ANFABRICATIE]);
-            CULOARE = (Culoare)Convert.ToInt32(date[INDEXCULOARE]);
-            OPTIUNI = (Optiuni)Convert.ToInt32(date[INDEXOPTIUNI]);
-            Pret = Convert.ToDouble(date[PRET]);
-            nrMasini++;
+            AnFabricatie = Convert.ToInt32( date[ANFABRICATIE] );
+            CULOARE = (Culoare)Convert.ToInt32( date[INDEXCULOARE] );
+            OPTIUNI = (Optiuni)Convert.ToInt32( date[INDEXOPTIUNI] );
+            Pret = Convert.ToDouble( date[PRET] );
+            IdMasina = Convert.ToInt32( date[ID] );
+            this.IdMasina++;
+            
         }
 
         public int Compara(Masina m1)
@@ -74,12 +93,12 @@ namespace Modele
 
         public string ConversieLaSir() //Afiseaza date despre masina
         {          
-            return string.Format( "Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
+            return string.Format( "#ID: " + IdMasina + "Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
         }
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret);
+            return string.Format(IdMasina+";"+NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret);
         }
     }
             

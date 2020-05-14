@@ -47,39 +47,78 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="OptiuneAdaugareForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="OptiuneAdaugareForm.Designer.cs">
+      <DependentUpon>OptiuneAdaugareForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificaForm.cs">
+    <Compile Include="OptiuneAfiseazaForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModificaForm.Designer.cs">
-      <DependentUpon>ModificaForm.cs</DependentUpon>
+    <Compile Include="OptiuneAfiseazaForm.Designer.cs">
+      <DependentUpon>OptiuneAfiseazaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptiuneCautaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptiuneCautaForm.Designer.cs">
+      <DependentUpon>OptiuneCautaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaStartForm.Designer.cs">
+      <DependentUpon>PaginaStartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptiuniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptiuniForm.Designer.cs">
+      <DependentUpon>OptiuniForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptiuneModificaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OptiuneModificaForm.Designer.cs">
+      <DependentUpon>OptiuneModificaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="OptiuneCautaForm.resx">
+      <DependentUpon>OptiuneCautaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModificaForm.resx">
-      <DependentUpon>ModificaForm.cs</DependentUpon>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptiuniForm.resx">
+      <DependentUpon>OptiuniForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptiuneModificaForm.resx">
+      <DependentUpon>OptiuneModificaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaStartForm.resx">
+      <DependentUpon>PaginaStartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -98,6 +137,33 @@
       <Project>{c9cc677b-3c44-42aa-a042-ea0e44f787da}</Project>
       <Name>NivelAcces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bkgOptiuni1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgroundPrimaPagina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logOutPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\listPng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchPng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

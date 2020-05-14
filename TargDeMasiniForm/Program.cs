@@ -12,8 +12,8 @@ namespace TargDeMasiniForm
     {
         static void Main(string[] args)
         {
-            Form1 form = new Form1();
-            form.Show();
+            PaginaStartForm startForm = new PaginaStartForm();
+            startForm.Show();
             Application.Run();
 
         }

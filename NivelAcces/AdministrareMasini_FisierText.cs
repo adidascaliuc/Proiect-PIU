@@ -78,7 +78,6 @@ namespace NivelAcces
         }
         public List<Masina> GetMasini(out int nrMasini)
             {
-            Masina.nrMasini = 0;
                 List<Masina> masini = new List<Masina>();
 
                 try
@@ -112,7 +111,6 @@ namespace NivelAcces
 
         public List<Masina> GetMasiniIndex(int index)
         {
-            Masina.nrMasini = 0;
             List<Masina> masini = new List<Masina>();
 
             try
