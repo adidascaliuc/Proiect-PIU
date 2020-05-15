@@ -15,14 +15,13 @@ namespace TargDeMasiniForm
 {
     public partial class OptiuneModificaForm : Form
     {
-        private  int indexModificaMasina = 0;
         private Masina m;
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
+
         public OptiuneModificaForm(Masina masina, int index)
         {
             InitializeComponent();
 
-            indexModificaMasina = index;
             m = masina;
 
             txtFirma.Text = m.NumeFirma;
@@ -73,8 +72,9 @@ namespace TargDeMasiniForm
                 m.CULOARE = (Culoare)modCuloare;
                 m.OPTIUNI = (Optiuni)modOptiuni;
                 m.Pret = Convert.ToDouble(txtPret.Text);
+                m.DataActualizare = DateTime.Now;
 
-                adminMasini.UpdateMasina(m, indexModificaMasina);
+                adminMasini.UpdateMasina(m, m.IdMasina - 1);
                 this.Hide();
 
                 

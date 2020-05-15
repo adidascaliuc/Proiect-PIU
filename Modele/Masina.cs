@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace Modele
 
@@ -13,15 +14,17 @@ namespace Modele
         int INDEXCULOARE = 4;
         int INDEXOPTIUNI = 5;
         int PRET = 6;
-        
+        int DATA = 7;
 
+
+        public int IdMasina { set; get; }
         public string NumeFirma { set; get; }
         public string Model { set; get; }
         public int AnFabricatie { set; get; }
         public Culoare CULOARE { set; get; }
         public Optiuni OPTIUNI { set; get; }
         public double Pret { set; get; }
-        public int IdMasina  = 0;
+        public DateTime DataActualizare { set; get; }
 
         public string SerieMasina = SerieUnica();
 
@@ -60,7 +63,7 @@ namespace Modele
             this.CULOARE = (Culoare)culoare;
             this.OPTIUNI = (Optiuni)optiuni;
             this.Pret = pret;
-            this.IdMasina++;
+            
 
 
         }
@@ -68,14 +71,14 @@ namespace Modele
         public Masina(string s)
         {
             string[] date = s.Split(';');
+            IdMasina = Convert.ToInt32(date[ID]);
             NumeFirma = date[NUMEFIRMA];
             Model = date[MODEL];
             AnFabricatie = Convert.ToInt32( date[ANFABRICATIE] );
             CULOARE = (Culoare)Convert.ToInt32( date[INDEXCULOARE] );
             OPTIUNI = (Optiuni)Convert.ToInt32( date[INDEXOPTIUNI] );
             Pret = Convert.ToDouble( date[PRET] );
-            IdMasina = Convert.ToInt32( date[ID] );
-            this.IdMasina++;
+            DataActualizare = DateTime.Now;
             
         }
 
@@ -98,7 +101,7 @@ namespace Modele
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(IdMasina+";"+NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret);
+            return string.Format(IdMasina+";"+NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret+";"+DataActualizare);
         }
     }
             

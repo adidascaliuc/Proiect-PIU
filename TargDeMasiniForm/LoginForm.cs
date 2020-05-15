@@ -34,6 +34,7 @@ namespace TargDeMasiniForm
         private void txtUsername_Enter(object sender, EventArgs e)
         {
             txtUsername.Text = "";
+            txtUsername.BackColor = SystemColors.ActiveCaption;
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
@@ -47,6 +48,7 @@ namespace TargDeMasiniForm
 
         private void txtPassword_Enter(object sender, EventArgs e)
         {
+            txtPassword.BackColor = SystemColors.ActiveCaption;
             txtPassword.Text = "";
         }
 
@@ -57,17 +59,39 @@ namespace TargDeMasiniForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if(txtUsername.Text == "Username")
+            {
+                txtUsername.BackColor = Color.Red;
+            }
+
+            if(txtPassword.Text == "Password")
+            {
+                txtPassword.BackColor = Color.Red;
+            }
+           
+            
+                
+            
+
             if(txtUsername.Text == "admin" && txtPassword.Text == "1234")
             {
-                OptiuniForm optForm = new OptiuniForm();
+                OptiuniInfo optForm = new OptiuniInfo();
                 optForm.Show();
-                this.Hide();                
+                this.Hide();
+                Program.startForm.Hide();
                 
             }
             else
             {
                 MessageBox.Show("Nume sau parola Incorecte!","Eroare", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+            
         }
     }
 }

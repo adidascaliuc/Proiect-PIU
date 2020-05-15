@@ -11,9 +11,12 @@ D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.exe
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.pdb
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\NivelAcces.dll
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\NivelAcces.pdb
-D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.ModificaForm.resources
-D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuniForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.PaginaStartForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.Properties.Resources.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.LoginForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneCautaForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneModificaForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAfiseazaForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAdaugareForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.RegisterForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuniInfo.resources

@@ -8,11 +8,14 @@ using System.Drawing;
 
 namespace TargDeMasiniForm
 {
+    
     class Program
     {
+        public static PaginaStartForm startForm;
+        [STAThread]
         static void Main(string[] args)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
+            startForm = new PaginaStartForm();
             startForm.Show();
             Application.Run();
 

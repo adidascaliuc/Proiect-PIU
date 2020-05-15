@@ -8,6 +8,8 @@ namespace NivelAcces
 {
     public class AdministrareMasini_FisierText : IStocareDataMasini
     {
+            private int ID_PRIMUL_STUDENT = 1;
+            private int INCREMENT = 1;
             private const int PAS_ALOCARE = 10;
             string NumeFisier { get; set; }
             public AdministrareMasini_FisierText(string numeFisier)
@@ -20,8 +22,39 @@ namespace NivelAcces
                 //instructiunea 'using' va apela sFisierText.Close();
                 //using (Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate)) { }
             }
-            public void AddMasina(Masina m)
+
+        private int GetId()
+        {
+            int IdMasina = ID_PRIMUL_STUDENT;
+            try
             {
+                // instructiunea 'using' va apela sr.Close()
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+
+                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Masina m = new Masina(line);
+                        IdMasina = m.IdMasina + INCREMENT;
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+            return IdMasina;
+        }
+
+        public void AddMasina(Masina m)
+            {
+            m.IdMasina = GetId();
                 try
                 {
                     //instructiunea 'using' va apela la final swFisierText.Close();
@@ -42,7 +75,7 @@ namespace NivelAcces
             }
         public void UpdateMasina(Masina m, int index)
         {
-            List<Masina> masini = GetMasini(out int nrMasini);
+            List<Masina> masini = GetMasini();
             int indexMasina = 0;
 
             try
@@ -76,7 +109,7 @@ namespace NivelAcces
             }
 
         }
-        public List<Masina> GetMasini(out int nrMasini)
+        public List<Masina> GetMasini()
             {
                 List<Masina> masini = new List<Masina>();
 
@@ -86,14 +119,12 @@ namespace NivelAcces
                     using (StreamReader sr = new StreamReader(NumeFisier))
                     {
                         string line;
-                        nrMasini = 0;
 
                         //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                         while ((line = sr.ReadLine()) != null)
                         {
                             Masina m = new Masina(line);
                             masini.Add( m );
-                            nrMasini++;
                         }
                     }
                 }

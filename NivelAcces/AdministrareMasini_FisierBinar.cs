@@ -17,7 +17,7 @@ namespace NivelAcces
             throw new Exception("Optiunea AddMasina nu este implementata");
         }
 
-        public List<Masina> GetMasini(out int nrMasini)
+        public List<Masina> GetMasini()
         {
             throw new Exception("Optiunea GetMasini nu este implementata");
         }

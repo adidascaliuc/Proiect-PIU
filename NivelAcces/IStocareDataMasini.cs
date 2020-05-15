@@ -6,7 +6,7 @@ namespace NivelAcces
     public interface IStocareDataMasini
     {
         void AddMasina(Masina m);       
-        List<Masina> GetMasini(out int nrMasini);
+        List<Masina> GetMasini();
         List<Masina> GetMasiniIndex(int index);
         void UpdateMasina(Masina m, int index);
     }

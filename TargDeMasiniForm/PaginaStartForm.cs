@@ -14,6 +14,7 @@ namespace TargDeMasiniForm
     {
         public PaginaStartForm()
         {
+            
             InitializeComponent();
 
             timer1.Start();
@@ -26,6 +27,7 @@ namespace TargDeMasiniForm
         {
             LoginForm lgnForm = new LoginForm();
             lgnForm.ShowDialog();
+            this.Hide();
 
         }
 

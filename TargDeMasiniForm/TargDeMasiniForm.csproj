@@ -77,11 +77,11 @@
     <Compile Include="PaginaStartForm.Designer.cs">
       <DependentUpon>PaginaStartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OptiuniForm.cs">
+    <Compile Include="OptiuniInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OptiuniForm.Designer.cs">
-      <DependentUpon>OptiuniForm.cs</DependentUpon>
+    <Compile Include="OptiuniInfo.Designer.cs">
+      <DependentUpon>OptiuniInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="OptiuneModificaForm.cs">
       <SubType>Form</SubType>
@@ -91,14 +91,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="OptiuneAdaugareForm.resx">
+      <DependentUpon>OptiuneAdaugareForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OptiuneAfiseazaForm.resx">
+      <DependentUpon>OptiuneAfiseazaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptiuneCautaForm.resx">
       <DependentUpon>OptiuneCautaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OptiuniForm.resx">
-      <DependentUpon>OptiuniForm.cs</DependentUpon>
+    <EmbeddedResource Include="OptiuniInfo.resx">
+      <DependentUpon>OptiuniInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OptiuneModificaForm.resx">
       <DependentUpon>OptiuneModificaForm.cs</DependentUpon>
@@ -109,6 +121,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
