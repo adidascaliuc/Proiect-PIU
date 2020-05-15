@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 
@@ -6,19 +7,25 @@ namespace Modele
 {
     public class Persoana
     {
+        string SEPARATOR_FISIER = ";";
+
         int NUME = 0;
         int PRENUME = 1;
-        int TIPPERSOANA = 2;
-        int BUGET = 3;
-        string SEPARATOR_FISIER = " ";
-        int PAS_ALOCARE = 1;
-       
+        int USERNAME = 2;
+        int PASSWORD = 3;
+        int BUGET = 4;
+        int MASINI = 5;
+
+
+        public List<Masina> masini = null;
         //parametrii auto-implemented
         public string Nume { set; get; }
         public string Prenume { set; get; }
         public TipPersoana tipPersoana { set; get; }
         public string NumeComplet { get{ return Nume +" "+ Prenume; } }
         public double Buget;
+        public string Username { set; get; }
+        public string Password { set; get; }
 
         public Persoana() //constructor implicit fara parametrii
         {
@@ -29,12 +36,14 @@ namespace Modele
    
         }
 
-        public Persoana(string nume, string prenume, int tipPersoana, double buget) //constructor cu parametrii
+        public Persoana(string nume, string prenume, string username, string password) //constructor cu parametrii
         {
             this.Nume = nume;
             this.Prenume = prenume;
-            this.tipPersoana = (TipPersoana) Convert.ToInt32( tipPersoana );
-            this.Buget = buget;
+            this.Username = username;
+            this.Password = password;
+            this.Buget = 0;
+            masini = null;
 
         }
 
@@ -44,8 +53,10 @@ namespace Modele
             string[] date = s.Split( );
             Nume = date[NUME];
             Prenume = date[PRENUME];
-            tipPersoana = (TipPersoana) Convert.ToInt32( date[TIPPERSOANA] );
+            Username = date[USERNAME];
+            Password = date[PASSWORD];
             Buget = Double.Parse( date[BUGET] );
+           // masini.Add(date[MASINI]);
 
         }
 
@@ -66,7 +77,7 @@ namespace Modele
 
         public string ConversieLaSir_PentruFisier()
         { 
-            string date = string.Format("{1}{0}{2}{0}{3}{0}{4}", SEPARATOR_FISIER, Nume, Prenume, Convert.ToInt32(tipPersoana), Buget);
+            string date = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}", SEPARATOR_FISIER, Nume, Prenume, Username, Password, Buget, masini);
 
             return date;
         }

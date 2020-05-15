@@ -31,15 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRegister = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
-            this.txtNume = new System.Windows.Forms.TextBox();
-            this.txtPrenume = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtNume = new MetroFramework.Controls.MetroTextBox();
+            this.txtPrenume = new MetroFramework.Controls.MetroTextBox();
+            this.txtUsername = new MetroFramework.Controls.MetroTextBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -75,52 +75,13 @@
             this.btnX.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnX.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnX.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnX.Location = new System.Drawing.Point(259, 12);
+            this.btnX.Location = new System.Drawing.Point(359, 12);
             this.btnX.Name = "btnX";
             this.btnX.Size = new System.Drawing.Size(38, 35);
             this.btnX.TabIndex = 1;
             this.btnX.Text = "X";
             this.btnX.UseVisualStyleBackColor = false;
             this.btnX.Click += new System.EventHandler(this.btnX_Click);
-            // 
-            // txtNume
-            // 
-            this.txtNume.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtNume.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNume.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtNume.Location = new System.Drawing.Point(88, 87);
-            this.txtNume.Name = "txtNume";
-            this.txtNume.Size = new System.Drawing.Size(226, 38);
-            this.txtNume.TabIndex = 2;
-            this.txtNume.Text = "Nume";
-            this.txtNume.Enter += new System.EventHandler(this.txtNume_Enter);
-            this.txtNume.Leave += new System.EventHandler(this.txtNume_Leave);
-            // 
-            // txtPrenume
-            // 
-            this.txtPrenume.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPrenume.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrenume.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtPrenume.Location = new System.Drawing.Point(88, 147);
-            this.txtPrenume.Name = "txtPrenume";
-            this.txtPrenume.Size = new System.Drawing.Size(226, 38);
-            this.txtPrenume.TabIndex = 3;
-            this.txtPrenume.Text = "Prenume";
-            this.txtPrenume.Enter += new System.EventHandler(this.textPrenume_Enter);
-            this.txtPrenume.Leave += new System.EventHandler(this.txtPrenume_Leave);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.ForeColor = System.Drawing.SystemColors.Info;
-            this.txtPassword.Location = new System.Drawing.Point(88, 270);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(226, 38);
-            this.txtPassword.TabIndex = 4;
-            this.txtPassword.Text = "Password";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // btnRegister
             // 
@@ -175,18 +136,50 @@
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
             // 
+            // txtNume
+            // 
+            this.txtNume.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtNume.Location = new System.Drawing.Point(88, 87);
+            this.txtNume.Name = "txtNume";
+            this.txtNume.Size = new System.Drawing.Size(226, 35);
+            this.txtNume.TabIndex = 11;
+            this.txtNume.Text = "Nume";
+            this.txtNume.Enter += new System.EventHandler(this.txtNume_Enter);
+            this.txtNume.Leave += new System.EventHandler(this.txtNume_Leave);
+            // 
+            // txtPrenume
+            // 
+            this.txtPrenume.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtPrenume.Location = new System.Drawing.Point(88, 147);
+            this.txtPrenume.Name = "txtPrenume";
+            this.txtPrenume.Size = new System.Drawing.Size(226, 35);
+            this.txtPrenume.TabIndex = 12;
+            this.txtPrenume.Text = "Prenume";
+            this.txtPrenume.Enter += new System.EventHandler(this.textPrenume_Enter);
+            this.txtPrenume.Leave += new System.EventHandler(this.txtPrenume_Leave);
+            // 
             // txtUsername
             // 
-            this.txtUsername.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtUsername.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.ForeColor = System.Drawing.SystemColors.Info;
+            this.txtUsername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtUsername.Location = new System.Drawing.Point(88, 207);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(226, 38);
-            this.txtUsername.TabIndex = 9;
+            this.txtUsername.Size = new System.Drawing.Size(226, 35);
+            this.txtUsername.TabIndex = 13;
             this.txtUsername.Text = "Username";
-            this.txtUsername.DragLeave += new System.EventHandler(this.txtUsername_DragLeave);
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtPassword.Location = new System.Drawing.Point(88, 270);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(226, 35);
+            this.txtPassword.TabIndex = 14;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             // 
             // RegisterForm
             // 
@@ -194,15 +187,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 411);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txtPrenume);
+            this.Controls.Add(this.txtNume);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtPrenume);
-            this.Controls.Add(this.txtNume);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegisterForm";
@@ -215,7 +208,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -224,14 +216,14 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.TextBox txtNume;
-        private System.Windows.Forms.TextBox txtPrenume;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txtUsername;
+        private MetroFramework.Controls.MetroTextBox txtNume;
+        private MetroFramework.Controls.MetroTextBox txtPrenume;
+        private MetroFramework.Controls.MetroTextBox txtUsername;
+        private MetroFramework.Controls.MetroTextBox txtPassword;
     }
 }

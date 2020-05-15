@@ -26,7 +26,7 @@ namespace Modele
         public double Pret { set; get; }
         public DateTime DataActualizare { set; get; }
 
-        public string SerieMasina = SerieUnica();
+        public string SerieMasina = "";
 
         private static string SerieUnica()
         {

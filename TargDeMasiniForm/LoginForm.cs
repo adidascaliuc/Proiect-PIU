@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modele;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NivelAcces;
 
 namespace TargDeMasiniForm
 {
     public partial class LoginForm : Form
     {
+        IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
         public LoginForm()
         {
             InitializeComponent();
@@ -59,7 +62,20 @@ namespace TargDeMasiniForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtUsername.Text == "Username")
+            if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
+            {
+                OptiuneInfoForm optForm = new OptiuneInfoForm();
+                optForm.Show();
+                this.Hide();
+                Program.startForm.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Nume sau parola Incorecte!", "Eroare", MessageBoxButtons.OK);
+            }
+
+            if (txtUsername.Text == "Username")
             {
                 txtUsername.BackColor = Color.Red;
             }
@@ -68,23 +84,25 @@ namespace TargDeMasiniForm
             {
                 txtPassword.BackColor = Color.Red;
             }
-           
-            
-                
-            
 
-            if(txtUsername.Text == "admin" && txtPassword.Text == "1234")
+            bool ok = false;
+            List<Persoana> persoane = adminPersoane.GetPersoane();
+            foreach(Persoana p in persoane)
             {
-                OptiuniInfo optForm = new OptiuniInfo();
-                optForm.Show();
-                this.Hide();
-                Program.startForm.Hide();
-                
+                if(p.Username == txtUsername.Text && p.Password == txtPassword.Text)
+                {
+                    MessageBox.Show("Persoana gasita");
+                    ok = true;
+                    break;
+                }
+
             }
-            else
+            if(ok == false)
             {
-                MessageBox.Show("Nume sau parola Incorecte!","Eroare", MessageBoxButtons.OK);
+                MessageBox.Show("Username sau Parola gresite !!!");
             }
+
+
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -93,5 +111,6 @@ namespace TargDeMasiniForm
             registerForm.Show();
             
         }
+
     }
 }

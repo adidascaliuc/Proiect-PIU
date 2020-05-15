@@ -17,7 +17,7 @@ namespace NivelAcces
             throw new Exception("Optiunea AddPersoane nu este implementata");
         }
 
-        public List<Persoana> GetPersoane(out int nrPersoane)
+        public List<Persoana> GetPersoane()
         {
             throw new Exception("Optiunea GetPersoane nu este implementata");
         }

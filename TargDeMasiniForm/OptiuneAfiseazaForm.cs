@@ -123,5 +123,27 @@ namespace TargDeMasiniForm
             saveFile.ShowDialog();
             salveazaRaport(masini, saveFile.FileName);
         }
+
+        private void btnCautareData_Click(object sender, EventArgs e)
+        {
+            List<Masina> masini = adminMasini.GetMasini();
+            List<Masina> masiniGasite = new List<Masina>();
+
+            foreach (Masina m in masini)
+            {
+                if ((m.DataActualizare >= dateTimePicker1.Value) && (m.DataActualizare <= dateTimePicker2.Value))
+                {
+                    masiniGasite.Add(m);
+                }
+            }
+            dataGridAfisare.DataSource = masiniGasite;
+        }
+
+        private void pictureInfo_Click(object sender, EventArgs e)
+        {
+            OptiuneInfoForm infoForm = new OptiuneInfoForm();
+            infoForm.Show();
+            this.Hide();
+        }
     }
 }

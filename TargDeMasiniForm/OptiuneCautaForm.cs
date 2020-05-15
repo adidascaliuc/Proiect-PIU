@@ -23,8 +23,8 @@ namespace TargDeMasiniForm
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
         {
-            OptiuniInfo optForm = new OptiuniInfo();
-            optForm.Show();
+            OptiuneAfiseazaForm afisareForm = new OptiuneAfiseazaForm();
+            afisareForm.Show();
             this.Hide();
         }
 
@@ -113,6 +113,13 @@ namespace TargDeMasiniForm
             {
                 dataGridAfisare.DataSource = masiniGasite;
             }
+        }
+
+        private void pictureInfo_Click(object sender, EventArgs e)
+        {
+            OptiuneInfoForm infoForm = new OptiuneInfoForm();
+            infoForm.Show();
+            this.Hide();
         }
     }
 }

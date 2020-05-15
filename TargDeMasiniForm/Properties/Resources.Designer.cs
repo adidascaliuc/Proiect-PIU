@@ -103,6 +103,16 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infoPng {
+            get {
+                object obj = ResourceManager.GetObject("infoPng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap listPng {
             get {
                 object obj = ResourceManager.GetObject("listPng", resourceCulture);

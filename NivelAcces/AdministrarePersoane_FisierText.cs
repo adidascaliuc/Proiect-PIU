@@ -41,7 +41,7 @@ namespace NivelAcces
             }
         }
 
-        public List<Persoana> GetPersoane(out int nrPersoane)
+        public List<Persoana> GetPersoane()
         {
             List<Persoana> persoane = new List<Persoana>();
 
@@ -51,12 +51,11 @@ namespace NivelAcces
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
-                    nrPersoane = 0;
 
                     //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
                     {
-                        persoane[nrPersoane++] = new Persoana(line);
+                        persoane.Add( new Persoana(line) );
                     }
                 }
             }

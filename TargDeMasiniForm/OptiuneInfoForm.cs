@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace TargDeMasiniForm
 {
-    public partial class OptiuniInfo : Form
+    public partial class OptiuneInfoForm : Form
     {
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
         public List<String> optiuniSelectate = new List<string>();
 
-        public OptiuniInfo()
+        public OptiuneInfoForm()
         {
             InitializeComponent();
         }
@@ -135,6 +135,13 @@ namespace TargDeMasiniForm
         {
             OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
             afiseazaForm.Show();
+            this.Hide();
+        }
+
+        private void pictureInfo_Click(object sender, EventArgs e)
+        {
+            OptiuneInfoForm infoForm = new OptiuneInfoForm();
+            infoForm.Show();
             this.Hide();
         }
     }

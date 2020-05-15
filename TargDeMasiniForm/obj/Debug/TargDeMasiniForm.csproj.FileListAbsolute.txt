@@ -19,4 +19,4 @@ D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneModific
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAfiseazaForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAdaugareForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.RegisterForm.resources
-D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuniInfo.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneInfoForm.resources

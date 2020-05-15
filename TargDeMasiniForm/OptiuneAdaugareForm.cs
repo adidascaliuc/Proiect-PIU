@@ -258,5 +258,12 @@ namespace TargDeMasiniForm
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OptiuneInfoForm infoForm = new OptiuneInfoForm();
+            infoForm.Show();
+            this.Hide();
+
+        }
     }
 }

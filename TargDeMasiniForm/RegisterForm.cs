@@ -70,21 +70,20 @@ namespace TargDeMasiniForm
             txtUsername.Text = "";
         }
 
-        private void txtUsername_DragLeave(object sender, EventArgs e)
-        {
-            if(txtUsername.Text == "")
-            {
-                txtUsername.Text = "Username";
-            }
-        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Persoana p = new Persoana();
+            Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
             adminPersoane.AddPersoana(p);
+            this.Hide();
+        }
 
-
-
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                txtUsername.Text = "Username";
+            }
         }
     }
 }
