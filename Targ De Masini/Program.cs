@@ -11,8 +11,8 @@ namespace Targ_De_Masini
     {
         static void Main(string[] args)
         {
-            //int nrPersoane;
-            //int nrMasini;
+            int nrPersoane = 0;
+            int nrMasini = 0;
 
             List<Persoana> persoane = new List<Persoana>();
             List<Masina> masini = new List<Masina>();
@@ -21,8 +21,8 @@ namespace Targ_De_Masini
             IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
             IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
             
-            masini = adminMasini.GetMasini(out int nrMasini);
-            persoane = adminPersoane.GetPersoane(out int nrPersoane);
+            //masini = adminMasini.GetMasini(out int nrMasini);
+            //persoane = adminPersoane.GetPersoane(out int nrPersoane);
 
             while (true)
             {
@@ -52,7 +52,7 @@ namespace Targ_De_Masini
 
                         Console.WriteLine("Introduceti bugetul: ");
                         int buget = Convert.ToInt32(Console.ReadLine());
-                        adminPersoane.AddPersoana(persoane[nrPersoane++] = new Persoana(nume, prenume, tipPersoana, buget));
+                        //adminPersoane.AddPersoana(persoane[nrPersoane++] = new Persoana(nume, prenume, tipPersoana, buget));
 
                         break;
 

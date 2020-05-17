@@ -151,27 +151,38 @@ namespace TargDeMasiniForm
         {
             if (txtFirma.Text == string.Empty)
             {
-                return 1;
+                lblFirma.BackColor = Color.Red;
             }
             if (txtModel.Text == string.Empty)
             {
-                return 2;
+                lblModel.BackColor = Color.Red;
+
             }
             if (cBoxAnFabricatie.Text == string.Empty)
             {
-                return 3;
+                lblAnFabricatie.BackColor = Color.Red;
             }
-            if (radioAlb.Enabled == false || radioAlbastru.Enabled == false || radioArgintiu.Enabled == false || radioNegru.Enabled == false || radioRosu.Enabled == false || radioVerde.Enabled == false)
+            if (radioAlb.Checked == false || radioAlbastru.Checked == false || radioArgintiu.Checked == false || radioNegru.Checked == false || radioRosu.Checked == false || radioVerde.Checked == false)
             {
-                return 4;
+                lblCuloare.BackColor = Color.Red;
+
             }
             if (cBoxAerConditionat.Checked == false && cBoxCutieAutomata.Checked == false && cBoxGeamuriElectrice.Checked == false && cBoxNavigatie.Checked == false && cBoxOptiuniVolan.Checked == false && cBoxScaunePiele.Checked == false)
             {
-                return 5;
+                lblOptiuni.BackColor = Color.Red;
+
             }
             if (txtPret.Text == string.Empty)
             {
-                return 6;
+                lblPret.BackColor = Color.Red;
+
+            }
+
+            if (txtFirma.BackColor == Color.Red || txtModel.BackColor == Color.Red ||
+                cBoxAnFabricatie.BackColor == Color.Red || lblCuloare.BackColor == Color.Red ||
+                lblOptiuni.BackColor == Color.Red || txtPret.BackColor == Color.Red)
+            {
+                return 1;
             }
             return 0;
         }

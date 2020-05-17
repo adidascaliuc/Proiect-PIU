@@ -20,3 +20,5 @@ D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAfiseaz
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneAdaugareForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.RegisterForm.resources
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.OptiuneInfoForm.resources
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\MetroFramework.dll
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\bin\Debug\MetroFramework.Fonts.dll

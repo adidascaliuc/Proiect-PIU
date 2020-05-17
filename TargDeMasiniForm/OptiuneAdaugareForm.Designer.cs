@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptiuneAdaugareForm));
             this.txtFirma = new MetroFramework.Controls.MetroTextBox();
             this.txtModel = new MetroFramework.Controls.MetroTextBox();
             this.cBoxAnFabricatie = new MetroFramework.Controls.MetroComboBox();
@@ -63,29 +63,19 @@
             this.btnCautare = new System.Windows.Forms.Button();
             this.btnAfisare = new System.Windows.Forms.Button();
             this.btnAdauga = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
+            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureDeconectare
-            // 
-            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logOutPng;
-            this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
-            this.pictureDeconectare.Name = "pictureDeconectare";
-            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
-            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureDeconectare.TabIndex = 69;
-            this.pictureDeconectare.TabStop = false;
-            this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click_1);
             // 
             // txtFirma
             // 
+            this.txtFirma.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.txtFirma.Location = new System.Drawing.Point(197, 8);
             this.txtFirma.Name = "txtFirma";
             this.txtFirma.Size = new System.Drawing.Size(167, 23);
@@ -130,6 +120,8 @@
             this.cBoxAnFabricatie.Name = "cBoxAnFabricatie";
             this.cBoxAnFabricatie.Size = new System.Drawing.Size(167, 29);
             this.cBoxAnFabricatie.TabIndex = 77;
+            this.cBoxAnFabricatie.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.cBoxAnFabricatie.SelectedIndexChanged += new System.EventHandler(this.cBoxAnFabricatie_SelectedIndexChanged);
             // 
             // txtPret
             // 
@@ -141,15 +133,21 @@
             // 
             // btnReset
             // 
+            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReset.Location = new System.Drawing.Point(235, 363);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(89, 36);
+            this.btnReset.Style = MetroFramework.MetroColorStyle.Brown;
             this.btnReset.TabIndex = 79;
             this.btnReset.Text = "Reset";
+            this.btnReset.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lblFirma
             // 
             this.lblFirma.AutoSize = true;
+            this.lblFirma.BackColor = System.Drawing.SystemColors.Control;
+            this.lblFirma.CustomBackground = true;
+            this.lblFirma.ForeColor = System.Drawing.Color.Transparent;
             this.lblFirma.Location = new System.Drawing.Point(92, 12);
             this.lblFirma.Name = "lblFirma";
             this.lblFirma.Size = new System.Drawing.Size(46, 19);
@@ -159,6 +157,7 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
+            this.lblModel.CustomBackground = true;
             this.lblModel.Location = new System.Drawing.Point(92, 42);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(50, 19);
@@ -168,6 +167,7 @@
             // lblAnFabricatie
             // 
             this.lblAnFabricatie.AutoSize = true;
+            this.lblAnFabricatie.CustomBackground = true;
             this.lblAnFabricatie.Location = new System.Drawing.Point(92, 78);
             this.lblAnFabricatie.Name = "lblAnFabricatie";
             this.lblAnFabricatie.Size = new System.Drawing.Size(88, 19);
@@ -177,6 +177,7 @@
             // lblCuloare
             // 
             this.lblCuloare.AutoSize = true;
+            this.lblCuloare.CustomBackground = true;
             this.lblCuloare.Location = new System.Drawing.Point(92, 119);
             this.lblCuloare.Name = "lblCuloare";
             this.lblCuloare.Size = new System.Drawing.Size(58, 19);
@@ -186,6 +187,7 @@
             // lblOptiuni
             // 
             this.lblOptiuni.AutoSize = true;
+            this.lblOptiuni.CustomBackground = true;
             this.lblOptiuni.Location = new System.Drawing.Point(92, 226);
             this.lblOptiuni.Name = "lblOptiuni";
             this.lblOptiuni.Size = new System.Drawing.Size(55, 19);
@@ -195,6 +197,7 @@
             // lblPret
             // 
             this.lblPret.AutoSize = true;
+            this.lblPret.CustomBackground = true;
             this.lblPret.Location = new System.Drawing.Point(92, 329);
             this.lblPret.Name = "lblPret";
             this.lblPret.Size = new System.Drawing.Size(36, 19);
@@ -204,132 +207,172 @@
             // radioAlb
             // 
             this.radioAlb.AutoSize = true;
+            this.radioAlb.CustomBackground = true;
             this.radioAlb.Location = new System.Drawing.Point(197, 123);
             this.radioAlb.Name = "radioAlb";
             this.radioAlb.Size = new System.Drawing.Size(41, 15);
+            this.radioAlb.Style = MetroFramework.MetroColorStyle.Black;
             this.radioAlb.TabIndex = 86;
             this.radioAlb.TabStop = true;
             this.radioAlb.Text = "Alb";
             this.radioAlb.UseVisualStyleBackColor = true;
+            this.radioAlb.CheckedChanged += new System.EventHandler(this.radioAlb_CheckedChanged);
             // 
             // radioNegru
             // 
             this.radioNegru.AutoSize = true;
+            this.radioNegru.CustomBackground = true;
             this.radioNegru.Location = new System.Drawing.Point(197, 146);
             this.radioNegru.Name = "radioNegru";
             this.radioNegru.Size = new System.Drawing.Size(56, 15);
+            this.radioNegru.Style = MetroFramework.MetroColorStyle.Black;
             this.radioNegru.TabIndex = 87;
             this.radioNegru.TabStop = true;
             this.radioNegru.Text = "Negru";
             this.radioNegru.UseVisualStyleBackColor = true;
+            this.radioNegru.CheckedChanged += new System.EventHandler(this.radioNegru_CheckedChanged);
             // 
             // radioRosu
             // 
             this.radioRosu.AutoSize = true;
+            this.radioRosu.CustomBackground = true;
             this.radioRosu.Location = new System.Drawing.Point(197, 171);
             this.radioRosu.Name = "radioRosu";
             this.radioRosu.Size = new System.Drawing.Size(49, 15);
+            this.radioRosu.Style = MetroFramework.MetroColorStyle.Black;
             this.radioRosu.TabIndex = 88;
             this.radioRosu.TabStop = true;
             this.radioRosu.Text = "Rosu";
             this.radioRosu.UseVisualStyleBackColor = true;
+            this.radioRosu.CheckedChanged += new System.EventHandler(this.radioRosu_CheckedChanged);
             // 
             // radioAlbastru
             // 
             this.radioAlbastru.AutoSize = true;
+            this.radioAlbastru.CustomBackground = true;
             this.radioAlbastru.Location = new System.Drawing.Point(360, 123);
             this.radioAlbastru.Name = "radioAlbastru";
             this.radioAlbastru.Size = new System.Drawing.Size(67, 15);
+            this.radioAlbastru.Style = MetroFramework.MetroColorStyle.Black;
             this.radioAlbastru.TabIndex = 89;
             this.radioAlbastru.TabStop = true;
             this.radioAlbastru.Text = "Albastru";
             this.radioAlbastru.UseVisualStyleBackColor = true;
+            this.radioAlbastru.CheckedChanged += new System.EventHandler(this.radioAlbastru_CheckedChanged);
             // 
             // radioVerde
             // 
             this.radioVerde.AutoSize = true;
+            this.radioVerde.CustomBackground = true;
             this.radioVerde.Location = new System.Drawing.Point(360, 148);
             this.radioVerde.Name = "radioVerde";
             this.radioVerde.Size = new System.Drawing.Size(52, 15);
+            this.radioVerde.Style = MetroFramework.MetroColorStyle.Black;
             this.radioVerde.TabIndex = 90;
             this.radioVerde.TabStop = true;
             this.radioVerde.Text = "Verde";
             this.radioVerde.UseVisualStyleBackColor = true;
+            this.radioVerde.CheckedChanged += new System.EventHandler(this.radioVerde_CheckedChanged);
             // 
             // radioArgintiu
             // 
             this.radioArgintiu.AutoSize = true;
+            this.radioArgintiu.CustomBackground = true;
             this.radioArgintiu.Location = new System.Drawing.Point(360, 171);
             this.radioArgintiu.Name = "radioArgintiu";
             this.radioArgintiu.Size = new System.Drawing.Size(66, 15);
+            this.radioArgintiu.Style = MetroFramework.MetroColorStyle.Black;
             this.radioArgintiu.TabIndex = 91;
             this.radioArgintiu.TabStop = true;
             this.radioArgintiu.Text = "Argintiu";
             this.radioArgintiu.UseVisualStyleBackColor = true;
+            this.radioArgintiu.CheckedChanged += new System.EventHandler(this.radioArgintiu_CheckedChanged);
             // 
             // cBoxAerConditionat
             // 
             this.cBoxAerConditionat.AutoSize = true;
+            this.cBoxAerConditionat.CustomBackground = true;
             this.cBoxAerConditionat.Location = new System.Drawing.Point(195, 226);
             this.cBoxAerConditionat.Name = "cBoxAerConditionat";
             this.cBoxAerConditionat.Size = new System.Drawing.Size(107, 15);
+            this.cBoxAerConditionat.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxAerConditionat.TabIndex = 92;
             this.cBoxAerConditionat.Text = "Aer Conditionat";
             this.cBoxAerConditionat.UseVisualStyleBackColor = true;
+            this.cBoxAerConditionat.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // cBoxOptiuniVolan
             // 
             this.cBoxOptiuniVolan.AutoSize = true;
+            this.cBoxOptiuniVolan.CustomBackground = true;
             this.cBoxOptiuniVolan.Location = new System.Drawing.Point(195, 247);
             this.cBoxOptiuniVolan.Name = "cBoxOptiuniVolan";
             this.cBoxOptiuniVolan.Size = new System.Drawing.Size(95, 15);
+            this.cBoxOptiuniVolan.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxOptiuniVolan.TabIndex = 93;
             this.cBoxOptiuniVolan.Text = "Optiuni Volan";
             this.cBoxOptiuniVolan.UseVisualStyleBackColor = true;
+            this.cBoxOptiuniVolan.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // cBoxScaunePiele
             // 
             this.cBoxScaunePiele.AutoSize = true;
+            this.cBoxScaunePiele.CustomBackground = true;
             this.cBoxScaunePiele.Location = new System.Drawing.Point(195, 268);
             this.cBoxScaunePiele.Name = "cBoxScaunePiele";
             this.cBoxScaunePiele.Size = new System.Drawing.Size(89, 15);
+            this.cBoxScaunePiele.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxScaunePiele.TabIndex = 94;
             this.cBoxScaunePiele.Text = "Scaune Piele";
             this.cBoxScaunePiele.UseVisualStyleBackColor = true;
+            this.cBoxScaunePiele.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // cBoxGeamuriElectrice
             // 
             this.cBoxGeamuriElectrice.AutoSize = true;
+            this.cBoxGeamuriElectrice.CustomBackground = true;
             this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(360, 226);
             this.cBoxGeamuriElectrice.Name = "cBoxGeamuriElectrice";
             this.cBoxGeamuriElectrice.Size = new System.Drawing.Size(115, 15);
+            this.cBoxGeamuriElectrice.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxGeamuriElectrice.TabIndex = 95;
             this.cBoxGeamuriElectrice.Text = "Geamuri Electrice";
             this.cBoxGeamuriElectrice.UseVisualStyleBackColor = true;
+            this.cBoxGeamuriElectrice.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // cBoxNavigatie
             // 
             this.cBoxNavigatie.AutoSize = true;
+            this.cBoxNavigatie.CustomBackground = true;
             this.cBoxNavigatie.Location = new System.Drawing.Point(360, 247);
             this.cBoxNavigatie.Name = "cBoxNavigatie";
             this.cBoxNavigatie.Size = new System.Drawing.Size(73, 15);
+            this.cBoxNavigatie.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxNavigatie.TabIndex = 96;
             this.cBoxNavigatie.Text = "Navigatie";
             this.cBoxNavigatie.UseVisualStyleBackColor = true;
+            this.cBoxNavigatie.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // cBoxCutieAutomata
             // 
             this.cBoxCutieAutomata.AutoSize = true;
+            this.cBoxCutieAutomata.CustomBackground = true;
             this.cBoxCutieAutomata.Location = new System.Drawing.Point(360, 268);
             this.cBoxCutieAutomata.Name = "cBoxCutieAutomata";
             this.cBoxCutieAutomata.Size = new System.Drawing.Size(107, 15);
+            this.cBoxCutieAutomata.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxCutieAutomata.TabIndex = 97;
             this.cBoxCutieAutomata.Text = "Cutie Automata";
             this.cBoxCutieAutomata.UseVisualStyleBackColor = true;
+            this.cBoxCutieAutomata.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
             // lblDeconectare
             // 
             this.lblDeconectare.AutoSize = true;
+            this.lblDeconectare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.lblDeconectare.CustomBackground = true;
+            this.lblDeconectare.CustomForeColor = true;
+            this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
             this.lblDeconectare.Location = new System.Drawing.Point(783, 8);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
@@ -339,21 +382,22 @@
             // 
             // panelMeniu
             // 
-            this.panelMeniu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panelMeniu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panelMeniu.Controls.Add(this.pictureInfo);
             this.panelMeniu.Controls.Add(this.pctModifica);
             this.panelMeniu.Controls.Add(this.pctCauta);
             this.panelMeniu.Controls.Add(this.pctAdauga);
             this.panelMeniu.Controls.Add(this.pctAfiseaza);
-            this.panelMeniu.Location = new System.Drawing.Point(0, -6);
+            this.panelMeniu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMeniu.Location = new System.Drawing.Point(0, 0);
             this.panelMeniu.Name = "panelMeniu";
-            this.panelMeniu.Size = new System.Drawing.Size(75, 424);
+            this.panelMeniu.Size = new System.Drawing.Size(75, 411);
             this.panelMeniu.TabIndex = 99;
             // 
             // pictureInfo
             // 
             this.pictureInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureInfo.Image = global::TargDeMasiniForm.Properties.Resources.infoPng;
+            this.pictureInfo.Image = ((System.Drawing.Image)(resources.GetObject("pictureInfo.Image")));
             this.pictureInfo.Location = new System.Drawing.Point(5, 353);
             this.pictureInfo.Name = "pictureInfo";
             this.pictureInfo.Size = new System.Drawing.Size(55, 43);
@@ -365,7 +409,7 @@
             // pctModifica
             // 
             this.pctModifica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctModifica.Image = global::TargDeMasiniForm.Properties.Resources.editPng;
+            this.pctModifica.Image = ((System.Drawing.Image)(resources.GetObject("pctModifica.Image")));
             this.pctModifica.Location = new System.Drawing.Point(12, 278);
             this.pctModifica.Name = "pctModifica";
             this.pctModifica.Size = new System.Drawing.Size(46, 39);
@@ -377,10 +421,10 @@
             // pctCauta
             // 
             this.pctCauta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctCauta.Image = global::TargDeMasiniForm.Properties.Resources.searchPng;
-            this.pctCauta.Location = new System.Drawing.Point(3, 183);
+            this.pctCauta.Image = ((System.Drawing.Image)(resources.GetObject("pctCauta.Image")));
+            this.pctCauta.Location = new System.Drawing.Point(12, 183);
             this.pctCauta.Name = "pctCauta";
-            this.pctCauta.Size = new System.Drawing.Size(55, 45);
+            this.pctCauta.Size = new System.Drawing.Size(46, 45);
             this.pctCauta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctCauta.TabIndex = 2;
             this.pctCauta.TabStop = false;
@@ -389,10 +433,10 @@
             // pctAdauga
             // 
             this.pctAdauga.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctAdauga.Image = global::TargDeMasiniForm.Properties.Resources.addPng;
-            this.pctAdauga.Location = new System.Drawing.Point(12, 19);
+            this.pctAdauga.Image = global::TargDeMasiniForm.Properties.Resources.addPng1;
+            this.pctAdauga.Location = new System.Drawing.Point(14, 18);
             this.pctAdauga.Name = "pctAdauga";
-            this.pctAdauga.Size = new System.Drawing.Size(46, 43);
+            this.pctAdauga.Size = new System.Drawing.Size(44, 43);
             this.pctAdauga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctAdauga.TabIndex = 1;
             this.pctAdauga.TabStop = false;
@@ -401,10 +445,10 @@
             // pctAfiseaza
             // 
             this.pctAfiseaza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctAfiseaza.Image = global::TargDeMasiniForm.Properties.Resources.listPng;
+            this.pctAfiseaza.Image = ((System.Drawing.Image)(resources.GetObject("pctAfiseaza.Image")));
             this.pctAfiseaza.Location = new System.Drawing.Point(12, 96);
             this.pctAfiseaza.Name = "pctAfiseaza";
-            this.pctAfiseaza.Size = new System.Drawing.Size(46, 48);
+            this.pctAfiseaza.Size = new System.Drawing.Size(46, 42);
             this.pctAfiseaza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctAfiseaza.TabIndex = 0;
             this.pctAfiseaza.TabStop = false;
@@ -437,6 +481,18 @@
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(75, 23);
             this.btnAdauga.TabIndex = 103;
+            // 
+            // pictureDeconectare
+            // 
+            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
+            this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
+            this.pictureDeconectare.Name = "pictureDeconectare";
+            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
+            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDeconectare.TabIndex = 69;
+            this.pictureDeconectare.TabStop = false;
+            this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click_1);
             // 
             // OptiuneAdaugareForm
             // 
@@ -477,13 +533,13 @@
             this.Name = "OptiuneAdaugareForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             this.panelMeniu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

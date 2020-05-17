@@ -118,34 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logOutPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logOutPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="listPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\listPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backgroundPrimaPagina" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\backgroundPrimaPagina.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="infoPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="username" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\username.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="editPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\editPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="people (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\people (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="searchPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\searchPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="addPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\addPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usernamePng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usernamePng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="passwordPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\passwordPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="usernamePng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\usernamePng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoutPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="searchPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bkgOptiuni1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bkgOptiuni1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="firstLastNamePng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\firstLastNamePng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="editPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="oraPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oraPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="passwordPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\passwordPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infoPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infoPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dataPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dataPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

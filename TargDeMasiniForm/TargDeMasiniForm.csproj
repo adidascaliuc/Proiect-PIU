@@ -34,8 +34,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\MetroFramework.dll</HintPath>
+      <HintPath>..\Targ De Masini\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\Targ De Masini\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\Targ De Masini\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -96,6 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,11 +146,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -160,35 +166,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bkgOptiuni1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\backgroundPrimaPagina.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\username.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\passwordPng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logOutPng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\editPng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\addPng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\listPng.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\searchPng.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\dataPng.png" />
+    <None Include="Resources\oraPng.png" />
+    <None Include="Resources\logoutPng1.png" />
+    <None Include="Resources\logoutPng.png" />
+    <None Include="Resources\passwordPng1.png" />
+    <None Include="Resources\firstLastNamePng.png" />
+    <None Include="Resources\people %281%29.png" />
+    <None Include="Resources\usernamePng1.png" />
+    <None Include="Resources\passwordPng.png" />
+    <None Include="Resources\usernamePng.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\infoPng1.png" />
+    <None Include="Resources\searchPng1.png" />
+    <None Include="Resources\listPng1.png" />
     <None Include="Resources\infoPng.png" />
+    <None Include="Resources\editPng1.png" />
+    <None Include="Resources\editPng.png" />
+    <None Include="Resources\searchPng.png" />
+    <None Include="Resources\listPng.png" />
+    <None Include="Resources\addPng1.png" />
+    <None Include="Resources\addPng.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -36,16 +36,16 @@
             this.txtFirma = new MetroFramework.Controls.MetroTextBox();
             this.txtModel = new MetroFramework.Controls.MetroTextBox();
             this.btnCauta = new MetroFramework.Controls.MetroButton();
+            this.btnModificare = new System.Windows.Forms.Button();
+            this.btnCautare = new System.Windows.Forms.Button();
+            this.btnAfisare = new System.Windows.Forms.Button();
+            this.btnAdauga = new System.Windows.Forms.Button();
             this.panelMeniu = new System.Windows.Forms.Panel();
             this.pictureInfo = new System.Windows.Forms.PictureBox();
             this.pctModifica = new System.Windows.Forms.PictureBox();
             this.pctCauta = new System.Windows.Forms.PictureBox();
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
-            this.btnModificare = new System.Windows.Forms.Button();
-            this.btnCautare = new System.Windows.Forms.Button();
-            this.btnAfisare = new System.Windows.Forms.Button();
-            this.btnAdauga = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.panelMeniu.SuspendLayout();
@@ -60,7 +60,7 @@
             // 
             this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisare.Location = new System.Drawing.Point(75, 65);
+            this.dataGridAfisare.Location = new System.Drawing.Point(96, 68);
             this.dataGridAfisare.Name = "dataGridAfisare";
             this.dataGridAfisare.Size = new System.Drawing.Size(839, 350);
             this.dataGridAfisare.TabIndex = 55;
@@ -68,7 +68,7 @@
             // pictureDeconectare
             // 
             this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logOutPng;
+            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
             this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
             this.pictureDeconectare.Name = "pictureDeconectare";
             this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
@@ -80,6 +80,7 @@
             // lblFirma
             // 
             this.lblFirma.AutoSize = true;
+            this.lblFirma.CustomBackground = true;
             this.lblFirma.Location = new System.Drawing.Point(130, 13);
             this.lblFirma.Name = "lblFirma";
             this.lblFirma.Size = new System.Drawing.Size(46, 19);
@@ -89,6 +90,7 @@
             // lblModel
             // 
             this.lblModel.AutoSize = true;
+            this.lblModel.CustomBackground = true;
             this.lblModel.Location = new System.Drawing.Point(130, 38);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(50, 19);
@@ -98,6 +100,10 @@
             // lblDeconectare
             // 
             this.lblDeconectare.AutoSize = true;
+            this.lblDeconectare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.lblDeconectare.CustomBackground = true;
+            this.lblDeconectare.CustomForeColor = true;
+            this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
             this.lblDeconectare.Location = new System.Drawing.Point(783, 8);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
@@ -111,6 +117,7 @@
             this.txtFirma.Name = "txtFirma";
             this.txtFirma.Size = new System.Drawing.Size(221, 23);
             this.txtFirma.TabIndex = 75;
+            this.txtFirma.Enter += new System.EventHandler(this.txtFirma_Enter);
             // 
             // txtModel
             // 
@@ -118,6 +125,7 @@
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(221, 23);
             this.txtModel.TabIndex = 76;
+            this.txtModel.Enter += new System.EventHandler(this.txtModel_Enter);
             // 
             // btnCauta
             // 
@@ -126,80 +134,8 @@
             this.btnCauta.Size = new System.Drawing.Size(75, 34);
             this.btnCauta.TabIndex = 77;
             this.btnCauta.Text = "Cauta";
+            this.btnCauta.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnCauta.Click += new System.EventHandler(this.btnCauta_Click);
-            // 
-            // panelMeniu
-            // 
-            this.panelMeniu.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.panelMeniu.Controls.Add(this.pictureInfo);
-            this.panelMeniu.Controls.Add(this.pctModifica);
-            this.panelMeniu.Controls.Add(this.pctCauta);
-            this.panelMeniu.Controls.Add(this.pctAdauga);
-            this.panelMeniu.Controls.Add(this.pctAfiseaza);
-            this.panelMeniu.Location = new System.Drawing.Point(0, -6);
-            this.panelMeniu.Name = "panelMeniu";
-            this.panelMeniu.Size = new System.Drawing.Size(75, 424);
-            this.panelMeniu.TabIndex = 80;
-            // 
-            // pictureInfo
-            // 
-            this.pictureInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureInfo.Image = global::TargDeMasiniForm.Properties.Resources.infoPng;
-            this.pictureInfo.Location = new System.Drawing.Point(5, 353);
-            this.pictureInfo.Name = "pictureInfo";
-            this.pictureInfo.Size = new System.Drawing.Size(55, 43);
-            this.pictureInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureInfo.TabIndex = 4;
-            this.pictureInfo.TabStop = false;
-            this.pictureInfo.Click += new System.EventHandler(this.pictureInfo_Click);
-            // 
-            // pctModifica
-            // 
-            this.pctModifica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctModifica.Image = global::TargDeMasiniForm.Properties.Resources.editPng;
-            this.pctModifica.Location = new System.Drawing.Point(12, 278);
-            this.pctModifica.Name = "pctModifica";
-            this.pctModifica.Size = new System.Drawing.Size(46, 39);
-            this.pctModifica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctModifica.TabIndex = 3;
-            this.pctModifica.TabStop = false;
-            this.pctModifica.Click += new System.EventHandler(this.pctModifica_Click);
-            // 
-            // pctCauta
-            // 
-            this.pctCauta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctCauta.Image = global::TargDeMasiniForm.Properties.Resources.searchPng;
-            this.pctCauta.Location = new System.Drawing.Point(3, 183);
-            this.pctCauta.Name = "pctCauta";
-            this.pctCauta.Size = new System.Drawing.Size(55, 45);
-            this.pctCauta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctCauta.TabIndex = 2;
-            this.pctCauta.TabStop = false;
-            this.pctCauta.Click += new System.EventHandler(this.pctCauta_Click);
-            // 
-            // pctAdauga
-            // 
-            this.pctAdauga.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctAdauga.Image = global::TargDeMasiniForm.Properties.Resources.addPng;
-            this.pctAdauga.Location = new System.Drawing.Point(12, 19);
-            this.pctAdauga.Name = "pctAdauga";
-            this.pctAdauga.Size = new System.Drawing.Size(46, 43);
-            this.pctAdauga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctAdauga.TabIndex = 1;
-            this.pctAdauga.TabStop = false;
-            this.pctAdauga.Click += new System.EventHandler(this.pctAdauga_Click);
-            // 
-            // pctAfiseaza
-            // 
-            this.pctAfiseaza.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctAfiseaza.Image = global::TargDeMasiniForm.Properties.Resources.listPng;
-            this.pctAfiseaza.Location = new System.Drawing.Point(12, 96);
-            this.pctAfiseaza.Name = "pctAfiseaza";
-            this.pctAfiseaza.Size = new System.Drawing.Size(46, 48);
-            this.pctAfiseaza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctAfiseaza.TabIndex = 0;
-            this.pctAfiseaza.TabStop = false;
-            this.pctAfiseaza.Click += new System.EventHandler(this.pctAfiseaza_Click);
             // 
             // btnModificare
             // 
@@ -228,6 +164,79 @@
             this.btnAdauga.Name = "btnAdauga";
             this.btnAdauga.Size = new System.Drawing.Size(75, 23);
             this.btnAdauga.TabIndex = 84;
+            // 
+            // panelMeniu
+            // 
+            this.panelMeniu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.panelMeniu.Controls.Add(this.pictureInfo);
+            this.panelMeniu.Controls.Add(this.pctModifica);
+            this.panelMeniu.Controls.Add(this.pctCauta);
+            this.panelMeniu.Controls.Add(this.pctAdauga);
+            this.panelMeniu.Controls.Add(this.pctAfiseaza);
+            this.panelMeniu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMeniu.Location = new System.Drawing.Point(0, 0);
+            this.panelMeniu.Name = "panelMeniu";
+            this.panelMeniu.Size = new System.Drawing.Size(75, 411);
+            this.panelMeniu.TabIndex = 100;
+            // 
+            // pictureInfo
+            // 
+            this.pictureInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureInfo.Image = global::TargDeMasiniForm.Properties.Resources.infoPng1;
+            this.pictureInfo.Location = new System.Drawing.Point(5, 353);
+            this.pictureInfo.Name = "pictureInfo";
+            this.pictureInfo.Size = new System.Drawing.Size(55, 43);
+            this.pictureInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureInfo.TabIndex = 4;
+            this.pictureInfo.TabStop = false;
+            this.pictureInfo.Click += new System.EventHandler(this.pictureInfo_Click);
+            // 
+            // pctModifica
+            // 
+            this.pctModifica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctModifica.Image = global::TargDeMasiniForm.Properties.Resources.editPng1;
+            this.pctModifica.Location = new System.Drawing.Point(12, 278);
+            this.pctModifica.Name = "pctModifica";
+            this.pctModifica.Size = new System.Drawing.Size(46, 39);
+            this.pctModifica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctModifica.TabIndex = 3;
+            this.pctModifica.TabStop = false;
+            this.pctModifica.Click += new System.EventHandler(this.pctModifica_Click);
+            // 
+            // pctCauta
+            // 
+            this.pctCauta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctCauta.Image = global::TargDeMasiniForm.Properties.Resources.searchPng1;
+            this.pctCauta.Location = new System.Drawing.Point(12, 183);
+            this.pctCauta.Name = "pctCauta";
+            this.pctCauta.Size = new System.Drawing.Size(46, 45);
+            this.pctCauta.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctCauta.TabIndex = 2;
+            this.pctCauta.TabStop = false;
+            // 
+            // pctAdauga
+            // 
+            this.pctAdauga.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctAdauga.Image = global::TargDeMasiniForm.Properties.Resources.addPng1;
+            this.pctAdauga.Location = new System.Drawing.Point(14, 18);
+            this.pctAdauga.Name = "pctAdauga";
+            this.pctAdauga.Size = new System.Drawing.Size(44, 43);
+            this.pctAdauga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctAdauga.TabIndex = 1;
+            this.pctAdauga.TabStop = false;
+            this.pctAdauga.Click += new System.EventHandler(this.pctAdauga_Click);
+            // 
+            // pctAfiseaza
+            // 
+            this.pctAfiseaza.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctAfiseaza.Image = global::TargDeMasiniForm.Properties.Resources.listPng1;
+            this.pctAfiseaza.Location = new System.Drawing.Point(12, 96);
+            this.pctAfiseaza.Name = "pctAfiseaza";
+            this.pctAfiseaza.Size = new System.Drawing.Size(46, 42);
+            this.pctAfiseaza.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctAfiseaza.TabIndex = 0;
+            this.pctAfiseaza.TabStop = false;
+            this.pctAfiseaza.Click += new System.EventHandler(this.pctAfiseaza_Click);
             // 
             // OptiuneCautaForm
             // 
@@ -273,15 +282,15 @@
         private MetroFramework.Controls.MetroTextBox txtFirma;
         private MetroFramework.Controls.MetroTextBox txtModel;
         private MetroFramework.Controls.MetroButton btnCauta;
+        private System.Windows.Forms.Button btnModificare;
+        private System.Windows.Forms.Button btnCautare;
+        private System.Windows.Forms.Button btnAfisare;
+        private System.Windows.Forms.Button btnAdauga;
         private System.Windows.Forms.Panel panelMeniu;
         private System.Windows.Forms.PictureBox pictureInfo;
         private System.Windows.Forms.PictureBox pctModifica;
         private System.Windows.Forms.PictureBox pctCauta;
         private System.Windows.Forms.PictureBox pctAdauga;
         private System.Windows.Forms.PictureBox pctAfiseaza;
-        private System.Windows.Forms.Button btnModificare;
-        private System.Windows.Forms.Button btnCautare;
-        private System.Windows.Forms.Button btnAfisare;
-        private System.Windows.Forms.Button btnAdauga;
     }
 }

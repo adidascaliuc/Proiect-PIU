@@ -35,28 +35,7 @@ namespace TargDeMasiniForm
             this.Hide();
         }
 
-        private void pctCauta_Click(object sender, EventArgs e)
-        {
-
-            //    List<Masina> masini = adminMasini.GetMasini(out int nrMasini);
-            //    Boolean gasit = false;
-
-            //    foreach (Masina m in masini)
-            //    {
-            //        if (m != null)
-            //        {
-            //            if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
-            //            {
-            //                lBoxAfisare.Items.Add(m.ConversieLaSir());
-            //                gasit = true;
-            //            }
-            //        }
-            //    }
-            //    if (gasit == false)
-            //    {
-            //        lBoxAfisare.Items.Add("Nu exista o astfel de masina!");
-            //    }
-        }
+        
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
@@ -92,27 +71,53 @@ namespace TargDeMasiniForm
 
         private void btnCauta_Click(object sender, EventArgs e)
         {
+                      
             bool ok = false;
             dataGridAfisare.DataSource = null;
             List<Masina> masini = adminMasini.GetMasini();
             List<Masina> masiniGasite = new List<Masina>();
-            foreach(Masina m in masini)
+            if (ValidareControale() == 0)
             {
-                if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
+                foreach (Masina m in masini)
                 {
-                    ok = true;
-                    masiniGasite.Add(m);
+                    if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
+                    {
+                        ok = true;
+                        masiniGasite.Add(m);
+                    }
+
                 }
-             
-            }
-            if(ok == false)
-            {
-                MessageBox.Show("Nu exista aceasta masina!!!");
+                if (ok == false)
+                {
+                    MessageBox.Show("Nu exista aceasta masina!!!");
+                }
+                else
+                {
+                    dataGridAfisare.DataSource = masiniGasite;
+                }
             }
             else
             {
-                dataGridAfisare.DataSource = masiniGasite;
+                MessageBox.Show("Completati campurile marcate cu rosu!!!");
             }
+        }
+
+        private int ValidareControale()
+        {
+            if(txtFirma.Text == "")
+            {
+                lblFirma.BackColor = Color.Red;
+            }
+            if(txtModel.Text == "")
+            {
+                lblModel.BackColor = Color.Red;
+            }
+
+            if(txtFirma.Text == "" || txtModel.Text == "")
+            {
+                return 1;
+            }
+            return 0;
         }
 
         private void pictureInfo_Click(object sender, EventArgs e)
@@ -120,6 +125,17 @@ namespace TargDeMasiniForm
             OptiuneInfoForm infoForm = new OptiuneInfoForm();
             infoForm.Show();
             this.Hide();
+        }
+
+        private void txtFirma_Enter(object sender, EventArgs e)
+        {
+            lblFirma.BackColor = SystemColors.Control;
+        }
+
+        private void txtModel_Enter(object sender, EventArgs e)
+        {
+            lblModel.BackColor = SystemColors.Control;
+            
         }
     }
 }

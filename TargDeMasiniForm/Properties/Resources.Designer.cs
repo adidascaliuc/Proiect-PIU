@@ -73,9 +73,9 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap backgroundPrimaPagina {
+        internal static System.Drawing.Bitmap addPng1 {
             get {
-                object obj = ResourceManager.GetObject("backgroundPrimaPagina", resourceCulture);
+                object obj = ResourceManager.GetObject("addPng1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bkgOptiuni1 {
+        internal static System.Drawing.Bitmap dataPng {
             get {
-                object obj = ResourceManager.GetObject("bkgOptiuni1", resourceCulture);
+                object obj = ResourceManager.GetObject("dataPng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,39 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editPng1 {
+            get {
+                object obj = ResourceManager.GetObject("editPng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap firstLastNamePng {
+            get {
+                object obj = ResourceManager.GetObject("firstLastNamePng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infoPng {
             get {
                 object obj = ResourceManager.GetObject("infoPng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap infoPng1 {
+            get {
+                object obj = ResourceManager.GetObject("infoPng1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +153,39 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap logOutPng {
+        internal static System.Drawing.Bitmap listPng1 {
             get {
-                object obj = ResourceManager.GetObject("logOutPng", resourceCulture);
+                object obj = ResourceManager.GetObject("listPng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoutPng {
+            get {
+                object obj = ResourceManager.GetObject("logoutPng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoutPng1 {
+            get {
+                object obj = ResourceManager.GetObject("logoutPng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap oraPng {
+            get {
+                object obj = ResourceManager.GetObject("oraPng", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,6 +203,36 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap passwordPng1 {
+            get {
+                object obj = ResourceManager.GetObject("passwordPng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people__1_ {
+            get {
+                object obj = ResourceManager.GetObject("people (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap play {
+            get {
+                object obj = ResourceManager.GetObject("play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap searchPng {
             get {
                 object obj = ResourceManager.GetObject("searchPng", resourceCulture);
@@ -153,9 +243,29 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap username {
+        internal static System.Drawing.Bitmap searchPng1 {
             get {
-                object obj = ResourceManager.GetObject("username", resourceCulture);
+                object obj = ResourceManager.GetObject("searchPng1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usernamePng {
+            get {
+                object obj = ResourceManager.GetObject("usernamePng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usernamePng1 {
+            get {
+                object obj = ResourceManager.GetObject("usernamePng1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

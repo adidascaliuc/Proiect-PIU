@@ -62,47 +62,54 @@ namespace TargDeMasiniForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
+            if (ValidareInput() == 0)
             {
-                OptiuneInfoForm optForm = new OptiuneInfoForm();
-                optForm.Show();
-                this.Hide();
-                Program.startForm.Hide();
+                if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
+                {
+                    OptiuneInfoForm optForm = new OptiuneInfoForm();
+                    optForm.Show();
+                    this.Hide();
+                    Program.startForm.Hide();
 
+                }
+                else
+                {
+                    MessageBox.Show("Nume sau parola Incorecte!", "Eroare", MessageBoxButtons.OK);
+                }
             }
             else
             {
-                MessageBox.Show("Nume sau parola Incorecte!", "Eroare", MessageBoxButtons.OK);
+                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
             }
+            
+        }
 
-            if (txtUsername.Text == "Username")
+        private int ValidareInput()
+        {
+            if(txtUsername.Text == "Username")
             {
                 txtUsername.BackColor = Color.Red;
             }
-
-            if(txtPassword.Text == "Password")
+            else
+            {
+                txtUsername.BackColor = SystemColors.ButtonFace;
+            }
+            if (txtPassword.Text == "Password")
             {
                 txtPassword.BackColor = Color.Red;
             }
-
-            bool ok = false;
-            List<Persoana> persoane = adminPersoane.GetPersoane();
-            foreach(Persoana p in persoane)
+            else
             {
-                if(p.Username == txtUsername.Text && p.Password == txtPassword.Text)
-                {
-                    MessageBox.Show("Persoana gasita");
-                    ok = true;
-                    break;
-                }
-
+                txtPassword.BackColor = SystemColors.ButtonFace;
             }
-            if(ok == false)
+            if (txtUsername.BackColor == Color.Red || txtPassword.BackColor == Color.Red)
             {
-                MessageBox.Show("Username sau Parola gresite !!!");
+                return 1;
             }
-
-
+            else
+            {
+                return 0;
+            }
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

@@ -56,27 +56,27 @@ namespace TargDeMasiniForm
 
         private int ValidareCuloare()
         {
-            if (radioAlb.Checked)
+            if (radioAlb.Checked == true)
             {
                 return 1;
             }
-            if (radioNegru.Checked)
+            if (radioNegru.Checked == true)
             {
                 return 2;
             }
-            if (radioRosu.Checked)
+            if (radioRosu.Checked == true)
             {
                 return 3;
             }
-            if (radioAlbastru.Checked)
+            if (radioAlbastru.Checked == true)
             {
                 return 4;
             }
-            if (radioVerde.Checked)
+            if (radioVerde.Checked == true)
             {
                 return 5;
             }
-            if (radioArgintiu.Checked)
+            if (radioArgintiu.Checked == true)
             {
                 return 6;
             }
@@ -89,42 +89,43 @@ namespace TargDeMasiniForm
         {
             if (txtFirma.Text == string.Empty)
             {
-                txtFirma.BackColor = Color.Red;
-                
+                lblFirma.BackColor = Color.Red;                
             }
             if (txtModel.Text == string.Empty)
             {
-                txtModel.BackColor = Color.Red;
+                lblModel.BackColor = Color.Red;
                
             }
             if (cBoxAnFabricatie.Text == string.Empty)
             {
-                cBoxAnFabricatie.BackColor = Color.Red;
-                
+                lblAnFabricatie.BackColor = Color.Red;                       
             }
-            if (radioAlb.Enabled == false || radioAlbastru.Enabled == false || radioArgintiu.Enabled == false || radioNegru.Enabled == false || radioRosu.Enabled == false || radioVerde.Enabled == false)
+            if (ValidareCuloare() == 0)
             {
                 lblCuloare.BackColor = Color.Red;
                 
-            }
+            }           
             if (cBoxAerConditionat.Checked == false && cBoxCutieAutomata.Checked == false && cBoxGeamuriElectrice.Checked == false && cBoxNavigatie.Checked == false && cBoxOptiuniVolan.Checked == false && cBoxScaunePiele.Checked == false)
             {
-                //lblOptiuni.BackColor = Color.Red;
+                lblOptiuni.BackColor = Color.Red;
                 
             }
             if (txtPret.Text == string.Empty)
             {
-                txtPret.BackColor = Color.Red;
+                lblPret.BackColor = Color.Red;
                 
             }
 
-            if(txtFirma.BackColor == Color.Red || txtModel.BackColor == Color.Red ||
+            if (txtFirma.BackColor == Color.Red || txtModel.BackColor == Color.Red ||
                 cBoxAnFabricatie.BackColor == Color.Red || lblCuloare.BackColor == Color.Red ||
                 lblOptiuni.BackColor == Color.Red || txtPret.BackColor == Color.Red)
             {
                 return 1;
             }
-            return 0;
+            else
+            {
+                return 0;
+            }
         }
 
         private void lBoxAfisare_SelectedIndexChanged(object sender, EventArgs e)
@@ -179,6 +180,21 @@ namespace TargDeMasiniForm
             
         }
 
+        private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBoxControl = sender as CheckBox; //operator 'as'
+            //sau
+            //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
+
+            string disciplinaSelectata = checkBoxControl.Text;
+
+            //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
+            if (checkBoxControl.Checked == true)
+                optiuniSelectate.Add(disciplinaSelectata);
+            else
+                optiuniSelectate.Remove(disciplinaSelectata);
+        }
+
         private void lblDeconectare_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -218,29 +234,24 @@ namespace TargDeMasiniForm
 
         private void txtFirma_Enter(object sender, EventArgs e)
         {
-            txtFirma.BackColor = SystemColors.Window;
+            lblFirma.BackColor = SystemColors.Control;
         }
 
         private void txtModel_Enter(object sender, EventArgs e)
         {
-            txtModel.BackColor = SystemColors.Window;
-        }
-
-        private void cBoxAnFabricatie_Enter(object sender, EventArgs e)
-        {
-            cBoxAnFabricatie.BackColor = SystemColors.Window;
+            lblModel.BackColor = SystemColors.Control;
         }
 
         private void txtPret_Enter(object sender, EventArgs e)
         {
-            txtPret.BackColor = SystemColors.Window;
+            lblPret.BackColor = SystemColors.Control;
         }
 
         private void lblDeconectare_Click_1(object sender, EventArgs e)
         {
             PaginaStartForm startForm = new PaginaStartForm();
             startForm.Show();
-            this.Hide();
+            this.Hide();           
         }
 
         private void pictureDeconectare_Click_1(object sender, EventArgs e)
@@ -248,15 +259,7 @@ namespace TargDeMasiniForm
             PaginaStartForm startForm = new PaginaStartForm();
             startForm.Show();
             this.Hide();
-        }
-
-        private void lblCuloare_Click(object sender, EventArgs e)
-        {
-            if(ValidareCuloare() != 0)
-            {
-                lblCuloare.BackColor = Color.Red;
-            }
-        }
+        }  
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -265,5 +268,60 @@ namespace TargDeMasiniForm
             this.Hide();
 
         }
+
+        private void radioAlb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioAlb.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioNegru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioNegru.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioRosu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioRosu.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioAlbastru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAlbastru.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioVerde_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioVerde.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioArgintiu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAlb.Checked == true)
+            {
+                radioArgintiu.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void cBoxAnFabricatie_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblAnFabricatie.BackColor = SystemColors.Control;
+        }
+
+        
     }
 }

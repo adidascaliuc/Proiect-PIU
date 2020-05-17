@@ -8,7 +8,7 @@ namespace NivelAcces
 {
     public class AdministrareMasini_FisierText : IStocareDataMasini
     {
-            private int ID_PRIMUL_STUDENT = 1;
+            private int ID_PRIMA_MASINA = 1;
             private int INCREMENT = 1;
             private const int PAS_ALOCARE = 10;
             string NumeFisier { get; set; }
@@ -25,7 +25,7 @@ namespace NivelAcces
 
         private int GetId()
         {
-            int IdMasina = ID_PRIMUL_STUDENT;
+            int IdMasina = ID_PRIMA_MASINA;
             try
             {
                 // instructiunea 'using' va apela sr.Close()
