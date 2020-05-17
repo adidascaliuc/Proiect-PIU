@@ -144,7 +144,7 @@ namespace TargDeMasiniForm
                 return 6;
             }
 
-            return 2;
+            return 0;
         }
 
         private int ValidareMasina()
@@ -162,7 +162,7 @@ namespace TargDeMasiniForm
             {
                 lblAnFabricatie.BackColor = Color.Red;
             }
-            if (radioAlb.Checked == false || radioAlbastru.Checked == false || radioArgintiu.Checked == false || radioNegru.Checked == false || radioRosu.Checked == false || radioVerde.Checked == false)
+            if (ValidareOptiuni() == 0)
             {
                 lblCuloare.BackColor = Color.Red;
 
@@ -212,6 +212,52 @@ namespace TargDeMasiniForm
             }
         }
 
-        
+        private void radioAlb_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioAlb.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioNegru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioNegru.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioRosu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioRosu.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioAlbastru_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioAlbastru.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioVerde_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioVerde.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
+
+        private void radioArgintiu_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioArgintiu.Checked == true)
+            {
+                lblCuloare.BackColor = SystemColors.Control;
+            }
+        }
     }
 }

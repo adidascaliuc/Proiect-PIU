@@ -64,6 +64,7 @@
             this.lblOra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblOra.CustomBackground = true;
             this.lblOra.CustomForeColor = true;
+            this.lblOra.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblOra.ForeColor = System.Drawing.Color.LightCoral;
             this.lblOra.Location = new System.Drawing.Point(132, 48);
             this.lblOra.Name = "lblOra";

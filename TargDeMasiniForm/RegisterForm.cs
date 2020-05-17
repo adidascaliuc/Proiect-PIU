@@ -28,6 +28,7 @@ namespace TargDeMasiniForm
         private void txtNume_Enter(object sender, EventArgs e)
         {
             txtNume.Text = "";
+            txtNume.BackColor = SystemColors.Control;
         }
 
         private void txtNume_Leave(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace TargDeMasiniForm
         private void textPrenume_Enter(object sender, EventArgs e)
         {
             txtPrenume.Text = "";
+            txtPrenume.BackColor = SystemColors.Control;
             
         }
 
@@ -55,6 +57,7 @@ namespace TargDeMasiniForm
         private void txtPassword_Enter(object sender, EventArgs e)
         {
             txtPassword.Text = "";
+            txtPassword.BackColor = SystemColors.Control;
         }
 
         private void txtPassword_Leave(object sender, EventArgs e)
@@ -68,14 +71,53 @@ namespace TargDeMasiniForm
         private void txtUsername_Enter(object sender, EventArgs e)
         {
             txtUsername.Text = "";
+            txtUsername.BackColor = SystemColors.Control;
         }
 
+        public int ValidareInput()
+        {
+            if (txtNume.BackColor == Color.Red || txtPrenume.BackColor == Color.Red || txtUsername.BackColor == Color.Red || txtPassword.BackColor == Color.Red)
+            {
+                return 0;
+            }
+            return 1;
+        }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
-            adminPersoane.AddPersoana(p);
-            this.Hide();
+            ValidareControale();
+
+            if (ValidareInput() == 1)
+            {
+                Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
+                adminPersoane.AddPersoana(p);
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
+            }
+        }
+
+        private void ValidareControale()
+        {
+            if(txtNume.Text == "" || txtNume.Text == "Nume")
+            {
+                txtNume.BackColor = Color.Red;
+            }
+            if(txtPrenume.Text == "" || txtPrenume.Text == "Prenume")
+            {
+                txtPrenume.BackColor = Color.Red;
+            }
+            if(txtUsername.Text == "" || txtUsername.Text == "Username")
+            {
+                txtUsername.BackColor = Color.Red;
+            }
+            if(txtPassword.Text == "" || txtPassword.Text == "Password")
+            {
+                txtPassword.BackColor = Color.Red;
+            }          
+
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)

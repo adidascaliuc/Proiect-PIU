@@ -150,6 +150,7 @@ namespace TargDeMasiniForm
             this.radioArgintiu.TabStop = true;
             this.radioArgintiu.Text = "Argintiu";
             this.radioArgintiu.UseVisualStyleBackColor = false;
+            this.radioArgintiu.CheckedChanged += new System.EventHandler(this.radioArgintiu_CheckedChanged);
             // 
             // radioVerde
             // 
@@ -164,6 +165,7 @@ namespace TargDeMasiniForm
             this.radioVerde.TabStop = true;
             this.radioVerde.Text = "Verde";
             this.radioVerde.UseVisualStyleBackColor = false;
+            this.radioVerde.CheckedChanged += new System.EventHandler(this.radioVerde_CheckedChanged);
             // 
             // radioAlbastru
             // 
@@ -178,6 +180,7 @@ namespace TargDeMasiniForm
             this.radioAlbastru.TabStop = true;
             this.radioAlbastru.Text = "Albastru";
             this.radioAlbastru.UseVisualStyleBackColor = false;
+            this.radioAlbastru.CheckedChanged += new System.EventHandler(this.radioAlbastru_CheckedChanged);
             // 
             // radioRosu
             // 
@@ -192,6 +195,7 @@ namespace TargDeMasiniForm
             this.radioRosu.TabStop = true;
             this.radioRosu.Text = "Rosu";
             this.radioRosu.UseVisualStyleBackColor = false;
+            this.radioRosu.CheckedChanged += new System.EventHandler(this.radioRosu_CheckedChanged);
             // 
             // radioNegru
             // 
@@ -206,6 +210,7 @@ namespace TargDeMasiniForm
             this.radioNegru.TabStop = true;
             this.radioNegru.Text = "Negru";
             this.radioNegru.UseVisualStyleBackColor = false;
+            this.radioNegru.CheckedChanged += new System.EventHandler(this.radioNegru_CheckedChanged);
             // 
             // radioAlb
             // 
@@ -220,6 +225,7 @@ namespace TargDeMasiniForm
             this.radioAlb.TabStop = true;
             this.radioAlb.Text = "Alb";
             this.radioAlb.UseVisualStyleBackColor = false;
+            this.radioAlb.CheckedChanged += new System.EventHandler(this.radioAlb_CheckedChanged);
             // 
             // lblPret
             // 

@@ -52,8 +52,10 @@
             this.pctCauta = new System.Windows.Forms.PictureBox();
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
+            this.salveazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
@@ -65,7 +67,9 @@
             // dataGridAfisare
             // 
             this.dataGridAfisare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAfisare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.dataGridAfisare.Location = new System.Drawing.Point(74, 0);
             this.dataGridAfisare.Name = "dataGridAfisare";
             this.dataGridAfisare.Size = new System.Drawing.Size(838, 362);
@@ -87,9 +91,11 @@
             // 
             this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salveazaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(94, 375);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(202, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(71, 24);
             this.menuStrip1.TabIndex = 72;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -286,6 +292,13 @@
             this.pctAfiseaza.TabIndex = 0;
             this.pctAfiseaza.TabStop = false;
             // 
+            // salveazaToolStripMenuItem
+            // 
+            this.salveazaToolStripMenuItem.Name = "salveazaToolStripMenuItem";
+            this.salveazaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.salveazaToolStripMenuItem.Text = "Salveaza";
+            this.salveazaToolStripMenuItem.Click += new System.EventHandler(this.salveazaFisierToolStripMenuItem_Click_1);
+            // 
             // OptiuneAfiseazaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +325,8 @@
             this.Text = "Car Shop";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panelMeniu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).EndInit();
@@ -348,5 +363,6 @@
         private System.Windows.Forms.PictureBox pctCauta;
         private System.Windows.Forms.PictureBox pctAdauga;
         private System.Windows.Forms.PictureBox pctAfiseaza;
+        private System.Windows.Forms.ToolStripMenuItem salveazaToolStripMenuItem;
     }
 }

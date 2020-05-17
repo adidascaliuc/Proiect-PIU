@@ -31,7 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblRegister = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.txtNume = new MetroFramework.Controls.MetroTextBox();
             this.txtPrenume = new MetroFramework.Controls.MetroTextBox();
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
@@ -40,6 +39,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -49,7 +49,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel1.Controls.Add(this.lblRegister);
             this.panel1.Controls.Add(this.btnX);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,21 +83,10 @@
             this.btnX.UseVisualStyleBackColor = false;
             this.btnX.Click += new System.EventHandler(this.btnX_Click);
             // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegister.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.Location = new System.Drawing.Point(142, 333);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(108, 39);
-            this.btnRegister.TabIndex = 5;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
-            // 
             // txtNume
             // 
+            this.txtNume.CustomBackground = true;
+            this.txtNume.CustomForeColor = true;
             this.txtNume.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNume.Location = new System.Drawing.Point(88, 87);
             this.txtNume.Name = "txtNume";
@@ -109,6 +98,8 @@
             // 
             // txtPrenume
             // 
+            this.txtPrenume.CustomBackground = true;
+            this.txtPrenume.CustomForeColor = true;
             this.txtPrenume.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPrenume.Location = new System.Drawing.Point(88, 147);
             this.txtPrenume.Name = "txtPrenume";
@@ -120,6 +111,8 @@
             // 
             // txtUsername
             // 
+            this.txtUsername.CustomBackground = true;
+            this.txtUsername.CustomForeColor = true;
             this.txtUsername.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtUsername.Location = new System.Drawing.Point(88, 207);
             this.txtUsername.Name = "txtUsername";
@@ -131,6 +124,8 @@
             // 
             // txtPassword
             // 
+            this.txtPassword.CustomBackground = true;
+            this.txtPassword.CustomForeColor = true;
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPassword.Location = new System.Drawing.Point(88, 270);
             this.txtPassword.Name = "txtPassword";
@@ -181,12 +176,24 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.metroButton1.Location = new System.Drawing.Point(133, 338);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(108, 45);
+            this.metroButton1.TabIndex = 15;
+            this.metroButton1.Text = "Register";
+            this.metroButton1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroButton1.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 411);
             this.ControlBox = false;
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.txtPrenume);
@@ -195,7 +202,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RegisterForm";
@@ -216,7 +222,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblRegister;
         private System.Windows.Forms.Button btnX;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -225,5 +230,6 @@
         private MetroFramework.Controls.MetroTextBox txtPrenume;
         private MetroFramework.Controls.MetroTextBox txtUsername;
         private MetroFramework.Controls.MetroTextBox txtPassword;
+        private MetroFramework.Controls.MetroButton metroButton1;
     }
 }
