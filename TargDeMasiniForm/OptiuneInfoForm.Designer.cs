@@ -38,12 +38,21 @@ namespace TargDeMasiniForm
             this.pctCauta = new System.Windows.Forms.PictureBox();
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
+            this.lblNume = new MetroFramework.Controls.MetroLabel();
+            this.lblPrenume = new MetroFramework.Controls.MetroLabel();
+            this.lblUsername = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.btnAddPhoto = new MetroFramework.Controls.MetroButton();
+            this.pictureUserPhoto = new System.Windows.Forms.PictureBox();
+            this.lblBuget = new MetroFramework.Controls.MetroLabel();
+            this.btnAdaugaBuget = new MetroFramework.Controls.MetroButton();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -130,26 +139,115 @@ namespace TargDeMasiniForm
             this.pctAfiseaza.TabStop = false;
             this.pctAfiseaza.Click += new System.EventHandler(this.pctAfiseaza_Click);
             // 
+            // lblNume
+            // 
+            this.lblNume.AutoSize = true;
+            this.lblNume.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblNume.Location = new System.Drawing.Point(91, 66);
+            this.lblNume.Name = "lblNume";
+            this.lblNume.Size = new System.Drawing.Size(68, 25);
+            this.lblNume.TabIndex = 101;
+            this.lblNume.Text = "Nume: ";
+            // 
+            // lblPrenume
+            // 
+            this.lblPrenume.AutoSize = true;
+            this.lblPrenume.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblPrenume.Location = new System.Drawing.Point(91, 115);
+            this.lblPrenume.Name = "lblPrenume";
+            this.lblPrenume.Size = new System.Drawing.Size(90, 25);
+            this.lblPrenume.TabIndex = 102;
+            this.lblPrenume.Text = "Prenume: ";
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblUsername.Location = new System.Drawing.Point(91, 162);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(98, 25);
+            this.lblUsername.TabIndex = 103;
+            this.lblUsername.Text = "Username: ";
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.Location = new System.Drawing.Point(518, 11);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(74, 19);
+            this.metroLabel1.TabIndex = 105;
+            this.metroLabel1.Text = "User photo";
+            // 
+            // btnAddPhoto
+            // 
+            this.btnAddPhoto.Location = new System.Drawing.Point(518, 202);
+            this.btnAddPhoto.Name = "btnAddPhoto";
+            this.btnAddPhoto.Size = new System.Drawing.Size(74, 32);
+            this.btnAddPhoto.TabIndex = 106;
+            this.btnAddPhoto.Text = "Adauga";
+            this.btnAddPhoto.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
+            // 
+            // pictureUserPhoto
+            // 
+            this.pictureUserPhoto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureUserPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureUserPhoto.Image = global::TargDeMasiniForm.Properties.Resources.usernamePng;
+            this.pictureUserPhoto.Location = new System.Drawing.Point(470, 44);
+            this.pictureUserPhoto.Name = "pictureUserPhoto";
+            this.pictureUserPhoto.Size = new System.Drawing.Size(169, 152);
+            this.pictureUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUserPhoto.TabIndex = 107;
+            this.pictureUserPhoto.TabStop = false;
+            // 
+            // lblBuget
+            // 
+            this.lblBuget.AutoSize = true;
+            this.lblBuget.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblBuget.Location = new System.Drawing.Point(91, 209);
+            this.lblBuget.Name = "lblBuget";
+            this.lblBuget.Size = new System.Drawing.Size(70, 25);
+            this.lblBuget.TabIndex = 108;
+            this.lblBuget.Text = " Buget: ";
+            // 
+            // btnAdaugaBuget
+            // 
+            this.btnAdaugaBuget.Location = new System.Drawing.Point(91, 254);
+            this.btnAdaugaBuget.Name = "btnAdaugaBuget";
+            this.btnAdaugaBuget.Size = new System.Drawing.Size(109, 56);
+            this.btnAdaugaBuget.TabIndex = 109;
+            this.btnAdaugaBuget.Text = "Adauga Fonduri";
+            this.btnAdaugaBuget.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // OptiuneInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 411);
+            this.Controls.Add(this.btnAdaugaBuget);
+            this.Controls.Add(this.lblBuget);
+            this.Controls.Add(this.pictureUserPhoto);
+            this.Controls.Add(this.btnAddPhoto);
+            this.Controls.Add(this.metroLabel1);
+            this.Controls.Add(this.lblUsername);
+            this.Controls.Add(this.lblPrenume);
+            this.Controls.Add(this.lblNume);
             this.Controls.Add(this.panelMeniu);
             this.Controls.Add(this.metroTile1);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "OptiuneInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Car Shop";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panelMeniu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -161,5 +259,13 @@ namespace TargDeMasiniForm
         private System.Windows.Forms.PictureBox pctCauta;
         private System.Windows.Forms.PictureBox pctAdauga;
         private System.Windows.Forms.PictureBox pctAfiseaza;
+        private MetroFramework.Controls.MetroLabel lblPrenume;
+        private MetroFramework.Controls.MetroLabel lblUsername;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
+        private MetroFramework.Controls.MetroButton btnAddPhoto;
+        private System.Windows.Forms.PictureBox pictureUserPhoto;
+        public MetroFramework.Controls.MetroLabel lblNume;
+        private MetroFramework.Controls.MetroLabel lblBuget;
+        private MetroFramework.Controls.MetroButton btnAdaugaBuget;
     }
 }

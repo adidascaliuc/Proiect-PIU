@@ -221,14 +221,15 @@ namespace TargDeMasiniForm
         private void pctCauta_Click(object sender, EventArgs e)
         {
             OptiuneCautaForm cautaForm = new OptiuneCautaForm();
-            cautaForm.Show();
             this.Hide();
+            cautaForm.ShowDialog();
+            
         }
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm modificaForm = new OptiuneAfiseazaForm();
-            modificaForm.Show();
+            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
+            afiseazaForm.Show();
             this.Hide();
         }
 
@@ -263,8 +264,7 @@ namespace TargDeMasiniForm
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            OptiuneInfoForm infoForm = new OptiuneInfoForm();
-            infoForm.Show();
+            Program.infoForm.Show();
             this.Hide();
 
         }

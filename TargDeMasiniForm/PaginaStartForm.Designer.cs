@@ -52,7 +52,7 @@
             this.lblData.CustomForeColor = true;
             this.lblData.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.lblData.ForeColor = System.Drawing.Color.LightCoral;
-            this.lblData.Location = new System.Drawing.Point(649, 48);
+            this.lblData.Location = new System.Drawing.Point(715, 48);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(0, 0);
             this.lblData.TabIndex = 5;
@@ -74,7 +74,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::TargDeMasiniForm.Properties.Resources.dataPng;
-            this.pictureBox3.Location = new System.Drawing.Point(587, 36);
+            this.pictureBox3.Location = new System.Drawing.Point(653, 36);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(56, 51);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -96,7 +96,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::TargDeMasiniForm.Properties.Resources.play;
-            this.pictureBox1.Location = new System.Drawing.Point(308, 149);
+            this.pictureBox1.Location = new System.Drawing.Point(337, 149);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(241, 225);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +111,7 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(834, 411);
+            this.ClientSize = new System.Drawing.Size(914, 411);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);

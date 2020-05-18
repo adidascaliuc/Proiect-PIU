@@ -46,7 +46,7 @@ namespace TargDeMasiniForm
                 {
                     Masina m = masini.Last();
                     OptiuneModificaForm modForm = new OptiuneModificaForm(m, 0);
-                    modForm.Show();
+                    modForm.ShowDialog();
                 }
             }
             catch
@@ -122,8 +122,7 @@ namespace TargDeMasiniForm
 
         private void pictureInfo_Click(object sender, EventArgs e)
         {
-            OptiuneInfoForm infoForm = new OptiuneInfoForm();
-            infoForm.Show();
+            Program.infoForm.Show();
             this.Hide();
         }
 
@@ -136,6 +135,6 @@ namespace TargDeMasiniForm
         {
             lblModel.BackColor = SystemColors.Control;
             
-        }
+        }  
     }
 }

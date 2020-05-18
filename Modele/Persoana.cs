@@ -56,7 +56,7 @@ namespace Modele
             Username = date[USERNAME];
             Password = date[PASSWORD];
             Buget = Double.Parse( date[BUGET] );
-            masini.Add(Convert.ToInt32( date[MASINI] ));
+            //masini.Add(Convert.ToInt32( date[MASINI] ));
 
         }
 

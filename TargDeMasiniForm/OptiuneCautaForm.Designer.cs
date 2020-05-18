@@ -258,7 +258,7 @@
             this.Controls.Add(this.dataGridAfisare);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "OptiuneCautaForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();

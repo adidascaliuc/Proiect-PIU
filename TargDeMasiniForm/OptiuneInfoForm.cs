@@ -13,41 +13,15 @@ namespace TargDeMasiniForm
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
         public List<String> optiuniSelectate = new List<string>();
 
-        public OptiuneInfoForm()
-        {
+        public OptiuneInfoForm(Persoana p)
+        {            
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-        
-
-        //private void btnCautare_Click(object sender, EventArgs e)
-        //{
-        //    lBoxAfisare.Items.Clear();
-
-        //    List<Masina> masini = adminMasini.GetMasini(out int nrMasini);
-        //    Boolean gasit = false;
-
-        //    foreach (Masina m in masini)
-        //    {
-        //        if (m != null)
-        //        {
-        //            if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
-        //            {
-        //                lBoxAfisare.Items.Add(m.ConversieLaSir());
-        //                gasit = true;
-        //            }
-        //        }
-        //    }
-        //    if (gasit == false)
-        //    {
-        //        lBoxAfisare.Items.Add("Nu exista o astfel de masina!");
-        //    }
-        //}
-                  
+            lblNume.Text = "Nume: " + p.Nume;
+            lblPrenume.Text = "Prenume: " + p.Prenume;
+            lblUsername.Text = "Username: " + p.Username;
+            lblBuget.Text = "Buget: " + p.Buget;           
+        }        
+                         
         private void pctModifica_Click(object sender, EventArgs e)
         {
 
@@ -64,51 +38,6 @@ namespace TargDeMasiniForm
             this.Hide();
         }
 
-        //private void pctCauta_Click(object sender, EventArgs e)
-        //{
-        //    OptiuneCautaForm cautaForm = new OptiuneCautaForm();
-        //    cautaForm.Show();
-        //    this.Hide();
-        //    lBoxAfisare.Items.Clear();
-
-        //    List<Masina> masini = adminMasini.GetMasini(out int nrMasini);
-        //    Boolean gasit = false;
-
-        //    foreach (Masina m in masini)
-        //    {
-        //        if (m != null)
-        //        {
-        //            if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
-        //            {
-        //                lBoxAfisare.Items.Add(m.ConversieLaSir());
-        //                gasit = true;
-        //            }
-        //        }
-        //    }
-        //    if (gasit == false)
-        //    {
-        //        MessageBox.Show("Nu exista o astfel de masina","Cautare", MessageBoxButtons.OK);
-        //    }
-        //}
-
-        //private void pctAdauga_Click(object sender, EventArgs e)
-        //{
-        //    int culoare = ValidareCuloare();
-        //    int optiuni = ValidareOptiuni();
-
-        //    int validare = ValidareMasina();
-
-        //    if (validare == 0)
-        //    {
-        //        Masina m = new Masina(txtFirma.Text, txtModel.Text, Convert.ToInt32(cBoxAnFabricatie.Text), culoare, optiuni, Convert.ToDouble(txtPret.Text));
-        //        adminMasini.AddMasina(m);
-        //        lblInfo.Text = "Masina a fost adaugata cu succes!";
-        //    }
-        //    else
-        //    {
-        //        CodEroareMasina(validare);
-        //    }
-        //}
 
         private void pctAdauga_Click_1(object sender, EventArgs e)
         {
@@ -116,43 +45,39 @@ namespace TargDeMasiniForm
             adaugaForm.Show();
             this.Hide();
         }
-
-        private void pctAfiseaza_Click_1(object sender, EventArgs e)
-        {
-            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-            afiseazaForm.Show();
-            this.Hide();
-        }
-
+    
         private void pctCauta_Click(object sender, EventArgs e)
         {
             OptiuneCautaForm optiuneCauta = new OptiuneCautaForm();
-            optiuneCauta.Show();
             this.Hide();
-        }
-
-        private void pctModifica_Click_1(object sender, EventArgs e)
-        {
-            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-            afiseazaForm.Show();
-            this.Hide();
-        }
+            optiuneCauta.ShowDialog();
+        }      
 
         private void pictureInfo_Click(object sender, EventArgs e)
         {
-            OptiuneInfoForm infoForm = new OptiuneInfoForm();
-            infoForm.Show();
+            Program.infoForm.Show();
             this.Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnAddPhoto_Click(object sender, EventArgs e)
         {
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
 
-        }
+                if(fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK )
+                {
+                    imageLocation = fileDialog.FileName;
 
-        private void pctAdauga_Click(object sender, EventArgs e)
-        {
-
+                    pictureUserPhoto.ImageLocation = imageLocation;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("A aparut o eroare!","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

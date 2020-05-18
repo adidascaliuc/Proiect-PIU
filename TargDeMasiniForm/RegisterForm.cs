@@ -89,14 +89,30 @@ namespace TargDeMasiniForm
 
             if (ValidareInput() == 1)
             {
-                Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
-                adminPersoane.AddPersoana(p);
-                this.Hide();
+                if (ValidarePassword() == 1)
+                {
+                    Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
+                    adminPersoane.AddPersoana(p);
+                    this.Hide();                
+                }
+                else
+                {
+                    MessageBox.Show("Parolele difera!!!");
+                }
             }
             else
             {
                 MessageBox.Show("Completati spatiile marcate cu rosu!!!");
             }
+        }
+
+        private int ValidarePassword()
+        {
+            if( (txtPassword.Text == txtConfirmPassword.Text) && (txtPassword.Text != "Password" && txtConfirmPassword.Text != "Password") )
+            {
+                return 1;
+            }
+            return 0;
         }
 
         private void ValidareControale()
@@ -116,7 +132,11 @@ namespace TargDeMasiniForm
             if(txtPassword.Text == "" || txtPassword.Text == "Password")
             {
                 txtPassword.BackColor = Color.Red;
-            }          
+            }     
+            if(txtConfirmPassword.Text == "" || txtConfirmPassword.Text == "Password")
+            {
+                txtConfirmPassword.BackColor = Color.Red;
+            }
 
         }
 
@@ -126,6 +146,39 @@ namespace TargDeMasiniForm
             {
                 txtUsername.Text = "Username";
             }
+        }
+
+        private void txtConfirmPassword_Enter(object sender, EventArgs e)
+        {
+            txtConfirmPassword.Text = "";
+        }
+
+        private void txtConfirmPassword_Leave(object sender, EventArgs e)
+        {
+            if(txtConfirmPassword.Text == "")
+            {
+                txtConfirmPassword.Text = "Password";
+            }
+        }
+
+        private void pictureShowPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '\0';
+        }
+
+        private void pictureShowPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '●';
+        }
+
+        private void pictureShowConfirmPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtConfirmPassword.PasswordChar = '\0';
+        }
+
+        private void pictureShowConfirmPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtConfirmPassword.PasswordChar = '●';
         }
     }
 }

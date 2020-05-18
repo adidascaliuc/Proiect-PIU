@@ -62,24 +62,42 @@ namespace TargDeMasiniForm
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            List<Persoana> persoane = adminPersoane.GetPersoane();
+            bool gasit = false;
             if (ValidareInput() == 0)
             {
                 if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
                 {
-                    OptiuneInfoForm optForm = new OptiuneInfoForm();
-                    optForm.Show();
                     this.Hide();
+                    Program.infoForm.ShowDialog();                    
                     Program.startForm.Hide();
 
                 }
                 else
                 {
-                    MessageBox.Show("Nume sau parola Incorecte!", "Eroare", MessageBoxButtons.OK);
+
+                    foreach (Persoana p in persoane)
+                    {
+                        if (txtUsername.Text == p.Username && txtPassword.Text == p.Password)
+                        {
+                            OptiuneInfoForm optForm = new OptiuneInfoForm(p);
+                            optForm.Show();
+                            this.Hide();
+                            Program.startForm.Hide();
+                            gasit = true;
+                        }
+
+                    }
+                    if (!gasit)
+                    {
+                        MessageBox.Show("Nume sau parola incorecte!");
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Completati spatiile marcate cu rosu!!!");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
             }
             
         }

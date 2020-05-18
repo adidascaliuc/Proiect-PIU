@@ -532,7 +532,7 @@
             this.Controls.Add(this.pictureDeconectare);
             this.Name = "OptiuneAdaugareForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Car Shop";
             this.panelMeniu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).EndInit();
