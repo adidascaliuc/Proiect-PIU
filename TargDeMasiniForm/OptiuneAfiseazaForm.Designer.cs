@@ -31,6 +31,7 @@
             this.dataGridAfisare = new System.Windows.Forms.DataGridView();
             this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.salveazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salvareInFisierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salveazaFisierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tscCuloare = new System.Windows.Forms.ToolStripComboBox();
@@ -52,7 +53,7 @@
             this.pctCauta = new System.Windows.Forms.PictureBox();
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
-            this.salveazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBuy = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -99,6 +100,13 @@
             this.menuStrip1.TabIndex = 72;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // salveazaToolStripMenuItem
+            // 
+            this.salveazaToolStripMenuItem.Name = "salveazaToolStripMenuItem";
+            this.salveazaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.salveazaToolStripMenuItem.Text = "Salveaza";
+            this.salveazaToolStripMenuItem.Click += new System.EventHandler(this.salveazaFisierToolStripMenuItem_Click_1);
+            // 
             // salvareInFisierToolStripMenuItem
             // 
             this.salvareInFisierToolStripMenuItem.Name = "salvareInFisierToolStripMenuItem";
@@ -134,7 +142,7 @@
             // 
             // btnActualizeaza
             // 
-            this.btnActualizeaza.Location = new System.Drawing.Point(291, 369);
+            this.btnActualizeaza.Location = new System.Drawing.Point(311, 366);
             this.btnActualizeaza.Name = "btnActualizeaza";
             this.btnActualizeaza.Size = new System.Drawing.Size(99, 43);
             this.btnActualizeaza.TabIndex = 76;
@@ -144,7 +152,7 @@
             // 
             // btnCautaData
             // 
-            this.btnCautaData.Location = new System.Drawing.Point(416, 369);
+            this.btnCautaData.Location = new System.Drawing.Point(416, 366);
             this.btnCautaData.Name = "btnCautaData";
             this.btnCautaData.Size = new System.Drawing.Size(99, 43);
             this.btnCautaData.TabIndex = 77;
@@ -292,18 +300,22 @@
             this.pctAfiseaza.TabIndex = 0;
             this.pctAfiseaza.TabStop = false;
             // 
-            // salveazaToolStripMenuItem
+            // btnBuy
             // 
-            this.salveazaToolStripMenuItem.Name = "salveazaToolStripMenuItem";
-            this.salveazaToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.salveazaToolStripMenuItem.Text = "Salveaza";
-            this.salveazaToolStripMenuItem.Click += new System.EventHandler(this.salveazaFisierToolStripMenuItem_Click_1);
+            this.btnBuy.Location = new System.Drawing.Point(229, 366);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(76, 43);
+            this.btnBuy.TabIndex = 101;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // OptiuneAfiseazaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 411);
+            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.panelMeniu);
             this.Controls.Add(this.lblPanaLa);
             this.Controls.Add(this.lblDeLa);
@@ -364,5 +376,6 @@
         private System.Windows.Forms.PictureBox pctAdauga;
         private System.Windows.Forms.PictureBox pctAfiseaza;
         private System.Windows.Forms.ToolStripMenuItem salveazaToolStripMenuItem;
+        private MetroFramework.Controls.MetroButton btnBuy;
     }
 }

@@ -33,15 +33,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnX = new System.Windows.Forms.Button();
             this.txtUsername = new MetroFramework.Controls.MetroTextBox();
-            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.btnLogin = new MetroFramework.Controls.MetroButton();
             this.btnRegister = new MetroFramework.Controls.MetroButton();
             this.label2 = new MetroFramework.Controls.MetroLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureShowPassword = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,21 +98,6 @@
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.txtPassword.CustomBackground = true;
-            this.txtPassword.CustomForeColor = true;
-            this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtPassword.Location = new System.Drawing.Point(77, 156);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(220, 38);
-            this.txtPassword.TabIndex = 9;
-            this.txtPassword.Text = "Password";
-            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
-            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
-            // 
             // btnLogin
             // 
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -148,16 +135,19 @@
             this.label2.Text = "Forgot Password?";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // pictureBox2
+            // pictureShowPassword
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(27, 156);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.pictureShowPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pictureShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureShowPassword.Image = global::TargDeMasiniForm.Properties.Resources.eye;
+            this.pictureShowPassword.Location = new System.Drawing.Point(258, 156);
+            this.pictureShowPassword.Name = "pictureShowPassword";
+            this.pictureShowPassword.Size = new System.Drawing.Size(39, 38);
+            this.pictureShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureShowPassword.TabIndex = 15;
+            this.pictureShowPassword.TabStop = false;
+            this.pictureShowPassword.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureShowPassword_MouseDown);
+            this.pictureShowPassword.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureShowPassword_MouseUp);
             // 
             // pictureBox1
             // 
@@ -170,6 +160,34 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(27, 156);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.txtPassword.CustomBackground = true;
+            this.txtPassword.CustomForeColor = true;
+            this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtPassword.Location = new System.Drawing.Point(78, 156);
+            this.txtPassword.MaxLength = 100;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(220, 38);
+            this.txtPassword.TabIndex = 16;
+            this.txtPassword.Text = "Password";
+            this.txtPassword.UseStyleColors = true;
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,14 +195,15 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(322, 345);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureShowPassword);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtPassword);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
             this.Name = "LoginForm";
@@ -192,8 +211,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureShowPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,11 +225,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroTextBox txtUsername;
-        private MetroFramework.Controls.MetroTextBox txtPassword;
         private MetroFramework.Controls.MetroButton btnLogin;
         private MetroFramework.Controls.MetroButton btnRegister;
         private MetroFramework.Controls.MetroLabel label2;
         private System.Windows.Forms.Button btnX;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureShowPassword;
+        private MetroFramework.Controls.MetroTextBox txtPassword;
     }
 }

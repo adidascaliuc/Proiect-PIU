@@ -119,5 +119,15 @@ namespace TargDeMasiniForm
             
         }
 
+        private void pictureShowPassword_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '\0';
+        }
+
+        private void pictureShowPassword_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.PasswordChar = '●';           
+            
+        }
     }
 }

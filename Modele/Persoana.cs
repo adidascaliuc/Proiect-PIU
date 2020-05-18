@@ -7,7 +7,7 @@ namespace Modele
 {
     public class Persoana
     {
-        string SEPARATOR_FISIER = ";";
+        string SEPARATOR_FISIER = "|";
 
         int NUME = 0;
         int PRENUME = 1;
@@ -17,7 +17,7 @@ namespace Modele
         int MASINI = 5;
 
 
-        public List<Masina> masini = null;
+        public List<int> masini = null;
         //parametrii auto-implemented
         public string Nume { set; get; }
         public string Prenume { set; get; }
@@ -49,30 +49,15 @@ namespace Modele
 
         //constructor sir de caractere
         public Persoana(string s)
-        {
-            string[] date = s.Split( );
+        { 
+            string[] date = s.Split('|');
             Nume = date[NUME];
             Prenume = date[PRENUME];
             Username = date[USERNAME];
             Password = date[PASSWORD];
             Buget = Double.Parse( date[BUGET] );
-           // masini.Add(date[MASINI]);
+            masini.Add(Convert.ToInt32( date[MASINI] ));
 
-        }
-
-        public int Compara(Persoana p1)
-        {
-            if(p1.Buget > this.Buget)
-            {
-                return -1;
-                
-            }
-            else if(p1.Buget < this.Buget)
-            {
-                return 1;
-               
-            }
-            return 0; //Acelasi buget
         }
 
         public string ConversieLaSir_PentruFisier()

@@ -16,6 +16,8 @@ namespace TargDeMasiniForm
     public partial class OptiuneAfiseazaForm : Form
     {
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
+        IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
+
         public List<String> optiuniSelectate = new List<string>();
         public OptiuneAfiseazaForm()
         {
@@ -144,6 +146,10 @@ namespace TargDeMasiniForm
             OptiuneInfoForm infoForm = new OptiuneInfoForm();
             infoForm.Show();
             this.Hide();
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
         }
     }
 }
