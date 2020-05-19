@@ -46,6 +46,9 @@ namespace TargDeMasiniForm
             this.pictureUserPhoto = new System.Windows.Forms.PictureBox();
             this.lblBuget = new MetroFramework.Controls.MetroLabel();
             this.btnAdaugaBuget = new MetroFramework.Controls.MetroButton();
+            this.txtBuget = new MetroFramework.Controls.MetroTextBox();
+            this.lblDeconectare = new MetroFramework.Controls.MetroLabel();
+            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
@@ -53,6 +56,7 @@ namespace TargDeMasiniForm
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -212,12 +216,51 @@ namespace TargDeMasiniForm
             // 
             // btnAdaugaBuget
             // 
-            this.btnAdaugaBuget.Location = new System.Drawing.Point(91, 254);
+            this.btnAdaugaBuget.Location = new System.Drawing.Point(91, 296);
             this.btnAdaugaBuget.Name = "btnAdaugaBuget";
             this.btnAdaugaBuget.Size = new System.Drawing.Size(109, 56);
             this.btnAdaugaBuget.TabIndex = 109;
             this.btnAdaugaBuget.Text = "Adauga Fonduri";
             this.btnAdaugaBuget.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAdaugaBuget.Click += new System.EventHandler(this.btnAdaugaBuget_Click);
+            // 
+            // txtBuget
+            // 
+            this.txtBuget.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtBuget.Location = new System.Drawing.Point(91, 248);
+            this.txtBuget.Name = "txtBuget";
+            this.txtBuget.Size = new System.Drawing.Size(119, 23);
+            this.txtBuget.TabIndex = 110;
+            this.txtBuget.Text = "DOLARI";
+            this.txtBuget.Enter += new System.EventHandler(this.txtBuget_Enter);
+            this.txtBuget.Leave += new System.EventHandler(this.txtBuget_Leave);
+            // 
+            // lblDeconectare
+            // 
+            this.lblDeconectare.AutoSize = true;
+            this.lblDeconectare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.lblDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDeconectare.CustomBackground = true;
+            this.lblDeconectare.CustomForeColor = true;
+            this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblDeconectare.Location = new System.Drawing.Point(783, 8);
+            this.lblDeconectare.Name = "lblDeconectare";
+            this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
+            this.lblDeconectare.TabIndex = 112;
+            this.lblDeconectare.Text = "Deconectare";
+            this.lblDeconectare.Click += new System.EventHandler(this.lblDeconectare_Click);
+            // 
+            // pictureDeconectare
+            // 
+            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
+            this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
+            this.pictureDeconectare.Name = "pictureDeconectare";
+            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
+            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDeconectare.TabIndex = 111;
+            this.pictureDeconectare.TabStop = false;
+            this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click);
             // 
             // OptiuneInfoForm
             // 
@@ -225,6 +268,9 @@ namespace TargDeMasiniForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 411);
+            this.Controls.Add(this.lblDeconectare);
+            this.Controls.Add(this.pictureDeconectare);
+            this.Controls.Add(this.txtBuget);
             this.Controls.Add(this.btnAdaugaBuget);
             this.Controls.Add(this.lblBuget);
             this.Controls.Add(this.pictureUserPhoto);
@@ -246,6 +292,7 @@ namespace TargDeMasiniForm
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +314,8 @@ namespace TargDeMasiniForm
         public MetroFramework.Controls.MetroLabel lblNume;
         private MetroFramework.Controls.MetroLabel lblBuget;
         private MetroFramework.Controls.MetroButton btnAdaugaBuget;
+        private MetroFramework.Controls.MetroTextBox txtBuget;
+        private MetroFramework.Controls.MetroLabel lblDeconectare;
+        private System.Windows.Forms.PictureBox pictureDeconectare;
     }
 }

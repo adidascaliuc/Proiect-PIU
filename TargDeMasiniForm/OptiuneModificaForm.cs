@@ -28,7 +28,8 @@ namespace TargDeMasiniForm
             txtModel.Text = m.Model;
             cBoxAnFabricatie.Text = Convert.ToString(m.AnFabricatie);
 
-            
+
+
 
             if (Convert.ToInt32(m.CULOARE) == 1)
             {
@@ -55,7 +56,66 @@ namespace TargDeMasiniForm
                 radioArgintiu.Checked = true;
             }
             txtPret.Text = Convert.ToString(m.Pret);
-           
+
+            foreach(string opt in m.optiuniInt.Split(' '))
+            {
+                if (opt == "1")
+                {
+                    cBoxAerConditionat.Checked = true;
+                }
+                if(opt == "2")
+                {
+                    cBoxOptiuniVolan.Checked = true;
+                }
+                if(opt == "4")
+                {
+                    cBoxScaunePiele.Checked = true;
+                }
+                if(opt == "8")
+                {
+                    cBoxGeamuriElectrice.Checked = true;
+                }
+                if(opt == "16")
+                {
+                    cBoxNavigatie.Checked = true;
+                }
+                if(opt == "32")
+                {
+                    cBoxCutieAutomata.Checked = true;
+                }
+            }
+            
+
+        }
+
+        private string ValidareOptiuniCheked()
+        {
+            string checkedOpt = "";
+            if (cBoxAerConditionat.Checked == true)
+            {
+                checkedOpt += "1";
+            }
+            if (cBoxOptiuniVolan.Checked == true)
+            {
+                checkedOpt += " 2";
+            }
+            if (cBoxScaunePiele.Checked == true)
+            {
+                checkedOpt += " 4";
+            }
+            if (cBoxGeamuriElectrice.Checked == true)
+            {
+                checkedOpt += " 8";
+            }
+            if (cBoxNavigatie.Checked == true)
+            {
+                checkedOpt += " 16";
+            }
+            if (cBoxCutieAutomata.Checked == true)
+            {
+                checkedOpt += " 32";
+            }
+            return checkedOpt;
         }
 
         private void btnModifica_Click(object sender, EventArgs e)
@@ -66,22 +126,30 @@ namespace TargDeMasiniForm
 
             if (validare == 0)
             {
-                m.NumeFirma = txtFirma.Text;
-                m.Model = txtModel.Text;
-                m.AnFabricatie = Convert.ToInt32(cBoxAnFabricatie.Text);
-                m.CULOARE = (Culoare)modCuloare;
-                m.OPTIUNI = (Optiuni)modOptiuni;
-                m.Pret = Convert.ToDouble(txtPret.Text);
-                m.DataActualizare = DateTime.Now;
+                if (double.TryParse(txtPret.Text, out double result))
+                {
+                    m.NumeFirma = txtFirma.Text;
+                    m.Model = txtModel.Text;
+                    m.AnFabricatie = Convert.ToInt32(cBoxAnFabricatie.Text);
+                    m.CULOARE = (Culoare)modCuloare;
+                    m.OPTIUNI = (Optiuni)modOptiuni;
+                    m.Pret = Convert.ToDouble(txtPret.Text);
+                    m.DataActualizare = DateTime.Now;
+                    m.optiuniInt = ValidareOptiuniCheked();
 
-                adminMasini.UpdateMasina(m, m.IdMasina - 1);
-                this.Hide();
+                    adminMasini.UpdateMasina(m, m.IdMasina - 1);
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Pretul nu poate fi un sir de caractere", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 
             }
             else
             {
-                CodEroareMasina(validare);
+                MessageBox.Show("Marcati campurile marcate cu rosu!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -172,7 +240,7 @@ namespace TargDeMasiniForm
                 lblOptiuni.BackColor = Color.Red;
 
             }
-            if (txtPret.Text == string.Empty)
+            if (txtPret.Text == string.Empty || double.TryParse(txtPret.Text, out double result) == false)
             {
                 lblPret.BackColor = Color.Red;
 
@@ -186,31 +254,7 @@ namespace TargDeMasiniForm
             }
             return 0;
         }
-
-        private void CodEroareMasina(int eroare)
-        {
-            switch (eroare)
-            {
-                case 1:
-                    lblFirma.ForeColor = Color.Red;
-                    break;
-                case 2:
-                    lblModel.ForeColor = Color.Red;
-                    break;
-                case 3:
-                    lblAnFabricatie.ForeColor = Color.Red;
-                    break;
-                case 4:
-                    lblCuloare.ForeColor = Color.Red;
-                    break;
-                case 5:
-                    lblOptiuni.ForeColor = Color.Red;
-                    break;
-                case 6:
-                    lblPret.ForeColor = Color.Red;
-                    break;
-            }
-        }
+      
 
         private void radioAlb_CheckedChanged(object sender, EventArgs e)
         {
@@ -258,6 +302,11 @@ namespace TargDeMasiniForm
             {
                 lblCuloare.BackColor = SystemColors.Control;
             }
+        }
+
+        private void txtPret_Enter(object sender, EventArgs e)
+        {
+            lblPret.BackColor = SystemColors.ButtonFace;
         }
     }
 }

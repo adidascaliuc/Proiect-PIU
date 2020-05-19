@@ -56,6 +56,7 @@ namespace TargDeMasiniForm
             this.btnModifica = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBoxCheckBox = new System.Windows.Forms.GroupBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@ namespace TargDeMasiniForm
             this.cBoxCutieAutomata.AutoSize = true;
             this.cBoxCutieAutomata.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxCutieAutomata.CustomBackground = true;
-            this.cBoxCutieAutomata.Location = new System.Drawing.Point(297, 300);
+            this.cBoxCutieAutomata.Location = new System.Drawing.Point(321, 300);
             this.cBoxCutieAutomata.Name = "cBoxCutieAutomata";
             this.cBoxCutieAutomata.Size = new System.Drawing.Size(107, 15);
             this.cBoxCutieAutomata.Style = MetroFramework.MetroColorStyle.Black;
@@ -77,7 +78,7 @@ namespace TargDeMasiniForm
             this.cBoxNavigatie.AutoSize = true;
             this.cBoxNavigatie.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxNavigatie.CustomBackground = true;
-            this.cBoxNavigatie.Location = new System.Drawing.Point(297, 279);
+            this.cBoxNavigatie.Location = new System.Drawing.Point(321, 279);
             this.cBoxNavigatie.Name = "cBoxNavigatie";
             this.cBoxNavigatie.Size = new System.Drawing.Size(73, 15);
             this.cBoxNavigatie.Style = MetroFramework.MetroColorStyle.Black;
@@ -90,7 +91,7 @@ namespace TargDeMasiniForm
             this.cBoxGeamuriElectrice.AutoSize = true;
             this.cBoxGeamuriElectrice.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxGeamuriElectrice.CustomBackground = true;
-            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(297, 258);
+            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(321, 258);
             this.cBoxGeamuriElectrice.Name = "cBoxGeamuriElectrice";
             this.cBoxGeamuriElectrice.Size = new System.Drawing.Size(115, 15);
             this.cBoxGeamuriElectrice.Style = MetroFramework.MetroColorStyle.Black;
@@ -103,7 +104,7 @@ namespace TargDeMasiniForm
             this.cBoxScaunePiele.AutoSize = true;
             this.cBoxScaunePiele.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxScaunePiele.CustomBackground = true;
-            this.cBoxScaunePiele.Location = new System.Drawing.Point(132, 300);
+            this.cBoxScaunePiele.Location = new System.Drawing.Point(156, 300);
             this.cBoxScaunePiele.Name = "cBoxScaunePiele";
             this.cBoxScaunePiele.Size = new System.Drawing.Size(89, 15);
             this.cBoxScaunePiele.Style = MetroFramework.MetroColorStyle.Black;
@@ -116,7 +117,7 @@ namespace TargDeMasiniForm
             this.cBoxOptiuniVolan.AutoSize = true;
             this.cBoxOptiuniVolan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxOptiuniVolan.CustomBackground = true;
-            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(132, 279);
+            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(156, 279);
             this.cBoxOptiuniVolan.Name = "cBoxOptiuniVolan";
             this.cBoxOptiuniVolan.Size = new System.Drawing.Size(95, 15);
             this.cBoxOptiuniVolan.Style = MetroFramework.MetroColorStyle.Black;
@@ -129,7 +130,7 @@ namespace TargDeMasiniForm
             this.cBoxAerConditionat.AutoSize = true;
             this.cBoxAerConditionat.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxAerConditionat.CustomBackground = true;
-            this.cBoxAerConditionat.Location = new System.Drawing.Point(132, 258);
+            this.cBoxAerConditionat.Location = new System.Drawing.Point(156, 258);
             this.cBoxAerConditionat.Name = "cBoxAerConditionat";
             this.cBoxAerConditionat.Size = new System.Drawing.Size(107, 15);
             this.cBoxAerConditionat.Style = MetroFramework.MetroColorStyle.Black;
@@ -142,7 +143,7 @@ namespace TargDeMasiniForm
             this.radioArgintiu.AutoSize = true;
             this.radioArgintiu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioArgintiu.CustomBackground = true;
-            this.radioArgintiu.Location = new System.Drawing.Point(295, 232);
+            this.radioArgintiu.Location = new System.Drawing.Point(318, 221);
             this.radioArgintiu.Name = "radioArgintiu";
             this.radioArgintiu.Size = new System.Drawing.Size(66, 15);
             this.radioArgintiu.Style = MetroFramework.MetroColorStyle.Black;
@@ -157,7 +158,7 @@ namespace TargDeMasiniForm
             this.radioVerde.AutoSize = true;
             this.radioVerde.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioVerde.CustomBackground = true;
-            this.radioVerde.Location = new System.Drawing.Point(295, 209);
+            this.radioVerde.Location = new System.Drawing.Point(318, 198);
             this.radioVerde.Name = "radioVerde";
             this.radioVerde.Size = new System.Drawing.Size(52, 15);
             this.radioVerde.Style = MetroFramework.MetroColorStyle.Black;
@@ -172,7 +173,7 @@ namespace TargDeMasiniForm
             this.radioAlbastru.AutoSize = true;
             this.radioAlbastru.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioAlbastru.CustomBackground = true;
-            this.radioAlbastru.Location = new System.Drawing.Point(295, 184);
+            this.radioAlbastru.Location = new System.Drawing.Point(318, 173);
             this.radioAlbastru.Name = "radioAlbastru";
             this.radioAlbastru.Size = new System.Drawing.Size(67, 15);
             this.radioAlbastru.Style = MetroFramework.MetroColorStyle.Black;
@@ -187,7 +188,7 @@ namespace TargDeMasiniForm
             this.radioRosu.AutoSize = true;
             this.radioRosu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioRosu.CustomBackground = true;
-            this.radioRosu.Location = new System.Drawing.Point(132, 232);
+            this.radioRosu.Location = new System.Drawing.Point(155, 221);
             this.radioRosu.Name = "radioRosu";
             this.radioRosu.Size = new System.Drawing.Size(49, 15);
             this.radioRosu.Style = MetroFramework.MetroColorStyle.Black;
@@ -202,7 +203,7 @@ namespace TargDeMasiniForm
             this.radioNegru.AutoSize = true;
             this.radioNegru.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioNegru.CustomBackground = true;
-            this.radioNegru.Location = new System.Drawing.Point(132, 207);
+            this.radioNegru.Location = new System.Drawing.Point(155, 196);
             this.radioNegru.Name = "radioNegru";
             this.radioNegru.Size = new System.Drawing.Size(56, 15);
             this.radioNegru.Style = MetroFramework.MetroColorStyle.Black;
@@ -217,7 +218,7 @@ namespace TargDeMasiniForm
             this.radioAlb.AutoSize = true;
             this.radioAlb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioAlb.CustomBackground = true;
-            this.radioAlb.Location = new System.Drawing.Point(132, 184);
+            this.radioAlb.Location = new System.Drawing.Point(155, 173);
             this.radioAlb.Name = "radioAlb";
             this.radioAlb.Size = new System.Drawing.Size(41, 15);
             this.radioAlb.Style = MetroFramework.MetroColorStyle.Black;
@@ -251,7 +252,7 @@ namespace TargDeMasiniForm
             // 
             this.lblCuloare.AutoSize = true;
             this.lblCuloare.CustomBackground = true;
-            this.lblCuloare.Location = new System.Drawing.Point(27, 180);
+            this.lblCuloare.Location = new System.Drawing.Point(27, 169);
             this.lblCuloare.Name = "lblCuloare";
             this.lblCuloare.Size = new System.Drawing.Size(58, 19);
             this.lblCuloare.TabIndex = 105;
@@ -293,6 +294,7 @@ namespace TargDeMasiniForm
             this.txtPret.Name = "txtPret";
             this.txtPret.Size = new System.Drawing.Size(167, 23);
             this.txtPret.TabIndex = 101;
+            this.txtPret.Enter += new System.EventHandler(this.txtPret_Enter);
             // 
             // cBoxAnFabricatie
             // 
@@ -378,6 +380,14 @@ namespace TargDeMasiniForm
             this.label1.TabIndex = 2;
             this.label1.Text = "Modifica";
             // 
+            // groupBoxCheckBox
+            // 
+            this.groupBoxCheckBox.Location = new System.Drawing.Point(132, 238);
+            this.groupBoxCheckBox.Name = "groupBoxCheckBox";
+            this.groupBoxCheckBox.Size = new System.Drawing.Size(318, 90);
+            this.groupBoxCheckBox.TabIndex = 123;
+            this.groupBoxCheckBox.TabStop = false;
+            // 
             // OptiuneModificaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
@@ -408,6 +418,7 @@ namespace TargDeMasiniForm
             this.Controls.Add(this.cBoxAnFabricatie);
             this.Controls.Add(this.txtModel);
             this.Controls.Add(this.txtFirma);
+            this.Controls.Add(this.groupBoxCheckBox);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "OptiuneModificaForm";
@@ -447,5 +458,6 @@ namespace TargDeMasiniForm
         private MetroFramework.Controls.MetroButton btnModifica;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBoxCheckBox;
     }
 }

@@ -3,3 +3,6 @@ adi|dascaliuc|adi.dascaliuc|1234|0
 a|a|aa|a|0
 vasile|vasilescu|vasi.vasile|12323424|0
 a|b|cd|e|0
+asd|asd|asd|asd|0
+asd|sda|adi.dascaliuc1|asd|0
+Dascaliuc|Adi|adi.dascaliu2|parola|0

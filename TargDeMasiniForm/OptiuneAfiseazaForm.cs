@@ -30,7 +30,14 @@ namespace TargDeMasiniForm
         {
             List<Masina> masini = adminMasini.GetMasini();
             dataGridAfisare.DataSource = null;
-            dataGridAfisare.DataSource = masini;
+            if (masini != null)
+            {               
+                dataGridAfisare.DataSource = masini;
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti masini introduse", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void pctModifica_Click(object sender, EventArgs e)
@@ -47,7 +54,7 @@ namespace TargDeMasiniForm
             }
             catch
             {
-                MessageBox.Show("Selectati o masina pentru modificare!!!", "Eroare", MessageBoxButtons.OK);
+                MessageBox.Show("Selectati o masina pentru modificare!!!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             
@@ -86,12 +93,6 @@ namespace TargDeMasiniForm
             PaginaStartForm startForm = new PaginaStartForm();
             startForm.Show();
             this.Hide();
-        }
-
-        private void salveazaFisierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void salveazaRaport(List<Masina> masini, string NumeFisier)
@@ -143,7 +144,7 @@ namespace TargDeMasiniForm
 
         private void pictureInfo_Click(object sender, EventArgs e)
         {
-            Program.infoForm.Show();
+            LoginForm.infoForm.Show();
             this.Hide();
         }
 

@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 
 namespace Modele
@@ -15,6 +18,7 @@ namespace Modele
         int INDEXOPTIUNI = 5;
         int PRET = 6;
         int DATA = 7;
+        int OPTIUNI_INT = 8;
 
 
         public int IdMasina { set; get; }
@@ -25,6 +29,7 @@ namespace Modele
         public Optiuni OPTIUNI { set; get; }
         public double Pret { set; get; }
         public DateTime DataActualizare { set; get; }
+        public string optiuniInt { set; get; }
 
         public string SerieMasina = "";
 
@@ -78,8 +83,10 @@ namespace Modele
             CULOARE = (Culoare)Convert.ToInt32( date[INDEXCULOARE] );
             OPTIUNI = (Optiuni)Convert.ToInt32( date[INDEXOPTIUNI] );
             Pret = Convert.ToDouble( date[PRET] );
-            DataActualizare = DateTime.Now;
-            
+            string dataFisier = date[DATA];
+
+            DataActualizare = Convert.ToDateTime(dataFisier);
+            optiuniInt = date[OPTIUNI_INT];
         }
 
         public int Compara(Masina m1)
@@ -96,12 +103,12 @@ namespace Modele
 
         public string ConversieLaSir() //Afiseaza date despre masina
         {          
-            return string.Format( "#ID: " + IdMasina + "Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
+            return string.Format( "#ID: " + IdMasina + " Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
         }
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(IdMasina+";"+NumeFirma+";"+Model+";"+AnFabricatie+";"+Convert.ToInt32( CULOARE )+";"+Convert.ToInt32( OPTIUNI )+";"+Pret+";"+DataActualizare);
+            return string.Format(IdMasina + ";" + NumeFirma + ";" + Model + ";" + AnFabricatie + ";" + Convert.ToInt32(CULOARE) + ";" + Convert.ToInt32(OPTIUNI) + ";" + Pret + ";" + DataActualizare + ';' + string.Join(" ",optiuniInt));
         }
     }
             

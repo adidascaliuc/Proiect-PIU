@@ -14,10 +14,12 @@ namespace TargDeMasiniForm
 {
     public partial class LoginForm : Form
     {
+        public static OptiuneInfoForm infoForm;
+        public static Persoana infoPersoana = null;
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
         public LoginForm()
-        {
-            InitializeComponent();
+        {                   
+            InitializeComponent();            
         }
 
         private void btnX_Click(object sender, EventArgs e)
@@ -63,27 +65,20 @@ namespace TargDeMasiniForm
         private void btnLogin_Click(object sender, EventArgs e)
         {
             List<Persoana> persoane = adminPersoane.GetPersoane();
+
             bool gasit = false;
             if (ValidareInput() == 0)
-            {
-                if (txtUsername.Text == "admin" && txtPassword.Text == "1234")
-                {
-                    this.Hide();
-                    Program.infoForm.ShowDialog();                    
-                    Program.startForm.Hide();
-
-                }
-                else
-                {
-
+            {               
                     foreach (Persoana p in persoane)
                     {
                         if (txtUsername.Text == p.Username && txtPassword.Text == p.Password)
                         {
-                            OptiuneInfoForm optForm = new OptiuneInfoForm(p);
-                            optForm.Show();
+                            infoPersoana = p;
+                            infoForm = new OptiuneInfoForm(p);
+                            infoForm.StartPosition = FormStartPosition.CenterScreen;
                             this.Hide();
                             Program.startForm.Hide();
+                            infoForm.ShowDialog();
                             gasit = true;
                         }
 
@@ -91,15 +86,13 @@ namespace TargDeMasiniForm
                     if (!gasit)
                     {
                         MessageBox.Show("Nume sau parola incorecte!");
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Completati spatiile marcate cu rosu!!!");
-                    }
+                    }                
                 }
-            }
             
+            else
+            {
+                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
+            }
         }
 
         private int ValidareInput()

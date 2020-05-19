@@ -51,7 +51,7 @@ namespace TargDeMasiniForm
             }
             catch
             {
-                MessageBox.Show("Selectati o masina pentru modificare!!!", "Eroare", MessageBoxButtons.OK);
+                MessageBox.Show("Selectati o masina pentru modificare!!!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,7 +89,7 @@ namespace TargDeMasiniForm
                 }
                 if (ok == false)
                 {
-                    MessageBox.Show("Nu exista aceasta masina!!!");
+                    MessageBox.Show("Nu exista aceasta masina!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -98,7 +98,7 @@ namespace TargDeMasiniForm
             }
             else
             {
-                MessageBox.Show("Completati campurile marcate cu rosu!!!");
+                MessageBox.Show("Completati campurile marcate cu rosu!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -122,7 +122,7 @@ namespace TargDeMasiniForm
 
         private void pictureInfo_Click(object sender, EventArgs e)
         {
-            Program.infoForm.Show();
+            LoginForm.infoForm.Show();
             this.Hide();
         }
 

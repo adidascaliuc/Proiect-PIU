@@ -101,6 +101,7 @@
             // 
             this.lblDeconectare.AutoSize = true;
             this.lblDeconectare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.lblDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;

@@ -13,15 +13,13 @@ namespace TargDeMasiniForm
     class Program
     {
         public static PaginaStartForm startForm;
-        public static OptiuneInfoForm infoForm;
         
         [STAThread]
         static void Main(string[] args)
         {
-            Persoana p = new Persoana("admin", "admin", "admin", "1234");
+            Persoana p = LoginForm.infoPersoana;
+
             startForm = new PaginaStartForm();           
-            infoForm = new OptiuneInfoForm(p);
-            infoForm.StartPosition = FormStartPosition.CenterScreen;
 
             startForm.Show();
             Application.Run();

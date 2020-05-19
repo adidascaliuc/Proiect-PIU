@@ -89,21 +89,44 @@ namespace TargDeMasiniForm
 
             if (ValidareInput() == 1)
             {
-                if (ValidarePassword() == 1)
+                if (ValidareUsername(txtUsername.Text) == 1)
                 {
-                    Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
-                    adminPersoane.AddPersoana(p);
-                    this.Hide();                
+                    if (ValidarePassword() == 1)
+                    {
+                        Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
+                        adminPersoane.AddPersoana(p);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Parolele difera!!!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Parolele difera!!!");
+                    MessageBox.Show("Exista deja un utilizator cu acest username");
                 }
             }
             else
             {
                 MessageBox.Show("Completati spatiile marcate cu rosu!!!");
             }
+        }
+
+        private int ValidareUsername(string username)
+        {
+            List<Persoana> persoane = adminPersoane.GetPersoane();
+            if (persoane != null)
+            {
+                foreach (Persoana p in persoane)
+                {
+                    if(p.Username == username)
+                    {
+                        return 0;
+                    }
+                }
+            }
+            return 1;
         }
 
         private int ValidarePassword()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,20 +16,20 @@ namespace TargDeMasiniForm
     public partial class OptiuneAdaugareForm : Form
     {
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
-        public List<String> optiuniSelectate = new List<string>();
+        public ArrayList optiuniSelectate = new ArrayList();
 
         public OptiuneAdaugareForm()
         {
             InitializeComponent();
         }
-
+        
         private int ValidareOptiuni()
         {
             int optiuni = 0;
 
-            if (cBoxAerConditionat.Checked)
+            if (cBoxAerConditionat.Checked == true)
             {
-                optiuni += 1;
+                optiuni += 1;               
             }
             if (cBoxOptiuniVolan.Checked)
             {
@@ -48,7 +49,7 @@ namespace TargDeMasiniForm
             }
             if (cBoxCutieAutomata.Checked)
             {
-                optiuni += 32;
+                optiuni += 32;               
             }
 
             return optiuni;
@@ -109,8 +110,8 @@ namespace TargDeMasiniForm
             {
                 lblOptiuni.BackColor = Color.Red;
                 
-            }
-            if (txtPret.Text == string.Empty)
+            }           
+            if (txtPret.Text == string.Empty || double.TryParse(txtPret.Text, out double result) == false)
             {
                 lblPret.BackColor = Color.Red;
                 
@@ -134,7 +135,7 @@ namespace TargDeMasiniForm
 
         }
 
-        private void btnReset_MouseClick(object sender, MouseEventArgs e)
+        private void ResetControls()
         {
             txtFirma.Text = string.Empty;
             txtModel.Text = string.Empty;
@@ -164,35 +165,68 @@ namespace TargDeMasiniForm
         {
             int culoare = ValidareCuloare();
             int optiuni = ValidareOptiuni();
+            string validareChecked = ValidareOptiuniCheked();
 
             int validare = ValidareMasina();
 
             if (validare == 0)
             {
-                Masina m = new Masina(txtFirma.Text, txtModel.Text, Convert.ToInt32(cBoxAnFabricatie.Text), culoare, optiuni, Convert.ToDouble(txtPret.Text));
-                adminMasini.AddMasina(m);
-                MessageBox.Show("Masina adaugata");
+                if (Double.TryParse(txtPret.Text, out double result) == true)
+                    {
+                    Masina m = new Masina(txtFirma.Text, txtModel.Text, Convert.ToInt32(cBoxAnFabricatie.Text), culoare, optiuni, Convert.ToDouble(txtPret.Text));
+                    m.optiuniInt = validareChecked;
+                    m.DataActualizare = DateTime.Now;
+                    adminMasini.AddMasina(m);
+                    MessageBox.Show("Masina adaugata");
+                    ResetControls();
+                    }                
+               
+                else
+                {
+                    MessageBox.Show("Pretul nu poate fi un sir de caractere!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Completati campurile marcate cu rosu!");
+                MessageBox.Show("Completati campurile marcate cu rosu!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }
 
+        private string ValidareOptiuniCheked()
+        {
+            string checkedOpt = "";
+            if(cBoxAerConditionat.Checked == true)
+            {
+                checkedOpt += "1";
+            }
+            if(cBoxOptiuniVolan.Checked == true)
+            {
+                checkedOpt += " 2";
+            }
+            if(cBoxScaunePiele.Checked == true)
+            {
+                checkedOpt += " 4";
+            }
+            if(cBoxGeamuriElectrice.Checked == true)
+            {
+                checkedOpt += " 8";
+            }
+            if(cBoxNavigatie.Checked == true)
+            {
+                checkedOpt += " 16";
+            }
+            if(cBoxCutieAutomata.Checked == true)
+            {
+                checkedOpt += " 32";
+            }
+            return checkedOpt;
+        }
+
         private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
         {
-            CheckBox checkBoxControl = sender as CheckBox; //operator 'as'
-            //sau
-            //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
-
-            string disciplinaSelectata = checkBoxControl.Text;
-
-            //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
-            if (checkBoxControl.Checked == true)
-                optiuniSelectate.Add(disciplinaSelectata);
-            else
-                optiuniSelectate.Remove(disciplinaSelectata);
+            lblOptiuni.BackColor = SystemColors.ButtonFace;
+            
         }
 
         private void lblDeconectare_Click(object sender, EventArgs e)
@@ -264,7 +298,7 @@ namespace TargDeMasiniForm
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Program.infoForm.Show();
+            LoginForm.infoForm.Show();
             this.Hide();
 
         }

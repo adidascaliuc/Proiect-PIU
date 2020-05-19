@@ -33,7 +33,6 @@
             this.txtModel = new MetroFramework.Controls.MetroTextBox();
             this.cBoxAnFabricatie = new MetroFramework.Controls.MetroComboBox();
             this.txtPret = new MetroFramework.Controls.MetroTextBox();
-            this.btnReset = new MetroFramework.Controls.MetroButton();
             this.lblFirma = new MetroFramework.Controls.MetroLabel();
             this.lblModel = new MetroFramework.Controls.MetroLabel();
             this.lblAnFabricatie = new MetroFramework.Controls.MetroLabel();
@@ -130,17 +129,6 @@
             this.txtPret.Size = new System.Drawing.Size(167, 23);
             this.txtPret.TabIndex = 78;
             this.txtPret.Enter += new System.EventHandler(this.txtPret_Enter);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReset.Location = new System.Drawing.Point(235, 363);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(89, 36);
-            this.btnReset.Style = MetroFramework.MetroColorStyle.Brown;
-            this.btnReset.TabIndex = 79;
-            this.btnReset.Text = "Reset";
-            this.btnReset.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lblFirma
             // 
@@ -370,6 +358,7 @@
             // 
             this.lblDeconectare.AutoSize = true;
             this.lblDeconectare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.lblDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
@@ -524,7 +513,6 @@
             this.Controls.Add(this.lblAnFabricatie);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblFirma);
-            this.Controls.Add(this.btnReset);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.cBoxAnFabricatie);
             this.Controls.Add(this.txtModel);
@@ -551,7 +539,6 @@
         private MetroFramework.Controls.MetroTextBox txtModel;
         private MetroFramework.Controls.MetroComboBox cBoxAnFabricatie;
         private MetroFramework.Controls.MetroTextBox txtPret;
-        private MetroFramework.Controls.MetroButton btnReset;
         private MetroFramework.Controls.MetroLabel lblFirma;
         private MetroFramework.Controls.MetroLabel lblModel;
         private MetroFramework.Controls.MetroLabel lblAnFabricatie;
