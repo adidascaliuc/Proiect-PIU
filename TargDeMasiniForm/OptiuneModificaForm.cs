@@ -24,8 +24,8 @@ namespace TargDeMasiniForm
 
             m = masina;
 
-            txtFirma.Text = m.NumeFirma;
-            txtModel.Text = m.Model;
+            comboFirma.Text = m.NumeFirma;
+            comboModel.Text = m.Model;
             cBoxAnFabricatie.Text = Convert.ToString(m.AnFabricatie);
 
 
@@ -128,8 +128,8 @@ namespace TargDeMasiniForm
             {
                 if (double.TryParse(txtPret.Text, out double result))
                 {
-                    m.NumeFirma = txtFirma.Text;
-                    m.Model = txtModel.Text;
+                    m.NumeFirma = comboFirma.Text;
+                    m.Model = comboModel.Text;
                     m.AnFabricatie = Convert.ToInt32(cBoxAnFabricatie.Text);
                     m.CULOARE = (Culoare)modCuloare;
                     m.OPTIUNI = (Optiuni)modOptiuni;
@@ -137,7 +137,7 @@ namespace TargDeMasiniForm
                     m.DataActualizare = DateTime.Now;
                     m.optiuniInt = ValidareOptiuniCheked();
 
-                    adminMasini.UpdateMasina(m, m.IdMasina - 1);
+                    adminMasini.UpdateMasina(m);
                     this.Hide();
                 }
                 else
@@ -217,11 +217,11 @@ namespace TargDeMasiniForm
 
         private int ValidareMasina()
         {
-            if (txtFirma.Text == string.Empty)
+            if (comboFirma.Text == string.Empty)
             {
                 lblFirma.BackColor = Color.Red;
             }
-            if (txtModel.Text == string.Empty)
+            if (comboModel.Text == string.Empty)
             {
                 lblModel.BackColor = Color.Red;
 
@@ -246,7 +246,7 @@ namespace TargDeMasiniForm
 
             }
 
-            if (txtFirma.BackColor == Color.Red || txtModel.BackColor == Color.Red ||
+            if (comboFirma.BackColor == Color.Red || comboModel.BackColor == Color.Red ||
                 cBoxAnFabricatie.BackColor == Color.Red || lblCuloare.BackColor == Color.Red ||
                 lblOptiuni.BackColor == Color.Red || txtPret.BackColor == Color.Red)
             {
@@ -307,6 +307,101 @@ namespace TargDeMasiniForm
         private void txtPret_Enter(object sender, EventArgs e)
         {
             lblPret.BackColor = SystemColors.ButtonFace;
+        }
+
+        private void comboFirma_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblFirma.BackColor = SystemColors.ButtonFace;
+            if (comboFirma.Text == "Audi")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("A4");
+                comboModel.Items.Add("A5");
+                comboModel.Items.Add("A6");
+                comboModel.Items.Add("Q5");
+                comboModel.Items.Add("Q7");
+            }
+            if (comboFirma.Text == "BMW")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Seria 5");
+                comboModel.Items.Add("Seria 7");
+                comboModel.Items.Add("X5");
+                comboModel.Items.Add("6");
+                comboModel.Items.Add("i8");
+            }
+            if (comboFirma.Text == "Ford")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Mustang");
+                comboModel.Items.Add("Fiesta");
+                comboModel.Items.Add("Tourneo Courier");
+                comboModel.Items.Add("Ecosport");
+                comboModel.Items.Add("Kuga");
+            }
+            if (comboFirma.Text == "Honda")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Civic Sedan");
+                comboModel.Items.Add("Civic 5D");
+                comboModel.Items.Add("Jazz");
+                comboModel.Items.Add("Honda E");
+                comboModel.Items.Add("CR-V HYBRID");
+            }
+            if (comboFirma.Text == "Hyundai")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("i10");
+                comboModel.Items.Add("i30 Fastback");
+                comboModel.Items.Add("Elantra");
+                comboModel.Items.Add("KONA");
+                comboModel.Items.Add("Santa Fe");
+            }
+            if (comboFirma.Text == "Lexus")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("RX");
+                comboModel.Items.Add("NX");
+                comboModel.Items.Add("LS");
+                comboModel.Items.Add("CT");
+                comboModel.Items.Add("IS");
+            }
+            if (comboFirma.Text == "Mercedes")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("S Class");
+                comboModel.Items.Add("E Class");
+                comboModel.Items.Add("CLA");
+                comboModel.Items.Add("GLE Coupe");
+                comboModel.Items.Add("GLE SUV");
+            }
+            if (comboFirma.Text == "Porche")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Cayman");
+                comboModel.Items.Add("Boxter");
+                comboModel.Items.Add("Panamera");
+                comboModel.Items.Add("Carrera");
+                comboModel.Items.Add("Cayenne");
+            }
+            if (comboFirma.Text == "Toyota")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Aygo");
+                comboModel.Items.Add("Corola");
+                comboModel.Items.Add("Proace Verso");
+                comboModel.Items.Add("Prius");
+                comboModel.Items.Add("C-HR facelift");
+            }
+            if (comboFirma.Text == "Volkswagen")
+            {
+                comboModel.Items.Clear();
+                comboModel.Items.Add("Polo");
+                comboModel.Items.Add("Golf 5");
+                comboModel.Items.Add("Golf 7");
+                comboModel.Items.Add("T-Cross");
+                comboModel.Items.Add("Tiguan");
+            }
         }
     }
 }

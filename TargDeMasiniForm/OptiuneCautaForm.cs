@@ -35,7 +35,7 @@ namespace TargDeMasiniForm
             this.Hide();
         }
 
-        
+
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
@@ -45,8 +45,15 @@ namespace TargDeMasiniForm
                 if (masini != null)
                 {
                     Masina m = masini.Last();
-                    OptiuneModificaForm modForm = new OptiuneModificaForm(m, 0);
-                    modForm.ShowDialog();
+                    if (OptiuneInfoForm.InfoPersoana.NumeComplet == m.NumeProprietar)
+                    {
+                        OptiuneModificaForm modForm = new OptiuneModificaForm(m, 0);
+                        modForm.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Doar proprietarul masinii are voie sa aduca modificari la aceasta!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
             catch
@@ -71,7 +78,7 @@ namespace TargDeMasiniForm
 
         private void btnCauta_Click(object sender, EventArgs e)
         {
-                      
+
             bool ok = false;
             dataGridAfisare.DataSource = null;
             List<Masina> masini = adminMasini.GetMasini();
@@ -80,7 +87,12 @@ namespace TargDeMasiniForm
             {
                 foreach (Masina m in masini)
                 {
-                    if (m.NumeFirma == txtFirma.Text && m.Model == txtModel.Text)
+                    if (m.NumeFirma == comboFirma.Text && m.Model == comboModel.Text)
+                    {
+                        ok = true;
+                        masiniGasite.Add(m);
+                    }
+                    if(m.NumeFirma == comboFirma.Text && comboModel.Text == string.Empty)
                     {
                         ok = true;
                         masiniGasite.Add(m);
@@ -93,8 +105,21 @@ namespace TargDeMasiniForm
                 }
                 else
                 {
-                    dataGridAfisare.DataSource = masiniGasite;
-                }
+                    dataGridAfisare.DataSource = masiniGasite.Select(m => new
+                    {
+                        m.IdMasina,
+                        m.NumeFirma,
+                        m.Model,
+                        m.AnFabricatie,
+                        m.CULOARE,
+                        m.OPTIUNI,
+                        m.Pret,
+                        m.DataActualizare,
+                        m.NumeProprietar
+                    }).ToList();
+
+
+                }   
             }
             else
             {
@@ -102,39 +127,131 @@ namespace TargDeMasiniForm
             }
         }
 
-        private int ValidareControale()
-        {
-            if(txtFirma.Text == "")
+            private int ValidareControale()
             {
-                lblFirma.BackColor = Color.Red;
+                if (comboFirma.Text == "")
+                {
+                    lblFirma.BackColor = Color.Red;
+                }
+                if (comboModel.Text == "" && lblFirma.BackColor == Color.Red)
+                {
+                    lblModel.BackColor = Color.Red;
+                }
+
+                if (comboFirma.Text == "" || comboModel.Text == "" && lblFirma.BackColor == Color.Red)
+                {
+                    return 1;
+                }
+                return 0;
             }
-            if(txtModel.Text == "")
+
+            private void pictureInfo_Click(object sender, EventArgs e)
             {
-                lblModel.BackColor = Color.Red;
+                LoginForm.infoForm.Show();
+                this.Hide();
             }
 
-            if(txtFirma.Text == "" || txtModel.Text == "")
+            private void comboFirma_SelectedIndexChanged(object sender, EventArgs e)
             {
-                return 1;
-            }
-            return 0;
-        }
-
-        private void pictureInfo_Click(object sender, EventArgs e)
-        {
-            LoginForm.infoForm.Show();
-            this.Hide();
-        }
-
-        private void txtFirma_Enter(object sender, EventArgs e)
-        {
-            lblFirma.BackColor = SystemColors.Control;
-        }
-
-        private void txtModel_Enter(object sender, EventArgs e)
-        {
-            lblModel.BackColor = SystemColors.Control;
+                lblFirma.BackColor = SystemColors.ButtonFace;
+                lblModel.BackColor = SystemColors.ButtonFace;
             
-        }  
+                if (comboFirma.Text == "Audi")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("A4");
+                    comboModel.Items.Add("A5");
+                    comboModel.Items.Add("A6");
+                    comboModel.Items.Add("Q5");
+                    comboModel.Items.Add("Q7");
+                }
+                if (comboFirma.Text == "BMW")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Seria 5");
+                    comboModel.Items.Add("Seria 7");
+                    comboModel.Items.Add("X5");
+                    comboModel.Items.Add("6");
+                    comboModel.Items.Add("i8");
+                }
+                if (comboFirma.Text == "Ford")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Mustang");
+                    comboModel.Items.Add("Fiesta");
+                    comboModel.Items.Add("Tourneo Courier");
+                    comboModel.Items.Add("Ecosport");
+                    comboModel.Items.Add("Kuga");
+                }
+                if (comboFirma.Text == "Honda")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Civic Sedan");
+                    comboModel.Items.Add("Civic 5D");
+                    comboModel.Items.Add("Jazz");
+                    comboModel.Items.Add("Honda E");
+                    comboModel.Items.Add("CR-V HYBRID");
+                }
+                if (comboFirma.Text == "Hyundai")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("i10");
+                    comboModel.Items.Add("i30 Fastback");
+                    comboModel.Items.Add("Elantra");
+                    comboModel.Items.Add("KONA");
+                    comboModel.Items.Add("Santa Fe");
+                }
+                if (comboFirma.Text == "Lexus")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("RX");
+                    comboModel.Items.Add("NX");
+                    comboModel.Items.Add("LS");
+                    comboModel.Items.Add("CT");
+                    comboModel.Items.Add("IS");
+                }
+                if (comboFirma.Text == "Mercedes")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("S Class");
+                    comboModel.Items.Add("E Class");
+                    comboModel.Items.Add("CLA");
+                    comboModel.Items.Add("GLE Coupe");
+                    comboModel.Items.Add("GLE SUV");
+                }
+                if (comboFirma.Text == "Porche")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Cayman");
+                    comboModel.Items.Add("Boxter");
+                    comboModel.Items.Add("Panamera");
+                    comboModel.Items.Add("Carrera");
+                    comboModel.Items.Add("Cayenne");
+                }
+                if (comboFirma.Text == "Toyota")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Aygo");
+                    comboModel.Items.Add("Corola");
+                    comboModel.Items.Add("Proace Verso");
+                    comboModel.Items.Add("Prius");
+                    comboModel.Items.Add("C-HR facelift");
+                }
+                if (comboFirma.Text == "Volkswagen")
+                {
+                    comboModel.Items.Clear();
+                    comboModel.Items.Add("Polo");
+                    comboModel.Items.Add("Golf 5");
+                    comboModel.Items.Add("Golf 7");
+                    comboModel.Items.Add("T-Cross");
+                    comboModel.Items.Add("Tiguan");
+                }
+            }
+
+        private void comboModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblModel.BackColor = SystemColors.ButtonFace;
+        }
     }
 }
+

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Dynamic;
 using System.IO;
+using System.Linq;
 
 namespace Modele
 {
@@ -9,15 +11,14 @@ namespace Modele
     {
         string SEPARATOR_FISIER = "|";
 
-        int NUME = 0;
-        int PRENUME = 1;
-        int USERNAME = 2;
-        int PASSWORD = 3;
-        int BUGET = 4;
-        int MASINI = 5;
+        const int NUME = 0;
+        const int PRENUME = 1;
+        const int USERNAME = 2;
+        const int PASSWORD = 3;
+        const int BUGET = 4;
+        const int MASINI = 5;
 
 
-        public List<int> masini = null;
         //parametrii auto-implemented
         public string Nume { set; get; }
         public string Prenume { set; get; }
@@ -26,6 +27,8 @@ namespace Modele
         public double Buget;
         public string Username { set; get; }
         public string Password { set; get; }
+        public List<Masina> masiniCumparate = new List<Masina>();
+        List<string> masini = new List<string>();
 
         public Persoana() //constructor implicit fara parametrii
         {
@@ -33,7 +36,6 @@ namespace Modele
             Prenume = string.Empty;
             tipPersoana = TipPersoana.None;
             Buget = 0.0f;
-   
         }
 
         public Persoana(string nume, string prenume, string username, string password) //constructor cu parametrii
@@ -43,28 +45,46 @@ namespace Modele
             this.Username = username;
             this.Password = password;
             this.Buget = 0;
-            masini = null;
+            masiniCumparate = null;
 
         }
 
         //constructor sir de caractere
         public Persoana(string s)
-        { 
+        {
             string[] date = s.Split('|');
             Nume = date[NUME];
             Prenume = date[PRENUME];
             Username = date[USERNAME];
             Password = date[PASSWORD];
-            Buget = Double.Parse( date[BUGET] );
-            //masini.Add(Convert.ToInt32( date[MASINI] ));
+            Buget = Double.Parse(date[BUGET]);
+            if (date[MASINI] == "" || date[MASINI] == null)
+            {
+                masiniCumparate.Add(null);
+            }
+            else
+            {
+                masiniCumparate.Add(new Masina(date[MASINI]));
+            }
+        }
 
+        public string masiniToString()
+        {
+            string masini = "";
+            if(masiniCumparate != null)
+            foreach(Masina m in masiniCumparate)
+            {
+                    if (m != null)
+                    {
+                        masini += m.ConversieLaSir_PentruFisiere() + "@";
+                    }
+            }
+            return masini;
         }
 
         public string ConversieLaSir_PentruFisier()
-        { 
-            string date = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}", SEPARATOR_FISIER, Nume, Prenume, Username, Password, Buget, masini);
-
-            return date;
+        {
+            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}", SEPARATOR_FISIER, Nume, Prenume, Username, Password, Buget, masiniToString());   
         }
 
         public string ConversieLaSir() //Afiseaza date despre persoana

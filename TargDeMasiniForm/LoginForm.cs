@@ -59,7 +59,34 @@ namespace TargDeMasiniForm
 
         private void label2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Username: admin\nPassword: 1234", "Date Log in", MessageBoxButtons.OK);
+            List<Persoana> persoane = adminPersoane.GetPersoane();
+            bool gasit = false;
+
+            if(txtUsername.Text == string.Empty)
+            {
+                MessageBox.Show("Introduceti username-ul apoi reveniti la recuperarea parolei.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                foreach(Persoana p in persoane)
+                {
+                    if(p.Username == txtUsername.Text)
+                    {
+                        MessageBox.Show("Parola: " + p.Password, "Info parola "+p.Username, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        gasit = true;
+                    }                  
+                }
+
+                if(gasit == false)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Nu exista acest utilizator.\nDoriti sa va creati un cont?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        RegisterForm registerForm = new RegisterForm();
+                        registerForm.ShowDialog();
+                    }                   
+                }
+            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -74,24 +101,23 @@ namespace TargDeMasiniForm
                         if (txtUsername.Text == p.Username && txtPassword.Text == p.Password)
                         {
                             infoPersoana = p;
-                            infoForm = new OptiuneInfoForm(p);
-                            infoForm.StartPosition = FormStartPosition.CenterScreen;
+                            infoForm = new OptiuneInfoForm(p);                    
+                            infoForm.Show();
                             this.Hide();
-                            Program.startForm.Hide();
-                            infoForm.ShowDialog();
+                            Program.startForm.Hide();                         
                             gasit = true;
                         }
 
                     }
                     if (!gasit)
                     {
-                        MessageBox.Show("Nume sau parola incorecte!");
+                        MessageBox.Show("Nume sau parola incorecte!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }                
                 }
             
             else
             {
-                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
+                MessageBox.Show("Completati spatiile marcate cu rosu!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

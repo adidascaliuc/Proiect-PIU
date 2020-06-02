@@ -20,6 +20,7 @@ namespace NivelAcces
             //instructiunea 'using' va apela sFisierText.Close();
             //using (Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate)) { }
         }
+        
         public void AddPersoana(Persoana p)
         {
             try
@@ -69,6 +70,38 @@ namespace NivelAcces
             }
 
             return persoane;
+        }
+        public void UpdatePersoana(Persoana p)
+        {
+            List<Persoana> persoane = GetPersoane();
+            try
+            {
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
+                {
+                    foreach (Persoana pers in persoane)
+                    {
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (pers.Username == p.Username)
+                        {
+                            swFisierText.WriteLine(p.ConversieLaSir_PentruFisier());
+                        }
+                        else
+                        {
+                            swFisierText.WriteLine(pers.ConversieLaSir_PentruFisier());
+                        }
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
         }
     }
 }

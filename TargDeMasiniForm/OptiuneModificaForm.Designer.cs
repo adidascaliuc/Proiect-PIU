@@ -51,12 +51,11 @@ namespace TargDeMasiniForm
             this.lblFirma = new MetroFramework.Controls.MetroLabel();
             this.txtPret = new MetroFramework.Controls.MetroTextBox();
             this.cBoxAnFabricatie = new MetroFramework.Controls.MetroComboBox();
-            this.txtModel = new MetroFramework.Controls.MetroTextBox();
-            this.txtFirma = new MetroFramework.Controls.MetroTextBox();
             this.btnModifica = new MetroFramework.Controls.MetroButton();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBoxCheckBox = new System.Windows.Forms.GroupBox();
+            this.comboModel = new MetroFramework.Controls.MetroComboBox();
+            this.comboFirma = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -272,7 +271,7 @@ namespace TargDeMasiniForm
             // 
             this.lblModel.AutoSize = true;
             this.lblModel.CustomBackground = true;
-            this.lblModel.Location = new System.Drawing.Point(27, 103);
+            this.lblModel.Location = new System.Drawing.Point(27, 113);
             this.lblModel.Name = "lblModel";
             this.lblModel.Size = new System.Drawing.Size(50, 19);
             this.lblModel.TabIndex = 103;
@@ -282,7 +281,7 @@ namespace TargDeMasiniForm
             // 
             this.lblFirma.AutoSize = true;
             this.lblFirma.CustomBackground = true;
-            this.lblFirma.Location = new System.Drawing.Point(27, 73);
+            this.lblFirma.Location = new System.Drawing.Point(27, 85);
             this.lblFirma.Name = "lblFirma";
             this.lblFirma.Size = new System.Drawing.Size(46, 19);
             this.lblFirma.TabIndex = 102;
@@ -328,20 +327,6 @@ namespace TargDeMasiniForm
             this.cBoxAnFabricatie.TabIndex = 100;
             this.cBoxAnFabricatie.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(132, 99);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(167, 23);
-            this.txtModel.TabIndex = 99;
-            // 
-            // txtFirma
-            // 
-            this.txtFirma.Location = new System.Drawing.Point(132, 69);
-            this.txtFirma.Name = "txtFirma";
-            this.txtFirma.Size = new System.Drawing.Size(167, 23);
-            this.txtFirma.TabIndex = 98;
-            // 
             // btnModifica
             // 
             this.btnModifica.Location = new System.Drawing.Point(163, 362);
@@ -380,13 +365,37 @@ namespace TargDeMasiniForm
             this.label1.TabIndex = 2;
             this.label1.Text = "Modifica";
             // 
-            // groupBoxCheckBox
+            // comboModel
             // 
-            this.groupBoxCheckBox.Location = new System.Drawing.Point(132, 238);
-            this.groupBoxCheckBox.Name = "groupBoxCheckBox";
-            this.groupBoxCheckBox.Size = new System.Drawing.Size(318, 90);
-            this.groupBoxCheckBox.TabIndex = 123;
-            this.groupBoxCheckBox.TabStop = false;
+            this.comboModel.FormattingEnabled = true;
+            this.comboModel.ItemHeight = 23;
+            this.comboModel.Location = new System.Drawing.Point(132, 103);
+            this.comboModel.Name = "comboModel";
+            this.comboModel.Size = new System.Drawing.Size(167, 29);
+            this.comboModel.TabIndex = 124;
+            this.comboModel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // comboFirma
+            // 
+            this.comboFirma.FormattingEnabled = true;
+            this.comboFirma.ItemHeight = 23;
+            this.comboFirma.Items.AddRange(new object[] {
+            "Audi",
+            "BMW",
+            "Ford",
+            "Honda",
+            "Hyundai",
+            "Lexus",
+            "Mercedes",
+            "Porche",
+            "Toyota",
+            "Volkswagen"});
+            this.comboFirma.Location = new System.Drawing.Point(132, 75);
+            this.comboFirma.Name = "comboFirma";
+            this.comboFirma.Size = new System.Drawing.Size(167, 29);
+            this.comboFirma.TabIndex = 125;
+            this.comboFirma.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.comboFirma.SelectedIndexChanged += new System.EventHandler(this.comboFirma_SelectedIndexChanged);
             // 
             // OptiuneModificaForm
             // 
@@ -394,6 +403,8 @@ namespace TargDeMasiniForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(471, 407);
+            this.Controls.Add(this.comboFirma);
+            this.Controls.Add(this.comboModel);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.btnModifica);
             this.Controls.Add(this.cBoxCutieAutomata);
@@ -416,9 +427,6 @@ namespace TargDeMasiniForm
             this.Controls.Add(this.lblFirma);
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.cBoxAnFabricatie);
-            this.Controls.Add(this.txtModel);
-            this.Controls.Add(this.txtFirma);
-            this.Controls.Add(this.groupBoxCheckBox);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "OptiuneModificaForm";
@@ -453,11 +461,10 @@ namespace TargDeMasiniForm
         private MetroFramework.Controls.MetroLabel lblFirma;
         private MetroFramework.Controls.MetroTextBox txtPret;
         private MetroFramework.Controls.MetroComboBox cBoxAnFabricatie;
-        private MetroFramework.Controls.MetroTextBox txtModel;
-        private MetroFramework.Controls.MetroTextBox txtFirma;
         private MetroFramework.Controls.MetroButton btnModifica;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBoxCheckBox;
+        private MetroFramework.Controls.MetroComboBox comboModel;
+        private MetroFramework.Controls.MetroComboBox comboFirma;
     }
 }

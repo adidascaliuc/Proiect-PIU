@@ -36,5 +36,6 @@ namespace TargDeMasiniForm
             lblOra.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
+     
     }
 }

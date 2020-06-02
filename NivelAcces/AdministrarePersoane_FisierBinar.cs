@@ -11,7 +11,6 @@ namespace NivelAcces
         {
             this.NumeFisier = NumeFisier;
         }
-
         public void AddPersoana(Persoana p)
         {
             throw new Exception("Optiunea AddPersoane nu este implementata");
@@ -20,6 +19,10 @@ namespace NivelAcces
         public List<Persoana> GetPersoane()
         {
             throw new Exception("Optiunea GetPersoane nu este implementata");
+        }
+        public void UpdatePersoana(Persoana p)
+        {
+            throw new Exception("Optiunea UpdatePersoana nu este implementata");
         }
     }
 }

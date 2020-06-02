@@ -229,9 +229,9 @@
             this.pictureShowPassword.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pictureShowPassword.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureShowPassword.Image = global::TargDeMasiniForm.Properties.Resources.eye;
-            this.pictureShowPassword.Location = new System.Drawing.Point(275, 240);
+            this.pictureShowPassword.Location = new System.Drawing.Point(275, 243);
             this.pictureShowPassword.Name = "pictureShowPassword";
-            this.pictureShowPassword.Size = new System.Drawing.Size(39, 38);
+            this.pictureShowPassword.Size = new System.Drawing.Size(39, 35);
             this.pictureShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureShowPassword.TabIndex = 18;
             this.pictureShowPassword.TabStop = false;
@@ -245,7 +245,7 @@
             this.pictureShowConfirmPassword.Image = global::TargDeMasiniForm.Properties.Resources.eye;
             this.pictureShowConfirmPassword.Location = new System.Drawing.Point(275, 297);
             this.pictureShowConfirmPassword.Name = "pictureShowConfirmPassword";
-            this.pictureShowConfirmPassword.Size = new System.Drawing.Size(39, 38);
+            this.pictureShowConfirmPassword.Size = new System.Drawing.Size(39, 35);
             this.pictureShowConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureShowConfirmPassword.TabIndex = 19;
             this.pictureShowConfirmPassword.TabStop = false;

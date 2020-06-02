@@ -33,8 +33,6 @@
             this.lblFirma = new MetroFramework.Controls.MetroLabel();
             this.lblModel = new MetroFramework.Controls.MetroLabel();
             this.lblDeconectare = new MetroFramework.Controls.MetroLabel();
-            this.txtFirma = new MetroFramework.Controls.MetroTextBox();
-            this.txtModel = new MetroFramework.Controls.MetroTextBox();
             this.btnCauta = new MetroFramework.Controls.MetroButton();
             this.btnModificare = new System.Windows.Forms.Button();
             this.btnCautare = new System.Windows.Forms.Button();
@@ -46,6 +44,8 @@
             this.pctCauta = new System.Windows.Forms.PictureBox();
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
+            this.comboFirma = new MetroFramework.Controls.MetroComboBox();
+            this.comboModel = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.panelMeniu.SuspendLayout();
@@ -60,9 +60,9 @@
             // 
             this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisare.Location = new System.Drawing.Point(96, 68);
+            this.dataGridAfisare.Location = new System.Drawing.Point(81, 73);
             this.dataGridAfisare.Name = "dataGridAfisare";
-            this.dataGridAfisare.Size = new System.Drawing.Size(839, 350);
+            this.dataGridAfisare.Size = new System.Drawing.Size(822, 338);
             this.dataGridAfisare.TabIndex = 55;
             // 
             // pictureDeconectare
@@ -81,7 +81,7 @@
             // 
             this.lblFirma.AutoSize = true;
             this.lblFirma.CustomBackground = true;
-            this.lblFirma.Location = new System.Drawing.Point(130, 13);
+            this.lblFirma.Location = new System.Drawing.Point(134, 8);
             this.lblFirma.Name = "lblFirma";
             this.lblFirma.Size = new System.Drawing.Size(46, 19);
             this.lblFirma.TabIndex = 72;
@@ -111,22 +111,6 @@
             this.lblDeconectare.TabIndex = 74;
             this.lblDeconectare.Text = "Deconectare";
             this.lblDeconectare.Click += new System.EventHandler(this.lblDeconectare_Click);
-            // 
-            // txtFirma
-            // 
-            this.txtFirma.Location = new System.Drawing.Point(267, 10);
-            this.txtFirma.Name = "txtFirma";
-            this.txtFirma.Size = new System.Drawing.Size(221, 23);
-            this.txtFirma.TabIndex = 75;
-            this.txtFirma.Enter += new System.EventHandler(this.txtFirma_Enter);
-            // 
-            // txtModel
-            // 
-            this.txtModel.Location = new System.Drawing.Point(267, 39);
-            this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(221, 23);
-            this.txtModel.TabIndex = 76;
-            this.txtModel.Enter += new System.EventHandler(this.txtModel_Enter);
             // 
             // btnCauta
             // 
@@ -239,19 +223,50 @@
             this.pctAfiseaza.TabStop = false;
             this.pctAfiseaza.Click += new System.EventHandler(this.pctAfiseaza_Click);
             // 
+            // comboFirma
+            // 
+            this.comboFirma.FormattingEnabled = true;
+            this.comboFirma.ItemHeight = 23;
+            this.comboFirma.Items.AddRange(new object[] {
+            "Audi",
+            "BMW",
+            "Ford",
+            "Honda",
+            "Hyundai",
+            "Lexus",
+            "Mercedes",
+            "Porche",
+            "Toyota",
+            "Volkswagen"});
+            this.comboFirma.Location = new System.Drawing.Point(186, 6);
+            this.comboFirma.Name = "comboFirma";
+            this.comboFirma.Size = new System.Drawing.Size(206, 29);
+            this.comboFirma.TabIndex = 101;
+            this.comboFirma.SelectedIndexChanged += new System.EventHandler(this.comboFirma_SelectedIndexChanged);
+            // 
+            // comboModel
+            // 
+            this.comboModel.FormattingEnabled = true;
+            this.comboModel.ItemHeight = 23;
+            this.comboModel.Location = new System.Drawing.Point(186, 38);
+            this.comboModel.Name = "comboModel";
+            this.comboModel.Size = new System.Drawing.Size(206, 29);
+            this.comboModel.TabIndex = 102;
+            this.comboModel.SelectedIndexChanged += new System.EventHandler(this.comboModel_SelectedIndexChanged);
+            // 
             // OptiuneCautaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 411);
+            this.Controls.Add(this.comboModel);
+            this.Controls.Add(this.comboFirma);
             this.Controls.Add(this.panelMeniu);
             this.Controls.Add(this.btnModificare);
             this.Controls.Add(this.btnCautare);
             this.Controls.Add(this.btnAfisare);
             this.Controls.Add(this.btnAdauga);
             this.Controls.Add(this.btnCauta);
-            this.Controls.Add(this.txtModel);
-            this.Controls.Add(this.txtFirma);
             this.Controls.Add(this.lblDeconectare);
             this.Controls.Add(this.lblModel);
             this.Controls.Add(this.lblFirma);
@@ -280,8 +295,6 @@
         private MetroFramework.Controls.MetroLabel lblFirma;
         private MetroFramework.Controls.MetroLabel lblModel;
         private MetroFramework.Controls.MetroLabel lblDeconectare;
-        private MetroFramework.Controls.MetroTextBox txtFirma;
-        private MetroFramework.Controls.MetroTextBox txtModel;
         private MetroFramework.Controls.MetroButton btnCauta;
         private System.Windows.Forms.Button btnModificare;
         private System.Windows.Forms.Button btnCautare;
@@ -293,5 +306,7 @@
         private System.Windows.Forms.PictureBox pctCauta;
         private System.Windows.Forms.PictureBox pctAdauga;
         private System.Windows.Forms.PictureBox pctAfiseaza;
+        private MetroFramework.Controls.MetroComboBox comboFirma;
+        private MetroFramework.Controls.MetroComboBox comboModel;
     }
 }

@@ -10,15 +10,17 @@ namespace Modele
     //clasa Masina cu parametrii auto-implemented
     public class Masina
     {
-        int ID = 0;
-        int NUMEFIRMA = 1;
-        int MODEL = 2;
-        int ANFABRICATIE = 3;
-        int INDEXCULOARE = 4;
-        int INDEXOPTIUNI = 5;
-        int PRET = 6;
-        int DATA = 7;
-        int OPTIUNI_INT = 8;
+        const int ID = 0;
+        const int NUMEFIRMA = 1;
+        const int MODEL = 2;
+        const int ANFABRICATIE = 3;
+        const int INDEXCULOARE = 4;
+        const int INDEXOPTIUNI = 5;
+        const int PRET = 6;
+        const int DATA = 7;
+        const int OPTIUNI_INT = 8;
+        const int SERIE = 9;
+        const int NUMEPROPRIETAR = 10;
 
 
         public int IdMasina { set; get; }
@@ -29,17 +31,23 @@ namespace Modele
         public Optiuni OPTIUNI { set; get; }
         public double Pret { set; get; }
         public DateTime DataActualizare { set; get; }
+        public string NumeProprietar { get; set; }
+        public string SerieMasina;
         public string optiuniInt { set; get; }
 
-        public string SerieMasina = "";
+        public string SerieMasinaImplemented
+        {
+            set { SerieMasina = SerieUnica() + IdMasina.ToString() + DataActualizare.Day; }
+            get { return SerieMasina; }
+        }
 
-        private static string SerieUnica()
+        private string SerieUnica()
         {
             string serie = "";
             Random rnd = new Random();
             string choose = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-            for(int i=0; i<10; i++)
+            for(int i=0; i<8; i++)
             {
                 serie += choose[rnd.Next(choose.Length-1)];
             }
@@ -87,6 +95,8 @@ namespace Modele
 
             DataActualizare = Convert.ToDateTime(dataFisier);
             optiuniInt = date[OPTIUNI_INT];
+            SerieMasina = date[SERIE];
+            NumeProprietar = date[NUMEPROPRIETAR];
         }
 
         public int Compara(Masina m1)
@@ -103,12 +113,12 @@ namespace Modele
 
         public string ConversieLaSir() //Afiseaza date despre masina
         {          
-            return string.Format( "#ID: " + IdMasina + " Masina: " + NumeFirma + " Model: " + Model + " An Fabricatie: " + AnFabricatie + " Culoare: " + CULOARE + " Optiuni: " + OPTIUNI + " Pret: " + Pret + "$\n" );           
+            return string.Format( "#ID: " + IdMasina + "\nMasina: " + NumeFirma + "\nModel: " + Model + "\nAn Fabricatie: " + AnFabricatie + "\nCuloare: " + CULOARE + "\nOptiuni: " + OPTIUNI + "\nPret: " + Pret + "$" +"\nProprietar: "+NumeProprietar+"\n\n" );           
         }
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(IdMasina + ";" + NumeFirma + ";" + Model + ";" + AnFabricatie + ";" + Convert.ToInt32(CULOARE) + ";" + Convert.ToInt32(OPTIUNI) + ";" + Pret + ";" + DataActualizare + ';' + string.Join(" ",optiuniInt));
+            return string.Format(IdMasina + ";" + NumeFirma + ";" + Model + ";" + AnFabricatie + ";" + Convert.ToInt32(CULOARE) + ";" + Convert.ToInt32(OPTIUNI) + ";" + Pret + ";" + DataActualizare + ';' + string.Join(" ",optiuniInt)+";"+SerieMasina+";"+NumeProprietar);
         }
     }
             

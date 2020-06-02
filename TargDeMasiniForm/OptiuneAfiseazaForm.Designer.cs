@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridAfisare = new System.Windows.Forms.DataGridView();
             this.salvareInFisierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salveazaFisierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tscCuloare = new System.Windows.Forms.ToolStripComboBox();
@@ -51,30 +50,20 @@
             this.btnActualizeaza = new MetroFramework.Controls.MetroButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.salveazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
+            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
+            this.dataGridAfisare = new System.Windows.Forms.DataGridView();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dataGridAfisare
-            // 
-            this.dataGridAfisare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.dataGridAfisare.Location = new System.Drawing.Point(74, 47);
-            this.dataGridAfisare.Name = "dataGridAfisare";
-            this.dataGridAfisare.Size = new System.Drawing.Size(838, 362);
-            this.dataGridAfisare.TabIndex = 46;
             // 
             // salvareInFisierToolStripMenuItem
             // 
@@ -202,6 +191,7 @@
             this.btnBuy.TabIndex = 111;
             this.btnBuy.Text = "Buy";
             this.btnBuy.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // lblPanaLa
             // 
@@ -280,6 +270,25 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 104;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.salveazaToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(90, 11);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(114, 24);
+            this.menuStrip1.TabIndex = 103;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // salveazaToolStripMenuItem
+            // 
+            this.salveazaToolStripMenuItem.Name = "salveazaToolStripMenuItem";
+            this.salveazaToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.salveazaToolStripMenuItem.Text = "Salveaza In Fisier";
+            this.salveazaToolStripMenuItem.Click += new System.EventHandler(this.salveazaFisierToolStripMenuItem_Click_1);
+            // 
             // pictureDeconectare
             // 
             this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -292,30 +301,22 @@
             this.pictureDeconectare.TabStop = false;
             this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click);
             // 
-            // menuStrip1
+            // dataGridAfisare
             // 
-            this.menuStrip1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salveazaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(90, 11);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(234, 24);
-            this.menuStrip1.TabIndex = 103;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // salveazaToolStripMenuItem
-            // 
-            this.salveazaToolStripMenuItem.Name = "salveazaToolStripMenuItem";
-            this.salveazaToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
-            this.salveazaToolStripMenuItem.Text = "Salveaza In Fisier";
-            this.salveazaToolStripMenuItem.Click += new System.EventHandler(this.salveazaFisierToolStripMenuItem_Click_1);
+            this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAfisare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
+            this.dataGridAfisare.Location = new System.Drawing.Point(76, 46);
+            this.dataGridAfisare.Name = "dataGridAfisare";
+            this.dataGridAfisare.Size = new System.Drawing.Size(837, 365);
+            this.dataGridAfisare.TabIndex = 112;
             // 
             // OptiuneAfiseazaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 411);
+            this.Controls.Add(this.dataGridAfisare);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.lblPanaLa);
             this.Controls.Add(this.lblDeLa);
@@ -331,27 +332,26 @@
             this.Controls.Add(this.btnCautare);
             this.Controls.Add(this.btnAfisare);
             this.Controls.Add(this.btnAdauga);
-            this.Controls.Add(this.dataGridAfisare);
+            this.HelpButton = true;
             this.Name = "OptiuneAfiseazaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).EndInit();
             this.panelMeniu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAfisare)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dataGridAfisare;
         private System.Windows.Forms.ToolStripMenuItem salvareInFisierToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox tscCuloare;
         private System.Windows.Forms.SaveFileDialog saveFile;
@@ -377,5 +377,6 @@
         private System.Windows.Forms.PictureBox pictureDeconectare;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem salveazaToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridAfisare;
     }
 }

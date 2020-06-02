@@ -71,7 +71,7 @@ namespace Targ_De_Masini
 
                         Console.WriteLine("Introduceti id-ul pntru a doua persoana: ");
                         int id2 = Convert.ToInt32(Console.ReadLine()) - 1;
-                        int rezultat = persoane[id1].Compara(persoane[id2]);
+                        int rezultat = 0;
 
                         if (rezultat == 1)
                         {

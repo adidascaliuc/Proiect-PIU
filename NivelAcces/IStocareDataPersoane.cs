@@ -6,6 +6,7 @@ namespace NivelAcces
     public interface IStocareDataPersoane
     {
         void AddPersoana(Persoana p);
-        List<Persoana> GetPersoane();       
+        List<Persoana> GetPersoane();
+        void UpdatePersoana(Persoana p);
     }
 }

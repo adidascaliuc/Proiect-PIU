@@ -93,23 +93,31 @@ namespace TargDeMasiniForm
                 {
                     if (ValidarePassword() == 1)
                     {
-                        Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
-                        adminPersoane.AddPersoana(p);
-                        this.Hide();
+                        if (txtPassword.Text.Length < 5)
+                        {
+                            MessageBox.Show("Parola trebuie sa contina cel putin 5 caractere!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+                            Persoana p = new Persoana(txtNume.Text, txtPrenume.Text, txtUsername.Text, txtPassword.Text);
+                            adminPersoane.AddPersoana(p);
+                            this.Hide();
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Parolele difera!!!");
+                        MessageBox.Show("Parolele difera!!!","Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Exista deja un utilizator cu acest username");
+                    MessageBox.Show("Exista deja un utilizator cu acest username","Username Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("Completati spatiile marcate cu rosu!!!");
+                MessageBox.Show("Completati spatiile marcate cu rosu!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -130,7 +138,7 @@ namespace TargDeMasiniForm
         }
 
         private int ValidarePassword()
-        {
+        {           
             if( (txtPassword.Text == txtConfirmPassword.Text) && (txtPassword.Text != "Password" && txtConfirmPassword.Text != "Password") )
             {
                 return 1;
@@ -174,6 +182,7 @@ namespace TargDeMasiniForm
         private void txtConfirmPassword_Enter(object sender, EventArgs e)
         {
             txtConfirmPassword.Text = "";
+            txtConfirmPassword.BackColor = SystemColors.ButtonFace;
         }
 
         private void txtConfirmPassword_Leave(object sender, EventArgs e)

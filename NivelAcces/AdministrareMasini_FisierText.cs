@@ -73,11 +73,10 @@ namespace NivelAcces
                     throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
                 }
             }
-        public void UpdateMasina(Masina m, int index)
+        public void StergeMasina(Masina m)
         {
             List<Masina> masini = GetMasini();
-            int indexMasina = 0;
-
+ 
             try
             {
                 //instructiunea 'using' va apela la final swFisierText.Close();
@@ -87,7 +86,39 @@ namespace NivelAcces
                     foreach (Masina msn in masini)
                     {
                         //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
-                        if (indexMasina == index)
+                        if (msn == m)
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            swFisierText.WriteLine(msn.ConversieLaSir_PentruFisiere());
+                        }
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+        }
+        public void UpdateMasina(Masina m)
+        {
+            List<Masina> masini = GetMasini();
+            try
+            {
+                //instructiunea 'using' va apela la final swFisierText.Close();
+                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
+                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
+                {
+                    foreach (Masina msn in masini)
+                    {
+                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                        if (msn.IdMasina == m.IdMasina)
                         {
                             swFisierText.WriteLine(m.ConversieLaSir_PentruFisiere());
                         }
@@ -95,7 +126,6 @@ namespace NivelAcces
                         {
                             swFisierText.WriteLine(msn.ConversieLaSir_PentruFisiere());
                         }
-                        indexMasina++;
                     }
                 }
             }

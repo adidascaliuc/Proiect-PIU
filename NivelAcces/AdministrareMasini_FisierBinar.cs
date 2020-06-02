@@ -23,11 +23,15 @@ namespace NivelAcces
         }
         public List<Masina> GetMasiniIndex(int index)
         {
-            throw new Exception("Optiunea GetMasini nu este implementata");
+            throw new Exception("Optiunea GetMasiniIndex nu este implementata");
         }
-        public void UpdateMasina(Masina m, int index)
+        public void UpdateMasina(Masina m)
         {
-            throw new Exception("Optiunea GetMasini nu este implementata");
+            throw new Exception("Optiunea UpdateMasina nu este implementata");
+        }
+        public void StergeMasina(Masina m)
+        {
+            throw new Exception("Optiunea StergeMasina nu este implementata");
         }
     }
 }
