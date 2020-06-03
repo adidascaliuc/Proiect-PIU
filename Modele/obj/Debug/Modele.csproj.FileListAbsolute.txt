@@ -4,3 +4,7 @@ D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.csproj.CoreCompileInputs.cache
 D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.dll
 D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.pdb
 D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.csprojAssemblyReference.cache
+D:\GitHub\Proiect-PIU\Modele\bin\Debug\LiveCharts.dll
+D:\GitHub\Proiect-PIU\Modele\bin\Debug\LiveCharts.pdb
+D:\GitHub\Proiect-PIU\Modele\bin\Debug\LiveCharts.xml
+D:\GitHub\Proiect-PIU\Modele\obj\Debug\Modele.csproj.CopyComplete

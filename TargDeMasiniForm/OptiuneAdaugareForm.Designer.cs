@@ -60,15 +60,19 @@
             this.btnCautare = new System.Windows.Forms.Button();
             this.btnAfisare = new System.Windows.Forms.Button();
             this.btnAdauga = new System.Windows.Forms.Button();
-            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.comboFirma = new MetroFramework.Controls.MetroComboBox();
             this.comboModel = new MetroFramework.Controls.MetroComboBox();
+            this.btnAdaugaImagine = new MetroFramework.Controls.MetroButton();
+            this.pictureMasina = new System.Windows.Forms.PictureBox();
+            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
+            this.btnAdaugare = new MetroFramework.Controls.MetroButton();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +111,7 @@
             // 
             // txtPret
             // 
-            this.txtPret.Location = new System.Drawing.Point(197, 329);
+            this.txtPret.Location = new System.Drawing.Point(197, 281);
             this.txtPret.Name = "txtPret";
             this.txtPret.Size = new System.Drawing.Size(167, 23);
             this.txtPret.TabIndex = 78;
@@ -144,6 +148,7 @@
             this.lblAnFabricatie.Size = new System.Drawing.Size(88, 19);
             this.lblAnFabricatie.TabIndex = 82;
             this.lblAnFabricatie.Text = "An Fabricatie:";
+            this.lblAnFabricatie.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lblCuloare
             // 
@@ -159,7 +164,7 @@
             // 
             this.lblOptiuni.AutoSize = true;
             this.lblOptiuni.CustomBackground = true;
-            this.lblOptiuni.Location = new System.Drawing.Point(92, 226);
+            this.lblOptiuni.Location = new System.Drawing.Point(92, 204);
             this.lblOptiuni.Name = "lblOptiuni";
             this.lblOptiuni.Size = new System.Drawing.Size(55, 19);
             this.lblOptiuni.TabIndex = 84;
@@ -169,7 +174,7 @@
             // 
             this.lblPret.AutoSize = true;
             this.lblPret.CustomBackground = true;
-            this.lblPret.Location = new System.Drawing.Point(92, 329);
+            this.lblPret.Location = new System.Drawing.Point(92, 281);
             this.lblPret.Name = "lblPret";
             this.lblPret.Size = new System.Drawing.Size(36, 19);
             this.lblPret.TabIndex = 85;
@@ -186,6 +191,7 @@
             this.radioAlb.TabIndex = 86;
             this.radioAlb.TabStop = true;
             this.radioAlb.Text = "Alb";
+            this.radioAlb.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioAlb.UseVisualStyleBackColor = true;
             this.radioAlb.CheckedChanged += new System.EventHandler(this.radioAlb_CheckedChanged);
             // 
@@ -200,6 +206,7 @@
             this.radioNegru.TabIndex = 87;
             this.radioNegru.TabStop = true;
             this.radioNegru.Text = "Negru";
+            this.radioNegru.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioNegru.UseVisualStyleBackColor = true;
             this.radioNegru.CheckedChanged += new System.EventHandler(this.radioNegru_CheckedChanged);
             // 
@@ -214,6 +221,7 @@
             this.radioRosu.TabIndex = 88;
             this.radioRosu.TabStop = true;
             this.radioRosu.Text = "Rosu";
+            this.radioRosu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioRosu.UseVisualStyleBackColor = true;
             this.radioRosu.CheckedChanged += new System.EventHandler(this.radioRosu_CheckedChanged);
             // 
@@ -228,6 +236,7 @@
             this.radioAlbastru.TabIndex = 89;
             this.radioAlbastru.TabStop = true;
             this.radioAlbastru.Text = "Albastru";
+            this.radioAlbastru.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioAlbastru.UseVisualStyleBackColor = true;
             this.radioAlbastru.CheckedChanged += new System.EventHandler(this.radioAlbastru_CheckedChanged);
             // 
@@ -242,6 +251,7 @@
             this.radioVerde.TabIndex = 90;
             this.radioVerde.TabStop = true;
             this.radioVerde.Text = "Verde";
+            this.radioVerde.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioVerde.UseVisualStyleBackColor = true;
             this.radioVerde.CheckedChanged += new System.EventHandler(this.radioVerde_CheckedChanged);
             // 
@@ -256,6 +266,7 @@
             this.radioArgintiu.TabIndex = 91;
             this.radioArgintiu.TabStop = true;
             this.radioArgintiu.Text = "Argintiu";
+            this.radioArgintiu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioArgintiu.UseVisualStyleBackColor = true;
             this.radioArgintiu.CheckedChanged += new System.EventHandler(this.radioArgintiu_CheckedChanged);
             // 
@@ -263,12 +274,13 @@
             // 
             this.cBoxAerConditionat.AutoSize = true;
             this.cBoxAerConditionat.CustomBackground = true;
-            this.cBoxAerConditionat.Location = new System.Drawing.Point(195, 226);
+            this.cBoxAerConditionat.Location = new System.Drawing.Point(195, 204);
             this.cBoxAerConditionat.Name = "cBoxAerConditionat";
             this.cBoxAerConditionat.Size = new System.Drawing.Size(107, 15);
             this.cBoxAerConditionat.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxAerConditionat.TabIndex = 92;
             this.cBoxAerConditionat.Text = "Aer Conditionat";
+            this.cBoxAerConditionat.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxAerConditionat.UseVisualStyleBackColor = true;
             this.cBoxAerConditionat.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -276,12 +288,13 @@
             // 
             this.cBoxOptiuniVolan.AutoSize = true;
             this.cBoxOptiuniVolan.CustomBackground = true;
-            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(195, 247);
+            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(195, 225);
             this.cBoxOptiuniVolan.Name = "cBoxOptiuniVolan";
             this.cBoxOptiuniVolan.Size = new System.Drawing.Size(95, 15);
             this.cBoxOptiuniVolan.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxOptiuniVolan.TabIndex = 93;
             this.cBoxOptiuniVolan.Text = "Optiuni Volan";
+            this.cBoxOptiuniVolan.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxOptiuniVolan.UseVisualStyleBackColor = true;
             this.cBoxOptiuniVolan.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -289,12 +302,13 @@
             // 
             this.cBoxScaunePiele.AutoSize = true;
             this.cBoxScaunePiele.CustomBackground = true;
-            this.cBoxScaunePiele.Location = new System.Drawing.Point(195, 268);
+            this.cBoxScaunePiele.Location = new System.Drawing.Point(195, 246);
             this.cBoxScaunePiele.Name = "cBoxScaunePiele";
             this.cBoxScaunePiele.Size = new System.Drawing.Size(89, 15);
             this.cBoxScaunePiele.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxScaunePiele.TabIndex = 94;
             this.cBoxScaunePiele.Text = "Scaune Piele";
+            this.cBoxScaunePiele.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxScaunePiele.UseVisualStyleBackColor = true;
             this.cBoxScaunePiele.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -302,12 +316,13 @@
             // 
             this.cBoxGeamuriElectrice.AutoSize = true;
             this.cBoxGeamuriElectrice.CustomBackground = true;
-            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(360, 226);
+            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(360, 204);
             this.cBoxGeamuriElectrice.Name = "cBoxGeamuriElectrice";
             this.cBoxGeamuriElectrice.Size = new System.Drawing.Size(115, 15);
             this.cBoxGeamuriElectrice.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxGeamuriElectrice.TabIndex = 95;
             this.cBoxGeamuriElectrice.Text = "Geamuri Electrice";
+            this.cBoxGeamuriElectrice.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxGeamuriElectrice.UseVisualStyleBackColor = true;
             this.cBoxGeamuriElectrice.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -315,12 +330,13 @@
             // 
             this.cBoxNavigatie.AutoSize = true;
             this.cBoxNavigatie.CustomBackground = true;
-            this.cBoxNavigatie.Location = new System.Drawing.Point(360, 247);
+            this.cBoxNavigatie.Location = new System.Drawing.Point(360, 225);
             this.cBoxNavigatie.Name = "cBoxNavigatie";
             this.cBoxNavigatie.Size = new System.Drawing.Size(73, 15);
             this.cBoxNavigatie.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxNavigatie.TabIndex = 96;
             this.cBoxNavigatie.Text = "Navigatie";
+            this.cBoxNavigatie.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxNavigatie.UseVisualStyleBackColor = true;
             this.cBoxNavigatie.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -328,12 +344,13 @@
             // 
             this.cBoxCutieAutomata.AutoSize = true;
             this.cBoxCutieAutomata.CustomBackground = true;
-            this.cBoxCutieAutomata.Location = new System.Drawing.Point(360, 268);
+            this.cBoxCutieAutomata.Location = new System.Drawing.Point(360, 246);
             this.cBoxCutieAutomata.Name = "cBoxCutieAutomata";
             this.cBoxCutieAutomata.Size = new System.Drawing.Size(107, 15);
             this.cBoxCutieAutomata.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxCutieAutomata.TabIndex = 97;
             this.cBoxCutieAutomata.Text = "Cutie Automata";
+            this.cBoxCutieAutomata.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxCutieAutomata.UseVisualStyleBackColor = true;
             this.cBoxCutieAutomata.CheckedChanged += new System.EventHandler(this.ckbOptiuni_CheckedChanged);
             // 
@@ -345,7 +362,7 @@
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDeconectare.Location = new System.Drawing.Point(783, 8);
+            this.lblDeconectare.Location = new System.Drawing.Point(902, 4);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
             this.lblDeconectare.TabIndex = 98;
@@ -412,7 +429,6 @@
             this.pctAdauga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctAdauga.TabIndex = 1;
             this.pctAdauga.TabStop = false;
-            this.pctAdauga.Click += new System.EventHandler(this.pctAdauga_Click);
             // 
             // pctAfiseaza
             // 
@@ -454,17 +470,6 @@
             this.btnAdauga.Size = new System.Drawing.Size(75, 23);
             this.btnAdauga.TabIndex = 103;
             // 
-            // pictureDeconectare
-            // 
-            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
-            this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
-            this.pictureDeconectare.Name = "pictureDeconectare";
-            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
-            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureDeconectare.TabIndex = 69;
-            this.pictureDeconectare.TabStop = false;
-            // 
             // comboFirma
             // 
             this.comboFirma.FormattingEnabled = true;
@@ -484,6 +489,7 @@
             this.comboFirma.Name = "comboFirma";
             this.comboFirma.Size = new System.Drawing.Size(167, 29);
             this.comboFirma.TabIndex = 104;
+            this.comboFirma.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.comboFirma.SelectedIndexChanged += new System.EventHandler(this.comboFirma_SelectedIndexChanged);
             // 
             // comboModel
@@ -494,14 +500,60 @@
             this.comboModel.Name = "comboModel";
             this.comboModel.Size = new System.Drawing.Size(167, 29);
             this.comboModel.TabIndex = 105;
+            this.comboModel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.comboModel.SelectedIndexChanged += new System.EventHandler(this.comboModel_SelectedIndexChanged);
+            // 
+            // btnAdaugaImagine
+            // 
+            this.btnAdaugaImagine.Location = new System.Drawing.Point(699, 239);
+            this.btnAdaugaImagine.Name = "btnAdaugaImagine";
+            this.btnAdaugaImagine.Size = new System.Drawing.Size(113, 44);
+            this.btnAdaugaImagine.TabIndex = 106;
+            this.btnAdaugaImagine.Text = "Adauga Imagine";
+            this.btnAdaugaImagine.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAdaugaImagine.Click += new System.EventHandler(this.btnSchimbaImagine_Click);
+            // 
+            // pictureMasina
+            // 
+            this.pictureMasina.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureMasina.Image = global::TargDeMasiniForm.Properties.Resources.presetCarPng1;
+            this.pictureMasina.Location = new System.Drawing.Point(615, 34);
+            this.pictureMasina.Name = "pictureMasina";
+            this.pictureMasina.Size = new System.Drawing.Size(283, 194);
+            this.pictureMasina.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMasina.TabIndex = 107;
+            this.pictureMasina.TabStop = false;
+            // 
+            // pictureDeconectare
+            // 
+            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
+            this.pictureDeconectare.Location = new System.Drawing.Point(999, 2);
+            this.pictureDeconectare.Name = "pictureDeconectare";
+            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
+            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDeconectare.TabIndex = 69;
+            this.pictureDeconectare.TabStop = false;
+            // 
+            // btnAdaugare
+            // 
+            this.btnAdaugare.Location = new System.Drawing.Point(223, 319);
+            this.btnAdaugare.Name = "btnAdaugare";
+            this.btnAdaugare.Size = new System.Drawing.Size(113, 44);
+            this.btnAdaugare.TabIndex = 108;
+            this.btnAdaugare.Text = "Adauga";
+            this.btnAdaugare.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAdaugare.Click += new System.EventHandler(this.btnAdaugare_Click);
             // 
             // OptiuneAdaugareForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(914, 411);
+            this.ClientSize = new System.Drawing.Size(1024, 411);
+            this.Controls.Add(this.btnAdaugare);
+            this.Controls.Add(this.pictureMasina);
+            this.Controls.Add(this.btnAdaugaImagine);
             this.Controls.Add(this.comboModel);
             this.Controls.Add(this.comboFirma);
             this.Controls.Add(this.panelMeniu);
@@ -531,6 +583,9 @@
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.cBoxAnFabricatie);
             this.Controls.Add(this.pictureDeconectare);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OptiuneAdaugareForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";
@@ -540,6 +595,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -581,5 +637,8 @@
         private System.Windows.Forms.Button btnAdauga;
         private MetroFramework.Controls.MetroComboBox comboFirma;
         private MetroFramework.Controls.MetroComboBox comboModel;
+        private MetroFramework.Controls.MetroButton btnAdaugaImagine;
+        private System.Windows.Forms.PictureBox pictureMasina;
+        private MetroFramework.Controls.MetroButton btnAdaugare;
     }
 }

@@ -1,56 +1,28 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modele;
 using NivelAcces;
 
 namespace TargDeMasiniForm
 {
+    
     public partial class OptiuneAfiseazaForm : Form
     {
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
-
+        public static OptiuneAfiseazaForm afis = new OptiuneAfiseazaForm();
         public List<string> optiuniSelectate = new List<string>();
         public OptiuneAfiseazaForm()
         {
             InitializeComponent();
-            List<Masina> masini = adminMasini.GetMasini();
-            dataGridAfisare.DataSource = masini.Select(m => new {
-                m.IdMasina,
-                m.NumeFirma,
-                m.Model,
-                m.AnFabricatie,
-                m.CULOARE,
-                m.OPTIUNI,
-                m.Pret,
-                m.DataActualizare,
-                m.NumeProprietar
-            }).ToList();
-        }
-
-        
-
-        private void btnActualizeaza_Click(object sender, EventArgs e)
-        {
-            List<Masina> masini = adminMasini.GetMasini();
-            dataGridAfisare.DataSource = null;
-            if (masini != null)
-            {
-                dataGridAfisare.DataSource = masini.Select(m => new { m.IdMasina, m.NumeFirma, m.Model,
-                m.AnFabricatie, m.CULOARE, m.OPTIUNI, m.Pret, m.DataActualizare, m.NumeProprietar } ).ToList();
-        }
-            else
-            {
-                MessageBox.Show("Nu aveti masini introduse", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            radioViewList.Checked = true;
+            populateForm();
+            afis = this;
         }
 
         private void pctModifica_Click(object sender, EventArgs e)
@@ -59,11 +31,11 @@ namespace TargDeMasiniForm
             {
                 List<Masina> masini = adminMasini.GetMasiniIndex(Convert.ToInt32(dataGridAfisare.SelectedRows[0].Cells[0].Value) - 1);
                 if (masini != null)
-                {                   
+                {
                     Masina m = masini.Last();
                     if (OptiuneInfoForm.InfoPersoana.NumeComplet == m.NumeProprietar)
                     {
-                        OptiuneModificaForm modForm = new OptiuneModificaForm(m, 0);
+                        OptiuneModificaForm modForm = new OptiuneModificaForm(m);
                         modForm.ShowDialog();
                     }
                     else
@@ -96,7 +68,7 @@ namespace TargDeMasiniForm
         {
             OptiuneCautaForm cautaForm = new OptiuneCautaForm();
             this.Hide();
-            cautaForm.Show();           
+            cautaForm.Show();
         }
 
         private void lblDeconectare_Click(object sender, EventArgs e)
@@ -117,13 +89,11 @@ namespace TargDeMasiniForm
         {
             try
             {
-                //instructiunea 'using' va apela la final swFisierText.Close();
-                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
                 {
                     foreach (Masina msn in masini)
-                    {                                            
-                            swFisierText.WriteLine(msn.ConversieLaSir());
+                    {
+                        swFisierText.WriteLine(msn.ConversieLaSir());
                     }
                 }
             }
@@ -166,12 +136,18 @@ namespace TargDeMasiniForm
                     masiniGasite.Add(m);
                     gasit = true;
                     nrMasini++;
-                }              
+                }
             }
             if (gasit == true)
             {
-                MessageBox.Show("Au fost gasite "+nrMasini +" masini care corespund cu data cautata.", "Info Cautarte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Au fost gasite " + nrMasini + " masini care corespund cu data cautata.", "Info Cautarte", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridAfisare.DataSource = masiniGasite;
+
+                flowLayoutAfisare.Controls.Clear();
+                foreach(Masina m in masiniGasite)
+                {
+                    flowLayoutAfisare.Controls.Add(new ListaMasiniForm(m));
+                }
             }
             else
             {
@@ -185,11 +161,9 @@ namespace TargDeMasiniForm
             this.Hide();
         }
 
-        private void btnBuy_Click(object sender, EventArgs e)
+        public void btnCumpara_Click(object sender, EventArgs e)
         {
-            
             List<Persoana> persoane = adminPersoane.GetPersoane();
-
             try
             {
                 List<Masina> masini = adminMasini.GetMasiniIndex(Convert.ToInt32(dataGridAfisare.SelectedRows[0].Cells[0].Value) - 1);
@@ -208,23 +182,21 @@ namespace TargDeMasiniForm
                         }
                         else
                         {
+                            OptiuneInfoForm.InfoPersoana.Buget -= masini.Last().Pret;
+                            adminPersoane.UpdatePersoana(OptiuneInfoForm.InfoPersoana);
+                            LoginForm.infoForm.lblBuget.Text = "Buget: " + OptiuneInfoForm.InfoPersoana.Buget + "$";
+
                             foreach (Persoana p in persoane)
                             {
-                                
-                                if (p.NumeComplet == OptiuneInfoForm.InfoPersoana.NumeComplet)
-                                {                                  
-                                    p.Buget -= masini.Last().Pret;
-                                    adminPersoane.UpdatePersoana(p);
-                                    masini.Last().NumeProprietar = p.NumeComplet;
-                                    adminMasini.UpdateMasina(masini.Last());                              
-                                    LoginForm.infoForm.lblBuget.Text = "Buget: " + p.Buget.ToString() + "$";
-                                }                               
                                 if (p.NumeComplet == masini.Last().NumeProprietar)
                                 {
                                     p.Buget += masini.Last().Pret;
                                     adminPersoane.UpdatePersoana(p);
                                 }
                             }
+                            masini.Last().NumeProprietar = OptiuneInfoForm.InfoPersoana.NumeComplet;
+                            masini.Last().istoricProprietari.Add(masini.Last().NumeProprietar);
+                            adminMasini.UpdateMasina(masini.Last());
                         }
 
                     }
@@ -233,7 +205,54 @@ namespace TargDeMasiniForm
             catch
             {
                 MessageBox.Show("Selectati o masina!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }                    
+            }
+            finally
+            {
+                populateForm();               
+            }
+        }
+        public void populateForm()
+        {
+            flowLayoutAfisare.Controls.Clear();
+            List<Masina> masini = adminMasini.GetMasini();
+            List<ListaMasiniForm> listaMasini = new List<ListaMasiniForm>();
+            foreach (Masina m in masini)
+            {
+                listaMasini.Add(new ListaMasiniForm(m));
+                flowLayoutAfisare.Controls.Add(listaMasini.Last());
+
+            }
+
+            List<Masina> masiniNou = adminMasini.GetMasini();
+            dataGridAfisare.DataSource = masiniNou.Select(m => new
+            {
+                m.IdMasina,
+                m.NumeFirma,
+                m.Model,
+                m.AnFabricatie,
+                m.CULOARE,
+                m.OPTIUNI,
+                m.Pret,
+                m.DataActualizare,
+                m.NumeProprietar
+            }).ToList();
+        }
+
+        private void radioViewTabel_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutAfisare.Hide();
+            dataGridAfisare.Show();
+            populateForm();
+            btnBuy.Show();
+
+        }
+
+        private void radioViewList_CheckedChanged(object sender, EventArgs e)
+        {
+            dataGridAfisare.Hide();
+            flowLayoutAfisare.Show();
+            populateForm();
+            btnBuy.Hide();
         }
     }
 }

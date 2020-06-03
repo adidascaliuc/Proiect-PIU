@@ -60,16 +60,16 @@
             // 
             this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAfisare.Location = new System.Drawing.Point(81, 73);
+            this.dataGridAfisare.Location = new System.Drawing.Point(77, 73);
             this.dataGridAfisare.Name = "dataGridAfisare";
-            this.dataGridAfisare.Size = new System.Drawing.Size(822, 338);
+            this.dataGridAfisare.Size = new System.Drawing.Size(944, 338);
             this.dataGridAfisare.TabIndex = 55;
             // 
             // pictureDeconectare
             // 
             this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
-            this.pictureDeconectare.Location = new System.Drawing.Point(880, 6);
+            this.pictureDeconectare.Location = new System.Drawing.Point(989, 6);
             this.pictureDeconectare.Name = "pictureDeconectare";
             this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
             this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -105,7 +105,7 @@
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDeconectare.Location = new System.Drawing.Point(783, 8);
+            this.lblDeconectare.Location = new System.Drawing.Point(897, 8);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
             this.lblDeconectare.TabIndex = 74;
@@ -242,6 +242,7 @@
             this.comboFirma.Name = "comboFirma";
             this.comboFirma.Size = new System.Drawing.Size(206, 29);
             this.comboFirma.TabIndex = 101;
+            this.comboFirma.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.comboFirma.SelectedIndexChanged += new System.EventHandler(this.comboFirma_SelectedIndexChanged);
             // 
             // comboModel
@@ -252,13 +253,13 @@
             this.comboModel.Name = "comboModel";
             this.comboModel.Size = new System.Drawing.Size(206, 29);
             this.comboModel.TabIndex = 102;
-            this.comboModel.SelectedIndexChanged += new System.EventHandler(this.comboModel_SelectedIndexChanged);
+            this.comboModel.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // OptiuneCautaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 411);
+            this.ClientSize = new System.Drawing.Size(1024, 411);
             this.Controls.Add(this.comboModel);
             this.Controls.Add(this.comboFirma);
             this.Controls.Add(this.panelMeniu);
@@ -273,6 +274,9 @@
             this.Controls.Add(this.pictureDeconectare);
             this.Controls.Add(this.dataGridAfisare);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OptiuneCautaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";

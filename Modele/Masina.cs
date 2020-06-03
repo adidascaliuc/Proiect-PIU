@@ -1,8 +1,12 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using Microsoft.Win32;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using LiveCharts;
+using System.Reflection;
 
 namespace Modele
 
@@ -21,6 +25,9 @@ namespace Modele
         const int OPTIUNI_INT = 8;
         const int SERIE = 9;
         const int NUMEPROPRIETAR = 10;
+        const int IMAGE = 11;
+        const int PROPRIETARI = 12;
+        const int PRETURI = 13;
 
 
         public int IdMasina { set; get; }
@@ -32,13 +39,28 @@ namespace Modele
         public double Pret { set; get; }
         public DateTime DataActualizare { set; get; }
         public string NumeProprietar { get; set; }
-        public string SerieMasina;
+        public string SerieMasinaString;
         public string optiuniInt { set; get; }
-
-        public string SerieMasinaImplemented
+        string imageLocation;
+        public ChartValues<double> istoricPreturi { set; get; } = new ChartValues<double>();
+        public List<string> istoricProprietari { set; get; } = new List<string>(); 
+        public string ImageLocation 
         {
-            set { SerieMasina = SerieUnica() + IdMasina.ToString() + DataActualizare.Day; }
-            get { return SerieMasina; }
+            set
+            {
+                imageLocation = @value;
+            }
+            get
+
+            {                
+                    return imageLocation;
+            }
+        }
+
+        public string SerieMasina
+        {
+            set { SerieMasinaString = value; }
+            get { return this.SerieMasinaString; }
         }
 
         private string SerieUnica()
@@ -76,9 +98,8 @@ namespace Modele
             this.CULOARE = (Culoare)culoare;
             this.OPTIUNI = (Optiuni)optiuni;
             this.Pret = pret;
-            
-
-
+            this.SerieMasina = SerieUnica() + IdMasina + DataActualizare.Day;
+           
         }
         //constructor sir de caractere
         public Masina(string s)
@@ -97,28 +118,25 @@ namespace Modele
             optiuniInt = date[OPTIUNI_INT];
             SerieMasina = date[SERIE];
             NumeProprietar = date[NUMEPROPRIETAR];
-        }
-
-        public int Compara(Masina m1)
-        {
-            if (this.Pret > m1.Pret)
+            ImageLocation = date[IMAGE];
+            foreach (string nume in date[PROPRIETARI].Split('|'))
             {
-                return 1;
+                istoricProprietari.Add(nume);
             }
-            else
+            foreach(string d in date[PRETURI].Split('|'))
             {
-                return 2;
+                istoricPreturi.Add(Convert.ToDouble(d));
             }
         }
-
-        public string ConversieLaSir() //Afiseaza date despre masina
+       
+        public string ConversieLaSir()
         {          
             return string.Format( "#ID: " + IdMasina + "\nMasina: " + NumeFirma + "\nModel: " + Model + "\nAn Fabricatie: " + AnFabricatie + "\nCuloare: " + CULOARE + "\nOptiuni: " + OPTIUNI + "\nPret: " + Pret + "$" +"\nProprietar: "+NumeProprietar+"\n\n" );           
         }
 
         public string ConversieLaSir_PentruFisiere()
         {
-            return string.Format(IdMasina + ";" + NumeFirma + ";" + Model + ";" + AnFabricatie + ";" + Convert.ToInt32(CULOARE) + ";" + Convert.ToInt32(OPTIUNI) + ";" + Pret + ";" + DataActualizare + ';' + string.Join(" ",optiuniInt)+";"+SerieMasina+";"+NumeProprietar);
+            return string.Format(IdMasina + ";" + NumeFirma + ";" + Model + ";" + AnFabricatie + ";" + Convert.ToInt32(CULOARE) + ";" + Convert.ToInt32(OPTIUNI) + ";" + Pret + ";" + DataActualizare + ';' + string.Join(" ",optiuniInt)+";"+SerieMasina+";"+NumeProprietar+";"+ImageLocation+";"+string.Join("|", istoricProprietari)+";"+string.Join("|", istoricPreturi));
         }
     }
             

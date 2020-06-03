@@ -1,14 +1,16 @@
-﻿using Modele;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using Modele;
 using NivelAcces;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
+using System.Drawing;
 
 namespace TargDeMasiniForm
 {
     public partial class OptiuneInfoForm : Form
-    { 
+    {
         public List<string> optiuniSelectate = new List<string>();
         public static Persoana InfoPersoana = null;
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
@@ -18,23 +20,30 @@ namespace TargDeMasiniForm
             InitializeComponent();
             if (p != null)
             {
-                lblNume.Text = "Nume: " + LoginForm.infoPersoana.Nume;
-                lblPrenume.Text = "Prenume: " + LoginForm.infoPersoana.Prenume;
-                lblUsername.Text = "Username: " + LoginForm.infoPersoana.Username;
-                lblBuget.Text = "Buget: " + LoginForm.infoPersoana.Buget+"$";
+                lblNume.Text = "Nume: " + p.Nume;
+                lblPrenume.Text = "Prenume: " + p.Prenume;
+                lblUsername.Text = "Username: " + p.Username;
+                lblBuget.Text = "Buget: " + p.Buget + "$";
+                try
+                {
+                    pictureUserPhoto.Image = Image.FromFile(@p.ImageLocation);
+                }
+                catch
+                {
+                    pictureUserPhoto.Image = pictureUserPhoto.ErrorImage;
+                }
+
             }
             else
             {
                 MessageBox.Show("Eroare");
             }
             InfoPersoana = p;
-
         }
 
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
-
             OptiuneAfiseazaForm optAfisare = new OptiuneAfiseazaForm();
             optAfisare.Show();
             this.Hide();
@@ -42,7 +51,6 @@ namespace TargDeMasiniForm
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
         {
-
             OptiuneAfiseazaForm optAfiseaza = new OptiuneAfiseazaForm();
             optAfiseaza.Show();
             this.Hide();
@@ -51,7 +59,7 @@ namespace TargDeMasiniForm
 
         private void pctAdauga_Click_1(object sender, EventArgs e)
         {
-            OptiuneAdaugareForm adaugaForm = new OptiuneAdaugareForm();    
+            OptiuneAdaugareForm adaugaForm = new OptiuneAdaugareForm();
             adaugaForm.Show();
             this.Hide();
 
@@ -59,13 +67,14 @@ namespace TargDeMasiniForm
 
         private void pctCauta_Click(object sender, EventArgs e)
         {
-            OptiuneCautaForm optiuneCauta = new OptiuneCautaForm();         
+            OptiuneCautaForm optiuneCauta = new OptiuneCautaForm();
             optiuneCauta.Show();
             this.Hide();
         }
 
         private void btnAddPhoto_Click(object sender, EventArgs e)
         {
+            List<Persoana> persoane = adminPersoane.GetPersoane();
             string imageLocation = "";
             try
             {
@@ -75,8 +84,16 @@ namespace TargDeMasiniForm
                 if (fileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     imageLocation = fileDialog.FileName;
-
                     pictureUserPhoto.ImageLocation = imageLocation;
+
+                    foreach (Persoana p in persoane)
+                    {
+                        if (p.Username == LoginForm.infoPersoana.Username)
+                        {
+                            p.ImageLocation = imageLocation;
+                            adminPersoane.UpdatePersoana(p);
+                        }
+                    }
                 }
             }
             catch
@@ -94,29 +111,39 @@ namespace TargDeMasiniForm
             {
                 ok = true;
                 buget = Interaction.InputBox("Introduceti suma: ", "Adaugare fonduri");
-                if(buget.Length == 0)
+                if (buget.Length == 0)
                 {
                     buget = "0";
                     break;
                 }
-                else if(double.TryParse(buget, out double result) == false)
+                else if (double.TryParse(buget, out double result) == false)
                 {
                     MessageBox.Show("Introduceti date valide!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     ok = false;
                 }
+                if (double.TryParse(buget, out double rezultat) == true)
+                {
+                    if (Convert.ToDouble(buget) < 0)
+                    {
+                        MessageBox.Show("Introduceti o suma pozitiva!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ok = false;
+                    }
+                }
 
             } while (ok == false);
 
-            foreach(Persoana p in persoane)
+            foreach (Persoana p in persoane)
             {
-                if(p.Username == LoginForm.infoPersoana.Username)
+                if (p.Username == LoginForm.infoPersoana.Username)
                 {
                     p.Buget += Convert.ToDouble(buget);
                     adminPersoane.UpdatePersoana(p);
                     LoginForm.infoPersoana.Buget += Convert.ToDouble(buget);
-                    lblBuget.Text = "Buget: " + p.Buget+"$";
+                    lblBuget.Text = "Buget: " + p.Buget + "$";
                 }
             }
+
+
         }
 
         private void lblDeconectare_Click(object sender, EventArgs e)
@@ -142,18 +169,18 @@ namespace TargDeMasiniForm
             {
                 newPassword = Interaction.InputBox("Introduceti noua parola:", "Change Password");
                 parolaCorecta = true;
-                if(newPassword.Length == 0)
+                if (newPassword.Length == 0)
                 {
                     newPassword = LoginForm.infoPersoana.Password;
                     break;
                 }
-                if(newPassword.Length < 5)
+                if (newPassword.Length < 5)
                 {
                     MessageBox.Show("Parola trebuie sa contina cel putin 5 caractere", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     parolaCorecta = false;
                 }
 
-                if(newPassword == LoginForm.infoPersoana.Password)
+                if (newPassword == LoginForm.infoPersoana.Password)
                 {
                     MessageBox.Show("Aveti deja setata aceasta parola", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     parolaCorecta = false;
@@ -170,15 +197,15 @@ namespace TargDeMasiniForm
                 MessageBox.Show("Noua parola este: " + newPassword, "Info Password", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            foreach(Persoana p in persoane)
+            foreach (Persoana p in persoane)
             {
-                if(p.Username == LoginForm.infoPersoana.Username)
+                if (p.Username == LoginForm.infoPersoana.Username)
                 {
                     p.Password = newPassword;
                     LoginForm.infoPersoana.Password = newPassword;
                     adminPersoane.UpdatePersoana(p);
                 }
-            }        
+            }
         }
     }
- }
+}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;

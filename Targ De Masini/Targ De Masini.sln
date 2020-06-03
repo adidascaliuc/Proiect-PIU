@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modele", "..\Modele\Modele.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NivelAcces", "..\NivelAcces\NivelAcces.csproj", "{C9CC677B-3C44-42AA-A042-EA0E44F787DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormTargDeMasini", "..\FormTargDeMasini\FormTargDeMasini.csproj", "{57FC3FAB-A809-45B6-8B06-A0CA213F5579}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TargDeMasiniForm", "..\TargDeMasiniForm\TargDeMasiniForm.csproj", "{5876D183-4C82-4FED-8920-75A43D34DD12}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{C9CC677B-3C44-42AA-A042-EA0E44F787DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9CC677B-3C44-42AA-A042-EA0E44F787DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9CC677B-3C44-42AA-A042-EA0E44F787DA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{57FC3FAB-A809-45B6-8B06-A0CA213F5579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57FC3FAB-A809-45B6-8B06-A0CA213F5579}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57FC3FAB-A809-45B6-8B06-A0CA213F5579}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57FC3FAB-A809-45B6-8B06-A0CA213F5579}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5876D183-4C82-4FED-8920-75A43D34DD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5876D183-4C82-4FED-8920-75A43D34DD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5876D183-4C82-4FED-8920-75A43D34DD12}.Release|Any CPU.ActiveCfg = Release|Any CPU

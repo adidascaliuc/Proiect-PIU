@@ -47,13 +47,15 @@
             this.lblDeLa = new MetroFramework.Controls.MetroLabel();
             this.lblDeconectare = new MetroFramework.Controls.MetroLabel();
             this.btnCautaData = new MetroFramework.Controls.MetroButton();
-            this.btnActualizeaza = new MetroFramework.Controls.MetroButton();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.salveazaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureDeconectare = new System.Windows.Forms.PictureBox();
+            this.flowLayoutAfisare = new System.Windows.Forms.FlowLayoutPanel();
             this.dataGridAfisare = new System.Windows.Forms.DataGridView();
+            this.radioViewTabel = new MetroFramework.Controls.MetroRadioButton();
+            this.radioViewList = new MetroFramework.Controls.MetroRadioButton();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
@@ -185,13 +187,13 @@
             // 
             // btnBuy
             // 
-            this.btnBuy.Location = new System.Drawing.Point(225, 2);
+            this.btnBuy.Location = new System.Drawing.Point(338, 2);
             this.btnBuy.Name = "btnBuy";
             this.btnBuy.Size = new System.Drawing.Size(76, 43);
             this.btnBuy.TabIndex = 111;
-            this.btnBuy.Text = "Buy";
+            this.btnBuy.Text = "Cumpara";
             this.btnBuy.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            this.btnBuy.Click += new System.EventHandler(this.btnCumpara_Click);
             // 
             // lblPanaLa
             // 
@@ -200,7 +202,7 @@
             this.lblPanaLa.CustomBackground = true;
             this.lblPanaLa.CustomForeColor = true;
             this.lblPanaLa.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPanaLa.Location = new System.Drawing.Point(517, 26);
+            this.lblPanaLa.Location = new System.Drawing.Point(586, 25);
             this.lblPanaLa.Name = "lblPanaLa";
             this.lblPanaLa.Size = new System.Drawing.Size(54, 19);
             this.lblPanaLa.TabIndex = 110;
@@ -213,7 +215,7 @@
             this.lblDeLa.CustomBackground = true;
             this.lblDeLa.CustomForeColor = true;
             this.lblDeLa.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDeLa.Location = new System.Drawing.Point(517, 5);
+            this.lblDeLa.Location = new System.Drawing.Point(586, 4);
             this.lblDeLa.Name = "lblDeLa";
             this.lblDeLa.Size = new System.Drawing.Size(42, 19);
             this.lblDeLa.TabIndex = 109;
@@ -227,7 +229,7 @@
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDeconectare.Location = new System.Drawing.Point(791, 15);
+            this.lblDeconectare.Location = new System.Drawing.Point(906, 16);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
             this.lblDeconectare.TabIndex = 108;
@@ -236,7 +238,7 @@
             // 
             // btnCautaData
             // 
-            this.btnCautaData.Location = new System.Drawing.Point(412, 2);
+            this.btnCautaData.Location = new System.Drawing.Point(444, 2);
             this.btnCautaData.Name = "btnCautaData";
             this.btnCautaData.Size = new System.Drawing.Size(99, 43);
             this.btnCautaData.TabIndex = 107;
@@ -244,20 +246,10 @@
             this.btnCautaData.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnCautaData.Click += new System.EventHandler(this.btnCautareData_Click);
             // 
-            // btnActualizeaza
-            // 
-            this.btnActualizeaza.Location = new System.Drawing.Point(307, 2);
-            this.btnActualizeaza.Name = "btnActualizeaza";
-            this.btnActualizeaza.Size = new System.Drawing.Size(99, 43);
-            this.btnActualizeaza.TabIndex = 106;
-            this.btnActualizeaza.Text = "Actualizare";
-            this.btnActualizeaza.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.btnActualizeaza.Click += new System.EventHandler(this.btnActualizeaza_Click);
-            // 
             // dateTimePicker2
             // 
             this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker2.Location = new System.Drawing.Point(577, 26);
+            this.dateTimePicker2.Location = new System.Drawing.Point(644, 25);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 105;
@@ -265,7 +257,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dateTimePicker1.Location = new System.Drawing.Point(577, 4);
+            this.dateTimePicker1.Location = new System.Drawing.Point(644, 3);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 104;
@@ -276,7 +268,7 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.salveazaToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(90, 11);
+            this.menuStrip1.Location = new System.Drawing.Point(76, 12);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(114, 24);
             this.menuStrip1.TabIndex = 103;
@@ -293,7 +285,7 @@
             // 
             this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
-            this.pictureDeconectare.Location = new System.Drawing.Point(878, 14);
+            this.pictureDeconectare.Location = new System.Drawing.Point(993, 15);
             this.pictureDeconectare.Name = "pictureDeconectare";
             this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
             this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -301,28 +293,65 @@
             this.pictureDeconectare.TabStop = false;
             this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click);
             // 
+            // flowLayoutAfisare
+            // 
+            this.flowLayoutAfisare.AutoScroll = true;
+            this.flowLayoutAfisare.Location = new System.Drawing.Point(76, 46);
+            this.flowLayoutAfisare.Name = "flowLayoutAfisare";
+            this.flowLayoutAfisare.Size = new System.Drawing.Size(948, 365);
+            this.flowLayoutAfisare.TabIndex = 113;
+            // 
             // dataGridAfisare
             // 
             this.dataGridAfisare.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridAfisare.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridAfisare.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
-            this.dataGridAfisare.Location = new System.Drawing.Point(76, 46);
+            this.dataGridAfisare.Location = new System.Drawing.Point(77, 46);
             this.dataGridAfisare.Name = "dataGridAfisare";
-            this.dataGridAfisare.Size = new System.Drawing.Size(837, 365);
+            this.dataGridAfisare.Size = new System.Drawing.Size(947, 365);
             this.dataGridAfisare.TabIndex = 112;
+            // 
+            // radioViewTabel
+            // 
+            this.radioViewTabel.AutoSize = true;
+            this.radioViewTabel.CustomBackground = true;
+            this.radioViewTabel.Location = new System.Drawing.Point(193, 8);
+            this.radioViewTabel.Name = "radioViewTabel";
+            this.radioViewTabel.Size = new System.Drawing.Size(78, 15);
+            this.radioViewTabel.TabIndex = 114;
+            this.radioViewTabel.TabStop = true;
+            this.radioViewTabel.Text = "View Tabel";
+            this.radioViewTabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.radioViewTabel.UseVisualStyleBackColor = true;
+            this.radioViewTabel.CheckedChanged += new System.EventHandler(this.radioViewTabel_CheckedChanged);
+            // 
+            // radioViewList
+            // 
+            this.radioViewList.AutoSize = true;
+            this.radioViewList.CustomBackground = true;
+            this.radioViewList.Location = new System.Drawing.Point(193, 29);
+            this.radioViewList.Name = "radioViewList";
+            this.radioViewList.Size = new System.Drawing.Size(69, 15);
+            this.radioViewList.TabIndex = 115;
+            this.radioViewList.TabStop = true;
+            this.radioViewList.Text = "View List";
+            this.radioViewList.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.radioViewList.UseVisualStyleBackColor = true;
+            this.radioViewList.CheckedChanged += new System.EventHandler(this.radioViewList_CheckedChanged);
             // 
             // OptiuneAfiseazaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 411);
-            this.Controls.Add(this.dataGridAfisare);
+            this.ClientSize = new System.Drawing.Size(1024, 411);
+            this.Controls.Add(this.radioViewList);
+            this.Controls.Add(this.radioViewTabel);
+            this.Controls.Add(this.flowLayoutAfisare);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.lblPanaLa);
             this.Controls.Add(this.lblDeLa);
             this.Controls.Add(this.lblDeconectare);
             this.Controls.Add(this.btnCautaData);
-            this.Controls.Add(this.btnActualizeaza);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureDeconectare);
@@ -332,7 +361,11 @@
             this.Controls.Add(this.btnCautare);
             this.Controls.Add(this.btnAfisare);
             this.Controls.Add(this.btnAdauga);
+            this.Controls.Add(this.dataGridAfisare);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OptiuneAfiseazaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";
@@ -371,12 +404,14 @@
         private MetroFramework.Controls.MetroLabel lblDeLa;
         private MetroFramework.Controls.MetroLabel lblDeconectare;
         private MetroFramework.Controls.MetroButton btnCautaData;
-        private MetroFramework.Controls.MetroButton btnActualizeaza;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox pictureDeconectare;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem salveazaToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutAfisare;
         private System.Windows.Forms.DataGridView dataGridAfisare;
+        private MetroFramework.Controls.MetroRadioButton radioViewTabel;
+        private MetroFramework.Controls.MetroRadioButton radioViewList;
     }
 }

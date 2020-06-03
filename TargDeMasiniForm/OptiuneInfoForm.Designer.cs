@@ -140,7 +140,7 @@ namespace TargDeMasiniForm
             this.lblDeconectare.CustomBackground = true;
             this.lblDeconectare.CustomForeColor = true;
             this.lblDeconectare.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblDeconectare.Location = new System.Drawing.Point(777, 6);
+            this.lblDeconectare.Location = new System.Drawing.Point(898, 9);
             this.lblDeconectare.Name = "lblDeconectare";
             this.lblDeconectare.Size = new System.Drawing.Size(82, 19);
             this.lblDeconectare.TabIndex = 155;
@@ -151,7 +151,7 @@ namespace TargDeMasiniForm
             // 
             this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
-            this.pictureDeconectare.Location = new System.Drawing.Point(874, 4);
+            this.pictureDeconectare.Location = new System.Drawing.Point(995, 7);
             this.pictureDeconectare.Name = "pictureDeconectare";
             this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
             this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -193,11 +193,11 @@ namespace TargDeMasiniForm
             // 
             // btnAddPhoto
             // 
-            this.btnAddPhoto.Location = new System.Drawing.Point(512, 200);
+            this.btnAddPhoto.Location = new System.Drawing.Point(504, 200);
             this.btnAddPhoto.Name = "btnAddPhoto";
-            this.btnAddPhoto.Size = new System.Drawing.Size(74, 32);
+            this.btnAddPhoto.Size = new System.Drawing.Size(89, 41);
             this.btnAddPhoto.TabIndex = 149;
-            this.btnAddPhoto.Text = "Adauga";
+            this.btnAddPhoto.Text = "Change Image";
             this.btnAddPhoto.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnAddPhoto.Click += new System.EventHandler(this.btnAddPhoto_Click);
             // 
@@ -257,7 +257,7 @@ namespace TargDeMasiniForm
             this.btnResetPassword.Name = "btnResetPassword";
             this.btnResetPassword.Size = new System.Drawing.Size(98, 41);
             this.btnResetPassword.TabIndex = 156;
-            this.btnResetPassword.Text = "Reset Password";
+            this.btnResetPassword.Text = "New Password";
             this.btnResetPassword.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
@@ -266,7 +266,7 @@ namespace TargDeMasiniForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(914, 411);
+            this.ClientSize = new System.Drawing.Size(1024, 411);
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.lblDeconectare);
             this.Controls.Add(this.pictureDeconectare);
@@ -281,6 +281,9 @@ namespace TargDeMasiniForm
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.panelMeniu);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OptiuneInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " Car Shop";

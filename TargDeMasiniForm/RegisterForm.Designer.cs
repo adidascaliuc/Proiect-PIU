@@ -141,7 +141,7 @@
             this.txtPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPassword.Location = new System.Drawing.Point(88, 243);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(226, 35);
             this.txtPassword.TabIndex = 14;
             this.txtPassword.Text = "Password";
@@ -167,7 +167,7 @@
             this.txtConfirmPassword.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtConfirmPassword.Location = new System.Drawing.Point(88, 297);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
+            this.txtConfirmPassword.PasswordChar = '●';
             this.txtConfirmPassword.Size = new System.Drawing.Size(226, 35);
             this.txtConfirmPassword.TabIndex = 17;
             this.txtConfirmPassword.Text = "Password";

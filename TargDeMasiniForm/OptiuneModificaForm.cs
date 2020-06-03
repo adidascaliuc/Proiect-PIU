@@ -1,15 +1,10 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modele;
 using NivelAcces;
-using TargDeMasiniForm;
 
 namespace TargDeMasiniForm
 {
@@ -18,7 +13,7 @@ namespace TargDeMasiniForm
         private Masina m;
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
 
-        public OptiuneModificaForm(Masina masina, int index)
+        public OptiuneModificaForm(Masina masina)
         {
             InitializeComponent();
 
@@ -27,9 +22,7 @@ namespace TargDeMasiniForm
             comboFirma.Text = m.NumeFirma;
             comboModel.Text = m.Model;
             cBoxAnFabricatie.Text = Convert.ToString(m.AnFabricatie);
-
-
-
+            pictureMasina.ImageLocation = m.ImageLocation;
 
             if (Convert.ToInt32(m.CULOARE) == 1)
             {
@@ -57,34 +50,34 @@ namespace TargDeMasiniForm
             }
             txtPret.Text = Convert.ToString(m.Pret);
 
-            foreach(string opt in m.optiuniInt.Split(' '))
+            foreach (string opt in m.optiuniInt.Split(' '))
             {
                 if (opt == "1")
                 {
                     cBoxAerConditionat.Checked = true;
                 }
-                if(opt == "2")
+                if (opt == "2")
                 {
                     cBoxOptiuniVolan.Checked = true;
                 }
-                if(opt == "4")
+                if (opt == "4")
                 {
                     cBoxScaunePiele.Checked = true;
                 }
-                if(opt == "8")
+                if (opt == "8")
                 {
                     cBoxGeamuriElectrice.Checked = true;
                 }
-                if(opt == "16")
+                if (opt == "16")
                 {
                     cBoxNavigatie.Checked = true;
                 }
-                if(opt == "32")
+                if (opt == "32")
                 {
                     cBoxCutieAutomata.Checked = true;
                 }
             }
-            
+
 
         }
 
@@ -134,18 +127,20 @@ namespace TargDeMasiniForm
                     m.CULOARE = (Culoare)modCuloare;
                     m.OPTIUNI = (Optiuni)modOptiuni;
                     m.Pret = Convert.ToDouble(txtPret.Text);
+                    m.istoricPreturi.Add(Convert.ToDouble(txtPret.Text));
                     m.DataActualizare = DateTime.Now;
                     m.optiuniInt = ValidareOptiuniCheked();
-
+                    m.NumeProprietar = OptiuneInfoForm.InfoPersoana.NumeComplet;
                     adminMasini.UpdateMasina(m);
                     this.Hide();
+                    OptiuneAfiseazaForm.afis.populateForm();
                 }
                 else
                 {
                     MessageBox.Show("Pretul nu poate fi un sir de caractere", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                
+
             }
             else
             {
@@ -254,11 +249,11 @@ namespace TargDeMasiniForm
             }
             return 0;
         }
-      
+
 
         private void radioAlb_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioAlb.Checked == true)
+            if (radioAlb.Checked == true)
             {
                 lblCuloare.BackColor = SystemColors.Control;
             }
@@ -401,6 +396,28 @@ namespace TargDeMasiniForm
                 comboModel.Items.Add("Golf 7");
                 comboModel.Items.Add("T-Cross");
                 comboModel.Items.Add("Tiguan");
+            }
+        }
+
+        private void btnAdaugaImagine_Click(object sender, EventArgs e)
+        {
+            List<Masina> masini = adminMasini.GetMasini();
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
+
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    imageLocation = fileDialog.FileName;
+                    pictureMasina.ImageLocation = imageLocation;
+                    m.ImageLocation = imageLocation;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("A aparut o eroare!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

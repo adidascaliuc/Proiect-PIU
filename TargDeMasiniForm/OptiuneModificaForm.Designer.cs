@@ -56,7 +56,10 @@ namespace TargDeMasiniForm
             this.label1 = new System.Windows.Forms.Label();
             this.comboModel = new MetroFramework.Controls.MetroComboBox();
             this.comboFirma = new MetroFramework.Controls.MetroComboBox();
+            this.pictureMasina = new System.Windows.Forms.PictureBox();
+            this.btnAdaugaImagine = new MetroFramework.Controls.MetroButton();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).BeginInit();
             this.SuspendLayout();
             // 
             // cBoxCutieAutomata
@@ -64,12 +67,13 @@ namespace TargDeMasiniForm
             this.cBoxCutieAutomata.AutoSize = true;
             this.cBoxCutieAutomata.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxCutieAutomata.CustomBackground = true;
-            this.cBoxCutieAutomata.Location = new System.Drawing.Point(321, 300);
+            this.cBoxCutieAutomata.Location = new System.Drawing.Point(300, 300);
             this.cBoxCutieAutomata.Name = "cBoxCutieAutomata";
             this.cBoxCutieAutomata.Size = new System.Drawing.Size(107, 15);
             this.cBoxCutieAutomata.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxCutieAutomata.TabIndex = 119;
             this.cBoxCutieAutomata.Text = "Cutie Automata";
+            this.cBoxCutieAutomata.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxCutieAutomata.UseVisualStyleBackColor = false;
             // 
             // cBoxNavigatie
@@ -77,12 +81,13 @@ namespace TargDeMasiniForm
             this.cBoxNavigatie.AutoSize = true;
             this.cBoxNavigatie.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxNavigatie.CustomBackground = true;
-            this.cBoxNavigatie.Location = new System.Drawing.Point(321, 279);
+            this.cBoxNavigatie.Location = new System.Drawing.Point(300, 279);
             this.cBoxNavigatie.Name = "cBoxNavigatie";
             this.cBoxNavigatie.Size = new System.Drawing.Size(73, 15);
             this.cBoxNavigatie.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxNavigatie.TabIndex = 118;
             this.cBoxNavigatie.Text = "Navigatie";
+            this.cBoxNavigatie.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxNavigatie.UseVisualStyleBackColor = false;
             // 
             // cBoxGeamuriElectrice
@@ -90,12 +95,13 @@ namespace TargDeMasiniForm
             this.cBoxGeamuriElectrice.AutoSize = true;
             this.cBoxGeamuriElectrice.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxGeamuriElectrice.CustomBackground = true;
-            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(321, 258);
+            this.cBoxGeamuriElectrice.Location = new System.Drawing.Point(300, 258);
             this.cBoxGeamuriElectrice.Name = "cBoxGeamuriElectrice";
             this.cBoxGeamuriElectrice.Size = new System.Drawing.Size(115, 15);
             this.cBoxGeamuriElectrice.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxGeamuriElectrice.TabIndex = 117;
             this.cBoxGeamuriElectrice.Text = "Geamuri Electrice";
+            this.cBoxGeamuriElectrice.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxGeamuriElectrice.UseVisualStyleBackColor = false;
             // 
             // cBoxScaunePiele
@@ -103,12 +109,13 @@ namespace TargDeMasiniForm
             this.cBoxScaunePiele.AutoSize = true;
             this.cBoxScaunePiele.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxScaunePiele.CustomBackground = true;
-            this.cBoxScaunePiele.Location = new System.Drawing.Point(156, 300);
+            this.cBoxScaunePiele.Location = new System.Drawing.Point(135, 300);
             this.cBoxScaunePiele.Name = "cBoxScaunePiele";
             this.cBoxScaunePiele.Size = new System.Drawing.Size(89, 15);
             this.cBoxScaunePiele.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxScaunePiele.TabIndex = 116;
             this.cBoxScaunePiele.Text = "Scaune Piele";
+            this.cBoxScaunePiele.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxScaunePiele.UseVisualStyleBackColor = false;
             // 
             // cBoxOptiuniVolan
@@ -116,12 +123,13 @@ namespace TargDeMasiniForm
             this.cBoxOptiuniVolan.AutoSize = true;
             this.cBoxOptiuniVolan.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxOptiuniVolan.CustomBackground = true;
-            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(156, 279);
+            this.cBoxOptiuniVolan.Location = new System.Drawing.Point(135, 279);
             this.cBoxOptiuniVolan.Name = "cBoxOptiuniVolan";
             this.cBoxOptiuniVolan.Size = new System.Drawing.Size(95, 15);
             this.cBoxOptiuniVolan.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxOptiuniVolan.TabIndex = 115;
             this.cBoxOptiuniVolan.Text = "Optiuni Volan";
+            this.cBoxOptiuniVolan.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxOptiuniVolan.UseVisualStyleBackColor = false;
             // 
             // cBoxAerConditionat
@@ -129,12 +137,13 @@ namespace TargDeMasiniForm
             this.cBoxAerConditionat.AutoSize = true;
             this.cBoxAerConditionat.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.cBoxAerConditionat.CustomBackground = true;
-            this.cBoxAerConditionat.Location = new System.Drawing.Point(156, 258);
+            this.cBoxAerConditionat.Location = new System.Drawing.Point(135, 258);
             this.cBoxAerConditionat.Name = "cBoxAerConditionat";
             this.cBoxAerConditionat.Size = new System.Drawing.Size(107, 15);
             this.cBoxAerConditionat.Style = MetroFramework.MetroColorStyle.Black;
             this.cBoxAerConditionat.TabIndex = 114;
             this.cBoxAerConditionat.Text = "Aer Conditionat";
+            this.cBoxAerConditionat.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cBoxAerConditionat.UseVisualStyleBackColor = false;
             // 
             // radioArgintiu
@@ -142,13 +151,14 @@ namespace TargDeMasiniForm
             this.radioArgintiu.AutoSize = true;
             this.radioArgintiu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioArgintiu.CustomBackground = true;
-            this.radioArgintiu.Location = new System.Drawing.Point(318, 221);
+            this.radioArgintiu.Location = new System.Drawing.Point(297, 221);
             this.radioArgintiu.Name = "radioArgintiu";
             this.radioArgintiu.Size = new System.Drawing.Size(66, 15);
             this.radioArgintiu.Style = MetroFramework.MetroColorStyle.Black;
             this.radioArgintiu.TabIndex = 113;
             this.radioArgintiu.TabStop = true;
             this.radioArgintiu.Text = "Argintiu";
+            this.radioArgintiu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioArgintiu.UseVisualStyleBackColor = false;
             this.radioArgintiu.CheckedChanged += new System.EventHandler(this.radioArgintiu_CheckedChanged);
             // 
@@ -157,13 +167,14 @@ namespace TargDeMasiniForm
             this.radioVerde.AutoSize = true;
             this.radioVerde.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioVerde.CustomBackground = true;
-            this.radioVerde.Location = new System.Drawing.Point(318, 198);
+            this.radioVerde.Location = new System.Drawing.Point(297, 198);
             this.radioVerde.Name = "radioVerde";
             this.radioVerde.Size = new System.Drawing.Size(52, 15);
             this.radioVerde.Style = MetroFramework.MetroColorStyle.Black;
             this.radioVerde.TabIndex = 112;
             this.radioVerde.TabStop = true;
             this.radioVerde.Text = "Verde";
+            this.radioVerde.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioVerde.UseVisualStyleBackColor = false;
             this.radioVerde.CheckedChanged += new System.EventHandler(this.radioVerde_CheckedChanged);
             // 
@@ -172,13 +183,14 @@ namespace TargDeMasiniForm
             this.radioAlbastru.AutoSize = true;
             this.radioAlbastru.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioAlbastru.CustomBackground = true;
-            this.radioAlbastru.Location = new System.Drawing.Point(318, 173);
+            this.radioAlbastru.Location = new System.Drawing.Point(297, 173);
             this.radioAlbastru.Name = "radioAlbastru";
             this.radioAlbastru.Size = new System.Drawing.Size(67, 15);
             this.radioAlbastru.Style = MetroFramework.MetroColorStyle.Black;
             this.radioAlbastru.TabIndex = 111;
             this.radioAlbastru.TabStop = true;
             this.radioAlbastru.Text = "Albastru";
+            this.radioAlbastru.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioAlbastru.UseVisualStyleBackColor = false;
             this.radioAlbastru.CheckedChanged += new System.EventHandler(this.radioAlbastru_CheckedChanged);
             // 
@@ -187,13 +199,14 @@ namespace TargDeMasiniForm
             this.radioRosu.AutoSize = true;
             this.radioRosu.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioRosu.CustomBackground = true;
-            this.radioRosu.Location = new System.Drawing.Point(155, 221);
+            this.radioRosu.Location = new System.Drawing.Point(134, 221);
             this.radioRosu.Name = "radioRosu";
             this.radioRosu.Size = new System.Drawing.Size(49, 15);
             this.radioRosu.Style = MetroFramework.MetroColorStyle.Black;
             this.radioRosu.TabIndex = 110;
             this.radioRosu.TabStop = true;
             this.radioRosu.Text = "Rosu";
+            this.radioRosu.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioRosu.UseVisualStyleBackColor = false;
             this.radioRosu.CheckedChanged += new System.EventHandler(this.radioRosu_CheckedChanged);
             // 
@@ -202,13 +215,14 @@ namespace TargDeMasiniForm
             this.radioNegru.AutoSize = true;
             this.radioNegru.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioNegru.CustomBackground = true;
-            this.radioNegru.Location = new System.Drawing.Point(155, 196);
+            this.radioNegru.Location = new System.Drawing.Point(134, 196);
             this.radioNegru.Name = "radioNegru";
             this.radioNegru.Size = new System.Drawing.Size(56, 15);
             this.radioNegru.Style = MetroFramework.MetroColorStyle.Black;
             this.radioNegru.TabIndex = 109;
             this.radioNegru.TabStop = true;
             this.radioNegru.Text = "Negru";
+            this.radioNegru.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioNegru.UseVisualStyleBackColor = false;
             this.radioNegru.CheckedChanged += new System.EventHandler(this.radioNegru_CheckedChanged);
             // 
@@ -217,13 +231,14 @@ namespace TargDeMasiniForm
             this.radioAlb.AutoSize = true;
             this.radioAlb.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.radioAlb.CustomBackground = true;
-            this.radioAlb.Location = new System.Drawing.Point(155, 173);
+            this.radioAlb.Location = new System.Drawing.Point(134, 173);
             this.radioAlb.Name = "radioAlb";
             this.radioAlb.Size = new System.Drawing.Size(41, 15);
             this.radioAlb.Style = MetroFramework.MetroColorStyle.Black;
             this.radioAlb.TabIndex = 108;
             this.radioAlb.TabStop = true;
             this.radioAlb.Text = "Alb";
+            this.radioAlb.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.radioAlb.UseVisualStyleBackColor = false;
             this.radioAlb.CheckedChanged += new System.EventHandler(this.radioAlb_CheckedChanged);
             // 
@@ -348,7 +363,7 @@ namespace TargDeMasiniForm
             this.metroPanel1.HorizontalScrollbarSize = 10;
             this.metroPanel1.Location = new System.Drawing.Point(0, 0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(471, 63);
+            this.metroPanel1.Size = new System.Drawing.Size(800, 63);
             this.metroPanel1.TabIndex = 121;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -397,12 +412,35 @@ namespace TargDeMasiniForm
             this.comboFirma.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.comboFirma.SelectedIndexChanged += new System.EventHandler(this.comboFirma_SelectedIndexChanged);
             // 
+            // pictureMasina
+            // 
+            this.pictureMasina.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureMasina.Image = global::TargDeMasiniForm.Properties.Resources.presetCarPng1;
+            this.pictureMasina.Location = new System.Drawing.Point(473, 103);
+            this.pictureMasina.Name = "pictureMasina";
+            this.pictureMasina.Size = new System.Drawing.Size(267, 160);
+            this.pictureMasina.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMasina.TabIndex = 127;
+            this.pictureMasina.TabStop = false;
+            // 
+            // btnAdaugaImagine
+            // 
+            this.btnAdaugaImagine.Location = new System.Drawing.Point(554, 291);
+            this.btnAdaugaImagine.Name = "btnAdaugaImagine";
+            this.btnAdaugaImagine.Size = new System.Drawing.Size(106, 36);
+            this.btnAdaugaImagine.TabIndex = 126;
+            this.btnAdaugaImagine.Text = "Schimba Imagine";
+            this.btnAdaugaImagine.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.btnAdaugaImagine.Click += new System.EventHandler(this.btnAdaugaImagine_Click);
+            // 
             // OptiuneModificaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(471, 407);
+            this.ClientSize = new System.Drawing.Size(800, 407);
+            this.Controls.Add(this.pictureMasina);
+            this.Controls.Add(this.btnAdaugaImagine);
             this.Controls.Add(this.comboFirma);
             this.Controls.Add(this.comboModel);
             this.Controls.Add(this.metroPanel1);
@@ -428,12 +466,16 @@ namespace TargDeMasiniForm
             this.Controls.Add(this.txtPret);
             this.Controls.Add(this.cBoxAnFabricatie);
             this.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "OptiuneModificaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Car Shop";
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,5 +508,7 @@ namespace TargDeMasiniForm
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroComboBox comboModel;
         private MetroFramework.Controls.MetroComboBox comboFirma;
+        private System.Windows.Forms.PictureBox pictureMasina;
+        private MetroFramework.Controls.MetroButton btnAdaugaImagine;
     }
 }

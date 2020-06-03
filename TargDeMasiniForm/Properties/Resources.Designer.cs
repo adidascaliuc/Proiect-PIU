@@ -143,6 +143,16 @@ namespace TargDeMasiniForm.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap infoCar {
+            get {
+                object obj = ResourceManager.GetObject("infoCar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap infoPng {
             get {
                 object obj = ResourceManager.GetObject("infoPng", resourceCulture);
@@ -246,6 +256,26 @@ namespace TargDeMasiniForm.Properties {
         internal static System.Drawing.Bitmap play {
             get {
                 object obj = ResourceManager.GetObject("play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap presetCarPng {
+            get {
+                object obj = ResourceManager.GetObject("presetCarPng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap presetCarPng1 {
+            get {
+                object obj = ResourceManager.GetObject("presetCarPng1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

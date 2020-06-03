@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Dynamic;
@@ -17,18 +18,31 @@ namespace Modele
         const int PASSWORD = 3;
         const int BUGET = 4;
         const int MASINI = 5;
+        const int IMAGE = 6;
 
 
         //parametrii auto-implemented
         public string Nume { set; get; }
         public string Prenume { set; get; }
         public TipPersoana tipPersoana { set; get; }
-        public string NumeComplet { get{ return Nume +" "+ Prenume; } }
+        public string NumeComplet { get { return Nume + " " + Prenume; } }
         public double Buget;
         public string Username { set; get; }
         public string Password { set; get; }
         public List<Masina> masiniCumparate = new List<Masina>();
-        List<string> masini = new List<string>();
+        string imageLocation;
+        public string ImageLocation
+        {
+            set
+            {
+                imageLocation = @value;
+            }
+            get
+
+            {               
+                    return imageLocation;                              
+            }
+        }
 
         public Persoana() //constructor implicit fara parametrii
         {
@@ -66,25 +80,26 @@ namespace Modele
             {
                 masiniCumparate.Add(new Masina(date[MASINI]));
             }
+            ImageLocation = date[IMAGE];
         }
 
         public string masiniToString()
         {
             string masini = "";
-            if(masiniCumparate != null)
-            foreach(Masina m in masiniCumparate)
-            {
+            if (masiniCumparate != null)
+                foreach (Masina m in masiniCumparate)
+                {
                     if (m != null)
                     {
                         masini += m.ConversieLaSir_PentruFisiere() + "@";
                     }
-            }
+                }
             return masini;
         }
 
         public string ConversieLaSir_PentruFisier()
         {
-            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}", SEPARATOR_FISIER, Nume, Prenume, Username, Password, Buget, masiniToString());   
+            return string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}{0}{6}{0}{7}", SEPARATOR_FISIER, Nume, Prenume, Username, Password, Buget, masiniToString(), ImageLocation);
         }
 
         public string ConversieLaSir() //Afiseaza date despre persoana

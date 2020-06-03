@@ -1,18 +1,14 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modele;
 using NivelAcces;
 
 namespace TargDeMasiniForm
 {
-    public partial class RegisterForm : Form      
+    public partial class RegisterForm : Form
     {
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
         public RegisterForm()
@@ -33,7 +29,7 @@ namespace TargDeMasiniForm
 
         private void txtNume_Leave(object sender, EventArgs e)
         {
-            if(txtNume.Text == "")
+            if (txtNume.Text == "")
             {
                 txtNume.Text = "Nume";
             }
@@ -43,12 +39,12 @@ namespace TargDeMasiniForm
         {
             txtPrenume.Text = "";
             txtPrenume.BackColor = SystemColors.Control;
-            
+
         }
 
         private void txtPrenume_Leave(object sender, EventArgs e)
         {
-            if(txtPrenume.Text == "")
+            if (txtPrenume.Text == "")
             {
                 txtPrenume.Text = "Prenume";
             }
@@ -62,7 +58,7 @@ namespace TargDeMasiniForm
 
         private void txtPassword_Leave(object sender, EventArgs e)
         {
-            if(txtPassword.Text == "")
+            if (txtPassword.Text == "")
             {
                 txtPassword.Text = "Password";
             }
@@ -107,12 +103,12 @@ namespace TargDeMasiniForm
                     }
                     else
                     {
-                        MessageBox.Show("Parolele difera!!!","Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Parolele difera!!!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Exista deja un utilizator cu acest username","Username Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Exista deja un utilizator cu acest username", "Username Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -128,7 +124,7 @@ namespace TargDeMasiniForm
             {
                 foreach (Persoana p in persoane)
                 {
-                    if(p.Username == username)
+                    if (p.Username == username)
                     {
                         return 0;
                     }
@@ -138,8 +134,8 @@ namespace TargDeMasiniForm
         }
 
         private int ValidarePassword()
-        {           
-            if( (txtPassword.Text == txtConfirmPassword.Text) && (txtPassword.Text != "Password" && txtConfirmPassword.Text != "Password") )
+        {
+            if ((txtPassword.Text == txtConfirmPassword.Text) && (txtPassword.Text != "Password" && txtConfirmPassword.Text != "Password"))
             {
                 return 1;
             }
@@ -148,23 +144,23 @@ namespace TargDeMasiniForm
 
         private void ValidareControale()
         {
-            if(txtNume.Text == "" || txtNume.Text == "Nume")
+            if (txtNume.Text == "" || txtNume.Text == "Nume")
             {
                 txtNume.BackColor = Color.Red;
             }
-            if(txtPrenume.Text == "" || txtPrenume.Text == "Prenume")
+            if (txtPrenume.Text == "" || txtPrenume.Text == "Prenume")
             {
                 txtPrenume.BackColor = Color.Red;
             }
-            if(txtUsername.Text == "" || txtUsername.Text == "Username")
+            if (txtUsername.Text == "" || txtUsername.Text == "Username")
             {
                 txtUsername.BackColor = Color.Red;
             }
-            if(txtPassword.Text == "" || txtPassword.Text == "Password")
+            if (txtPassword.Text == "" || txtPassword.Text == "Password")
             {
                 txtPassword.BackColor = Color.Red;
-            }     
-            if(txtConfirmPassword.Text == "" || txtConfirmPassword.Text == "Password")
+            }
+            if (txtConfirmPassword.Text == "" || txtConfirmPassword.Text == "Password")
             {
                 txtConfirmPassword.BackColor = Color.Red;
             }
@@ -187,7 +183,7 @@ namespace TargDeMasiniForm
 
         private void txtConfirmPassword_Leave(object sender, EventArgs e)
         {
-            if(txtConfirmPassword.Text == "")
+            if (txtConfirmPassword.Text == "")
             {
                 txtConfirmPassword.Text = "Password";
             }

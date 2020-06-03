@@ -1,7 +1,4 @@
-1;Audi;Q5;2020;3;63;234532.56;6/2/2020 1:25:09 AM;1 2 4 8 16 32;;a a
-2;Audi;A6;2020;6;63;60000.99;6/1/2020 5:48:58 PM;1 2 4 8 16 32;;a a
-3;Volkswagen;Tiguan;2012;2;63;11950.5;6/1/2020 8:32:13 PM;1 2 4 8 16 32;;a a
-4;Audi;Q7;2020;2;15;30000;6/1/2020 10:06:19 PM;1 2 4 8;;a a
-5;Lexus;NX;2015;3;32;12000.88;6/1/2020 10:10:05 PM; 32;;a a
-6;BMW;Seria 5;2005;2;2;18800.79;6/2/2020 1:07:02 PM; 2;;a a
-7;BMW;i8;2020;6;11;30000;6/2/2020 1:08:12 PM;1 2 8;;a a
+1;Audi;Q5;2012;6;63;100000;6/3/2020 7:32:26 PM;1 2 4 8 16 32;7XN5CA8701;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\audiQ5GriPng.png;Dascaliuc Adi|a a;100000|10000|50000|10000|50000|100000
+2;BMW;Seria 7;2011;5;3;10000;6/3/2020 6:07:31 PM;1 2;PWYIPOPU01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\bmwSeria7Png.png;a a;10000
+3;Porche;Cayenne;2014;6;39;50000;6/3/2020 6:08:15 PM;1 2 4 32;283J8GLB01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\porcheCayenne.png;a a;50000
+4;Ford;Mustang;2011;2;57;30000;6/3/2020 7:30:46 PM;1 8 16 32;OQRRAR7H01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\fordMustangPng.png;a a;30000

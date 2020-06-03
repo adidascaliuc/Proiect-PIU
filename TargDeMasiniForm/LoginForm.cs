@@ -1,12 +1,8 @@
-﻿using Modele;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using Modele;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NivelAcces;
 
@@ -18,8 +14,8 @@ namespace TargDeMasiniForm
         public static Persoana infoPersoana = null;
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
         public LoginForm()
-        {                   
-            InitializeComponent();            
+        {
+            InitializeComponent();
         }
 
         private void btnX_Click(object sender, EventArgs e)
@@ -33,9 +29,9 @@ namespace TargDeMasiniForm
             {
                 txtUsername.Text = "Username";
             }
-            
+
         }
-        
+
         private void txtUsername_Enter(object sender, EventArgs e)
         {
             txtUsername.Text = "";
@@ -48,7 +44,7 @@ namespace TargDeMasiniForm
             {
                 txtPassword.Text = "Password";
             }
-            
+
         }
 
         private void txtPassword_Enter(object sender, EventArgs e)
@@ -62,29 +58,29 @@ namespace TargDeMasiniForm
             List<Persoana> persoane = adminPersoane.GetPersoane();
             bool gasit = false;
 
-            if(txtUsername.Text == string.Empty)
+            if (txtUsername.Text == string.Empty || txtUsername.Text == "Username")
             {
                 MessageBox.Show("Introduceti username-ul apoi reveniti la recuperarea parolei.", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                foreach(Persoana p in persoane)
+                foreach (Persoana p in persoane)
                 {
-                    if(p.Username == txtUsername.Text)
+                    if (p.Username == txtUsername.Text)
                     {
-                        MessageBox.Show("Parola: " + p.Password, "Info parola "+p.Username, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Parola: " + p.Password, "Info parola " + p.Username, MessageBoxButtons.OK, MessageBoxIcon.Information);
                         gasit = true;
-                    }                  
+                    }
                 }
 
-                if(gasit == false)
+                if (gasit == false)
                 {
                     DialogResult dialogResult = MessageBox.Show("Nu exista acest utilizator.\nDoriti sa va creati un cont?", "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
                         RegisterForm registerForm = new RegisterForm();
                         registerForm.ShowDialog();
-                    }                   
+                    }
                 }
             }
         }
@@ -95,26 +91,26 @@ namespace TargDeMasiniForm
 
             bool gasit = false;
             if (ValidareInput() == 0)
-            {               
-                    foreach (Persoana p in persoane)
+            {
+                foreach (Persoana p in persoane)
+                {
+                    if (txtUsername.Text == p.Username && txtPassword.Text == p.Password)
                     {
-                        if (txtUsername.Text == p.Username && txtPassword.Text == p.Password)
-                        {
-                            infoPersoana = p;
-                            infoForm = new OptiuneInfoForm(p);                    
-                            infoForm.Show();
-                            this.Hide();
-                            Program.startForm.Hide();                         
-                            gasit = true;
-                        }
-
+                        infoPersoana = p;
+                        infoForm = new OptiuneInfoForm(p);
+                        infoForm.Show();
+                        this.Hide();
+                        Program.startForm.Hide();
+                        gasit = true;
                     }
-                    if (!gasit)
-                    {
-                        MessageBox.Show("Nume sau parola incorecte!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }                
+
                 }
-            
+                if (!gasit)
+                {
+                    MessageBox.Show("Nume sau parola incorecte!", "Eroare", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
             else
             {
                 MessageBox.Show("Completati spatiile marcate cu rosu!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -123,7 +119,7 @@ namespace TargDeMasiniForm
 
         private int ValidareInput()
         {
-            if(txtUsername.Text == "Username")
+            if (txtUsername.Text == "Username")
             {
                 txtUsername.BackColor = Color.Red;
             }
@@ -153,7 +149,7 @@ namespace TargDeMasiniForm
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
-            
+
         }
 
         private void pictureShowPassword_MouseDown(object sender, MouseEventArgs e)
@@ -163,8 +159,8 @@ namespace TargDeMasiniForm
 
         private void pictureShowPassword_MouseUp(object sender, MouseEventArgs e)
         {
-            txtPassword.PasswordChar = '●';           
-            
+            txtPassword.PasswordChar = '●';
+
         }
     }
 }

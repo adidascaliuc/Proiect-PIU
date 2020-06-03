@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Modele;
@@ -17,10 +18,6 @@ namespace NivelAcces
                 this.NumeFisier = numeFisier;
                 Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
                 sFisierText.Close();
-
-                //liniile de mai sus pot fi inlocuite cu linia de cod urmatoare deoarece
-                //instructiunea 'using' va apela sFisierText.Close();
-                //using (Stream sFisierText = File.Open(numeFisier, FileMode.OpenOrCreate)) { }
             }
 
         private int GetId()
@@ -28,12 +25,10 @@ namespace NivelAcces
             int IdMasina = ID_PRIMA_MASINA;
             try
             {
-                // instructiunea 'using' va apela sr.Close()
                 using (StreamReader sr = new StreamReader(NumeFisier))
                 {
                     string line;
 
-                    //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                     while ((line = sr.ReadLine()) != null)
                     {
                         Masina m = new Masina(line);
@@ -57,8 +52,6 @@ namespace NivelAcces
             m.IdMasina = GetId();
                 try
                 {
-                    //instructiunea 'using' va apela la final swFisierText.Close();
-                    //al doilea parametru setat la 'true' al constructorului StreamWriter indica modul 'append' de deschidere al fisierului
                     using (StreamWriter swFisierText = new StreamWriter(NumeFisier, true))
                     {
                         swFisierText.WriteLine(m.ConversieLaSir_PentruFisiere());
@@ -79,13 +72,10 @@ namespace NivelAcces
  
             try
             {
-                //instructiunea 'using' va apela la final swFisierText.Close();
-                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
                 {
                     foreach (Masina msn in masini)
                     {
-                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
                         if (msn == m)
                         {
                             continue;
@@ -111,13 +101,10 @@ namespace NivelAcces
             List<Masina> masini = GetMasini();
             try
             {
-                //instructiunea 'using' va apela la final swFisierText.Close();
-                //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
                 using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
                 {
                     foreach (Masina msn in masini)
                     {
-                        //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
                         if (msn.IdMasina == m.IdMasina)
                         {
                             swFisierText.WriteLine(m.ConversieLaSir_PentruFisiere());
@@ -145,12 +132,9 @@ namespace NivelAcces
 
                 try
                 {
-                    // instructiunea 'using' va apela sr.Close()
                     using (StreamReader sr = new StreamReader(NumeFisier))
                     {
                         string line;
-
-                        //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                         while ((line = sr.ReadLine()) != null)
                         {
                             Masina m = new Masina(line);

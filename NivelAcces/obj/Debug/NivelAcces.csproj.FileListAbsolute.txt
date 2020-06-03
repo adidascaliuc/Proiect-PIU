@@ -7,3 +7,6 @@ D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csproj.CoreCompileInputs.c
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.csproj.CopyComplete
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.dll
 D:\GitHub\Proiect-PIU\NivelAcces\obj\Debug\NivelAcces.pdb
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\LiveCharts.dll
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\LiveCharts.pdb
+D:\GitHub\Proiect-PIU\NivelAcces\bin\Debug\LiveCharts.xml

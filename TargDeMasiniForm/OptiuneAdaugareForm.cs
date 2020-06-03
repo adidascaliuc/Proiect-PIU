@@ -1,12 +1,8 @@
-﻿using System;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Modele;
 using NivelAcces;
@@ -17,19 +13,20 @@ namespace TargDeMasiniForm
     {
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
         public ArrayList optiuniSelectate = new ArrayList();
+        private bool imageSelected = false;
 
         public OptiuneAdaugareForm()
         {
             InitializeComponent();
         }
-        
+
         private int ValidareOptiuni()
         {
             int optiuni = 0;
 
             if (cBoxAerConditionat.Checked == true)
             {
-                optiuni += 1;               
+                optiuni += 1;
             }
             if (cBoxOptiuniVolan.Checked)
             {
@@ -49,7 +46,7 @@ namespace TargDeMasiniForm
             }
             if (cBoxCutieAutomata.Checked)
             {
-                optiuni += 32;               
+                optiuni += 32;
             }
 
             return optiuni;
@@ -85,36 +82,36 @@ namespace TargDeMasiniForm
             return 0;
         }
 
-        
+
         private int ValidareMasina()
         {
             if (comboFirma.Text == string.Empty)
             {
-                lblFirma.BackColor = Color.Red;                
+                lblFirma.BackColor = Color.Red;
             }
             if (comboModel.Text == string.Empty)
             {
                 lblModel.BackColor = Color.Red;
-               
+
             }
             if (cBoxAnFabricatie.Text == string.Empty)
             {
-                lblAnFabricatie.BackColor = Color.Red;                       
+                lblAnFabricatie.BackColor = Color.Red;
             }
             if (ValidareCuloare() == 0)
             {
                 lblCuloare.BackColor = Color.Red;
-                
-            }           
+
+            }
             if (cBoxAerConditionat.Checked == false && cBoxCutieAutomata.Checked == false && cBoxGeamuriElectrice.Checked == false && cBoxNavigatie.Checked == false && cBoxOptiuniVolan.Checked == false && cBoxScaunePiele.Checked == false)
             {
                 lblOptiuni.BackColor = Color.Red;
-                
-            }           
+
+            }
             if (txtPret.Text == string.Empty || double.TryParse(txtPret.Text, out double result) == false)
             {
                 lblPret.BackColor = Color.Red;
-                
+
             }
 
             if (comboFirma.BackColor == Color.Red || comboModel.BackColor == Color.Red ||
@@ -129,11 +126,6 @@ namespace TargDeMasiniForm
             }
         }
 
-        private void lBoxAfisare_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //List<Masina> masini = adminMasini.GetMasiniIndex(lBoxAfisare.SelectedIndex);
-
-        }
 
         private void ResetControls()
         {
@@ -156,68 +148,32 @@ namespace TargDeMasiniForm
             cBoxNavigatie.Checked = false;
             cBoxOptiuniVolan.Checked = false;
             cBoxScaunePiele.Checked = false;
-
-
-        }
-
-
-        private void pctAdauga_Click(object sender, EventArgs e)
-        {
-            int culoare = ValidareCuloare();
-            int optiuni = ValidareOptiuni();
-            string validareChecked = ValidareOptiuniCheked();
-
-            int validare = ValidareMasina();
-
-            if (validare == 0)
-            {
-                if (Double.TryParse(txtPret.Text, out double result) == true)
-                    {
-                    Masina m = new Masina(comboFirma.Text, comboModel.Text, Convert.ToInt32(cBoxAnFabricatie.Text), culoare, optiuni, Convert.ToDouble(txtPret.Text));
-                    m.optiuniInt = validareChecked;
-                    m.DataActualizare = DateTime.Now;
-                    m.NumeProprietar = OptiuneInfoForm.InfoPersoana.NumeComplet;
-                    adminMasini.AddMasina(m);
-                    MessageBox.Show("Masina adaugata", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ResetControls();
-                    }                
-               
-                else
-                {
-                    MessageBox.Show("Pretul nu poate fi un sir de caractere!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Completati campurile marcate cu rosu!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
         }
 
         private string ValidareOptiuniCheked()
         {
             string checkedOpt = "";
-            if(cBoxAerConditionat.Checked == true)
+            if (cBoxAerConditionat.Checked == true)
             {
                 checkedOpt += "1";
             }
-            if(cBoxOptiuniVolan.Checked == true)
+            if (cBoxOptiuniVolan.Checked == true)
             {
                 checkedOpt += " 2";
             }
-            if(cBoxScaunePiele.Checked == true)
+            if (cBoxScaunePiele.Checked == true)
             {
                 checkedOpt += " 4";
             }
-            if(cBoxGeamuriElectrice.Checked == true)
+            if (cBoxGeamuriElectrice.Checked == true)
             {
                 checkedOpt += " 8";
             }
-            if(cBoxNavigatie.Checked == true)
+            if (cBoxNavigatie.Checked == true)
             {
                 checkedOpt += " 16";
             }
-            if(cBoxCutieAutomata.Checked == true)
+            if (cBoxCutieAutomata.Checked == true)
             {
                 checkedOpt += " 32";
             }
@@ -227,7 +183,7 @@ namespace TargDeMasiniForm
         private void ckbOptiuni_CheckedChanged(object sender, EventArgs e)
         {
             lblOptiuni.BackColor = SystemColors.ButtonFace;
-            
+
         }
 
         private void lblDeconectare_Click(object sender, EventArgs e)
@@ -247,10 +203,10 @@ namespace TargDeMasiniForm
 
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
-        {
-            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-            afiseazaForm.Show();
-            this.Hide();
+        {           
+                OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
+                afiseazaForm.Show();
+                this.Hide();
         }
 
         private void pctCauta_Click(object sender, EventArgs e)
@@ -258,7 +214,7 @@ namespace TargDeMasiniForm
             OptiuneCautaForm cautaForm = new OptiuneCautaForm();
             this.Hide();
             cautaForm.Show();
-            
+
         }
 
         private void pctModifica_Click(object sender, EventArgs e)
@@ -292,7 +248,7 @@ namespace TargDeMasiniForm
 
         private void radioAlb_CheckedChanged(object sender, EventArgs e)
         {
-            if(radioAlb.Checked == true)
+            if (radioAlb.Checked == true)
             {
                 lblCuloare.BackColor = SystemColors.Control;
             }
@@ -441,6 +397,69 @@ namespace TargDeMasiniForm
         private void comboModel_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblModel.BackColor = SystemColors.ButtonFace;
+        }
+
+        private void btnSchimbaImagine_Click(object sender, EventArgs e)
+        {
+            List<Masina> masini = adminMasini.GetMasini();
+            string imageLocation = "";
+            try
+            {
+                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
+
+                if (fileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    imageLocation = fileDialog.FileName;
+                    pictureMasina.ImageLocation = imageLocation;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("A aparut o eroare!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void btnAdaugare_Click(object sender, EventArgs e)
+        {
+            int culoare = ValidareCuloare();
+            int optiuni = ValidareOptiuni();
+            string validareChecked = ValidareOptiuniCheked();
+
+            int validare = ValidareMasina();
+
+            if (validare == 0)
+            {
+                if (Double.TryParse(txtPret.Text, out double result) == true)
+                {
+                    if (Convert.ToDouble(txtPret.Text) <= 0)
+                    {
+                        MessageBox.Show("Pretul masinii trebuie sa fie mai mare decat 0!", "Info Pret", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        Masina m = new Masina(comboFirma.Text, comboModel.Text, Convert.ToInt32(cBoxAnFabricatie.Text), culoare, optiuni, Convert.ToDouble(txtPret.Text));
+                        m.optiuniInt = validareChecked;
+                        m.DataActualizare = DateTime.Now;
+                        m.NumeProprietar = OptiuneInfoForm.InfoPersoana.NumeComplet;
+                        m.ImageLocation = pictureMasina.ImageLocation;                      
+                        m.istoricProprietari.Add(OptiuneInfoForm.InfoPersoana.NumeComplet);
+                        m.istoricPreturi.Add(Convert.ToDouble(txtPret.Text));
+                        adminMasini.AddMasina(m);
+                        MessageBox.Show("Masina adaugata", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ResetControls();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Pretul nu poate fi un sir de caractere!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completati campurile marcate cu rosu!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -1,8 +1,2 @@
-a|a|a|a|300000|
-v|v|v|v|30000|
-Hreceniuc|Andreia|andreiiahr|piu2020|720008.93|
-Dascaliuc|Adi|adi.dascaliuc|parola|500000|
-b|b|b|b|0|
-test|proiect|test.proiect|proiectpiu2020|0|
-Dascaliuc|Adi|dascaliuc.adi|12345|0|
-a|a|aa|12345|0|
+Dascaliuc|Adi|adi.dascaliuc|parola|90000||
+a|a|a|12345|0||D:\GitHub\Proiect-PIU\Imagini\Forma\addPng.png
