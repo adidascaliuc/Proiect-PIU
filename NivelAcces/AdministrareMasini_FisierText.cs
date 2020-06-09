@@ -66,36 +66,7 @@ namespace NivelAcces
                     throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
                 }
             }
-        public void StergeMasina(Masina m)
-        {
-            List<Masina> masini = GetMasini();
- 
-            try
-            {
-                using (StreamWriter swFisierText = new StreamWriter(NumeFisier, false))
-                {
-                    foreach (Masina msn in masini)
-                    {
-                        if (msn == m)
-                        {
-                            continue;
-                        }
-                        else
-                        {
-                            swFisierText.WriteLine(msn.ConversieLaSir_PentruFisiere());
-                        }
-                    }
-                }
-            }
-            catch (IOException eIO)
-            {
-                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
-            }
-            catch (Exception eGen)
-            {
-                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
-            }
-        }
+        
         public void UpdateMasina(Masina m)
         {
             List<Masina> masini = GetMasini();
@@ -190,6 +161,37 @@ namespace NivelAcces
             }
 
             return null;
+        }
+
+        public List<Masina> GetMasiniUser(string NumePersoana)
+        {
+            List<Masina> masini = new List<Masina>();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(NumeFisier))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Masina m = new Masina(line);
+                        if (m.NumeProprietar == NumePersoana)
+                        {
+                            masini.Add(m);
+                        }
+                    }
+                }
+            }
+            catch (IOException eIO)
+            {
+                throw new Exception("Eroare la deschiderea fisierului. Mesaj: " + eIO.Message);
+            }
+            catch (Exception eGen)
+            {
+                throw new Exception("Eroare generica. Mesaj: " + eGen.Message);
+            }
+
+            return masini;
         }
     }
 }

@@ -10,6 +10,6 @@ namespace NivelAcces
         List<Masina> GetMasini();
         List<Masina> GetMasiniIndex(int index);
         void UpdateMasina(Masina m);
-        void StergeMasina(Masina m);
+        List<Masina> GetMasiniUser(string username);
     }
 }

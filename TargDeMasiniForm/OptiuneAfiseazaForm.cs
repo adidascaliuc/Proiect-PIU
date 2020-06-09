@@ -52,36 +52,32 @@ namespace TargDeMasiniForm
 
         private void pctAdauga_Click(object sender, EventArgs e)
         {
-            OptiuneAdaugareForm adaugaForm = new OptiuneAdaugareForm();
-            adaugaForm.Show();
+            new OptiuneAdaugareForm().Show();
             this.Hide();
         }
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-            afiseazaForm.Show();
+            new OptiuneAfiseazaForm().Show();
             this.Hide();
         }
 
         private void pctCauta_Click(object sender, EventArgs e)
         {
-            OptiuneCautaForm cautaForm = new OptiuneCautaForm();
+            new OptiuneCautaForm().Show();
             this.Hide();
-            cautaForm.Show();
+            
         }
 
         private void lblDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 
         private void pictureDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 
@@ -146,7 +142,7 @@ namespace TargDeMasiniForm
                 flowLayoutAfisare.Controls.Clear();
                 foreach(Masina m in masiniGasite)
                 {
-                    flowLayoutAfisare.Controls.Add(new ListaMasiniForm(m));
+                    flowLayoutAfisare.Controls.Add(new ListaMasiniForm(m, (int)ModAfisare.FORMAAFISARE));
                 }
             }
             else
@@ -218,7 +214,7 @@ namespace TargDeMasiniForm
             List<ListaMasiniForm> listaMasini = new List<ListaMasiniForm>();
             foreach (Masina m in masini)
             {
-                listaMasini.Add(new ListaMasiniForm(m));
+                listaMasini.Add(new ListaMasiniForm(m, (int)ModAfisare.FORMAAFISARE));
                 flowLayoutAfisare.Controls.Add(listaMasini.Last());
 
             }

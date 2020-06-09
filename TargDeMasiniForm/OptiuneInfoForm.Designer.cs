@@ -38,10 +38,8 @@ namespace TargDeMasiniForm
             this.pctAdauga = new System.Windows.Forms.PictureBox();
             this.pctAfiseaza = new System.Windows.Forms.PictureBox();
             this.lblDeconectare = new MetroFramework.Controls.MetroLabel();
-            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
             this.btnAdaugaBuget = new MetroFramework.Controls.MetroButton();
             this.lblBuget = new MetroFramework.Controls.MetroLabel();
-            this.pictureUserPhoto = new System.Windows.Forms.PictureBox();
             this.btnAddPhoto = new MetroFramework.Controls.MetroButton();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.lblUsername = new MetroFramework.Controls.MetroLabel();
@@ -49,12 +47,17 @@ namespace TargDeMasiniForm
             this.lblNume = new MetroFramework.Controls.MetroLabel();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.btnResetPassword = new MetroFramework.Controls.MetroButton();
+            this.pictureMyCars = new System.Windows.Forms.PictureBox();
+            this.pictureDeconectare = new System.Windows.Forms.PictureBox();
+            this.pictureUserPhoto = new System.Windows.Forms.PictureBox();
+            this.lblMyCars = new MetroFramework.Controls.MetroLabel();
             this.panelMeniu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctModifica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMyCars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).BeginInit();
             this.SuspendLayout();
@@ -147,18 +150,6 @@ namespace TargDeMasiniForm
             this.lblDeconectare.Text = "Deconectare";
             this.lblDeconectare.Click += new System.EventHandler(this.lblDeconectare_Click);
             // 
-            // pictureDeconectare
-            // 
-            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
-            this.pictureDeconectare.Location = new System.Drawing.Point(995, 7);
-            this.pictureDeconectare.Name = "pictureDeconectare";
-            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
-            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureDeconectare.TabIndex = 154;
-            this.pictureDeconectare.TabStop = false;
-            this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click);
-            // 
             // btnAdaugaBuget
             // 
             this.btnAdaugaBuget.Location = new System.Drawing.Point(85, 267);
@@ -179,21 +170,9 @@ namespace TargDeMasiniForm
             this.lblBuget.TabIndex = 151;
             this.lblBuget.Text = " Buget: ";
             // 
-            // pictureUserPhoto
-            // 
-            this.pictureUserPhoto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureUserPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureUserPhoto.Image = global::TargDeMasiniForm.Properties.Resources.usernamePng;
-            this.pictureUserPhoto.Location = new System.Drawing.Point(464, 42);
-            this.pictureUserPhoto.Name = "pictureUserPhoto";
-            this.pictureUserPhoto.Size = new System.Drawing.Size(169, 152);
-            this.pictureUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureUserPhoto.TabIndex = 150;
-            this.pictureUserPhoto.TabStop = false;
-            // 
             // btnAddPhoto
             // 
-            this.btnAddPhoto.Location = new System.Drawing.Point(504, 200);
+            this.btnAddPhoto.Location = new System.Drawing.Point(505, 200);
             this.btnAddPhoto.Name = "btnAddPhoto";
             this.btnAddPhoto.Size = new System.Drawing.Size(89, 41);
             this.btnAddPhoto.TabIndex = 149;
@@ -204,7 +183,7 @@ namespace TargDeMasiniForm
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(512, 9);
+            this.metroLabel1.Location = new System.Drawing.Point(509, 9);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(74, 19);
             this.metroLabel1.TabIndex = 148;
@@ -261,12 +240,66 @@ namespace TargDeMasiniForm
             this.btnResetPassword.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnResetPassword.Click += new System.EventHandler(this.btnResetPassword_Click);
             // 
+            // pictureMyCars
+            // 
+            this.pictureMyCars.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureMyCars.Image = global::TargDeMasiniForm.Properties.Resources.myCarsPng;
+            this.pictureMyCars.Location = new System.Drawing.Point(836, 216);
+            this.pictureMyCars.Name = "pictureMyCars";
+            this.pictureMyCars.Size = new System.Drawing.Size(122, 106);
+            this.pictureMyCars.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureMyCars.TabIndex = 157;
+            this.pictureMyCars.TabStop = false;
+            this.pictureMyCars.Click += new System.EventHandler(this.pictureMyCars_Click);
+            // 
+            // pictureDeconectare
+            // 
+            this.pictureDeconectare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureDeconectare.Image = global::TargDeMasiniForm.Properties.Resources.logoutPng1;
+            this.pictureDeconectare.Location = new System.Drawing.Point(995, 7);
+            this.pictureDeconectare.Name = "pictureDeconectare";
+            this.pictureDeconectare.Size = new System.Drawing.Size(23, 21);
+            this.pictureDeconectare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureDeconectare.TabIndex = 154;
+            this.pictureDeconectare.TabStop = false;
+            this.pictureDeconectare.Click += new System.EventHandler(this.pictureDeconectare_Click);
+            // 
+            // pictureUserPhoto
+            // 
+            this.pictureUserPhoto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureUserPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureUserPhoto.Image = global::TargDeMasiniForm.Properties.Resources.usernamePng;
+            this.pictureUserPhoto.Location = new System.Drawing.Point(464, 42);
+            this.pictureUserPhoto.Name = "pictureUserPhoto";
+            this.pictureUserPhoto.Size = new System.Drawing.Size(169, 152);
+            this.pictureUserPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureUserPhoto.TabIndex = 150;
+            this.pictureUserPhoto.TabStop = false;
+            // 
+            // lblMyCars
+            // 
+            this.lblMyCars.AutoSize = true;
+            this.lblMyCars.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblMyCars.CustomBackground = true;
+            this.lblMyCars.CustomForeColor = true;
+            this.lblMyCars.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.lblMyCars.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblMyCars.Location = new System.Drawing.Point(848, 325);
+            this.lblMyCars.Name = "lblMyCars";
+            this.lblMyCars.Size = new System.Drawing.Size(101, 19);
+            this.lblMyCars.TabIndex = 158;
+            this.lblMyCars.Text = "Masinile Mele";
+            this.lblMyCars.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.lblMyCars.Click += new System.EventHandler(this.pictureMyCars_Click);
+            // 
             // OptiuneInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 411);
+            this.Controls.Add(this.lblMyCars);
+            this.Controls.Add(this.pictureMyCars);
             this.Controls.Add(this.btnResetPassword);
             this.Controls.Add(this.lblDeconectare);
             this.Controls.Add(this.pictureDeconectare);
@@ -293,6 +326,7 @@ namespace TargDeMasiniForm
             ((System.ComponentModel.ISupportInitialize)(this.pctCauta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAdauga)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctAfiseaza)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMyCars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureDeconectare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureUserPhoto)).EndInit();
             this.ResumeLayout(false);
@@ -319,5 +353,7 @@ namespace TargDeMasiniForm
         private MetroFramework.Controls.MetroTile metroTile1;
         public MetroFramework.Controls.MetroLabel lblBuget;
         private MetroFramework.Controls.MetroButton btnResetPassword;
+        private System.Windows.Forms.PictureBox pictureMyCars;
+        private MetroFramework.Controls.MetroLabel lblMyCars;
     }
 }

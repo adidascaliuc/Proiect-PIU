@@ -30,10 +30,9 @@ namespace Modele
     
     
 
-    public enum TipPersoana
+    public enum ModAfisare
     {
-        None  = 0,
-        Cumparator = 1,
-        Vanzator = 2,
+        FORMAAFISARE = 1,
+        FORMAMYCARS = 2,
     }
 }

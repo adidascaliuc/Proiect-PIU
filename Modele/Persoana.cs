@@ -24,7 +24,6 @@ namespace Modele
         //parametrii auto-implemented
         public string Nume { set; get; }
         public string Prenume { set; get; }
-        public TipPersoana tipPersoana { set; get; }
         public string NumeComplet { get { return Nume + " " + Prenume; } }
         public double Buget;
         public string Username { set; get; }
@@ -48,7 +47,6 @@ namespace Modele
         {
             Nume = string.Empty;
             Prenume = string.Empty;
-            tipPersoana = TipPersoana.None;
             Buget = 0.0f;
         }
 
@@ -105,7 +103,7 @@ namespace Modele
         public string ConversieLaSir() //Afiseaza date despre persoana
         {
             string buff = "";
-            buff += "Nume " + tipPersoana + ": " + NumeComplet;
+            buff += "Nume : " + NumeComplet;
             buff += "\nBuget: " + Buget + "$\n";
             return buff;
         }

@@ -73,6 +73,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyCarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyCarsForm.Designer.cs">
+      <DependentUpon>MyCarsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OptiuneAdaugareForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     <EmbeddedResource Include="ListaMasiniForm.resx">
       <DependentUpon>ListaMasiniForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MyCarsForm.resx">
+      <DependentUpon>MyCarsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OptiuneAdaugareForm.resx">
       <DependentUpon>OptiuneAdaugareForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +209,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\myCarsPng.png" />
     <None Include="Resources\infoCar.png" />
     <None Include="Resources\presetCarPng1.png" />
     <None Include="Resources\presetCarPng.png" />

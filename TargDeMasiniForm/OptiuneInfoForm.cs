@@ -11,9 +11,13 @@ namespace TargDeMasiniForm
 {
     public partial class OptiuneInfoForm : Form
     {
+        public const int FORMAAFISARE = 1;
+        public const int FORMAMYCARS = 2;
+
         public List<string> optiuniSelectate = new List<string>();
         public static Persoana InfoPersoana = null;
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
+        IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
 
         public OptiuneInfoForm(Persoana p)
         {
@@ -44,31 +48,27 @@ namespace TargDeMasiniForm
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm optAfisare = new OptiuneAfiseazaForm();
-            optAfisare.Show();
+            new OptiuneAfiseazaForm().Show();
             this.Hide();
         }
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm optAfiseaza = new OptiuneAfiseazaForm();
-            optAfiseaza.Show();
+            new OptiuneAfiseazaForm().Show();
             this.Hide();
         }
 
 
         private void pctAdauga_Click_1(object sender, EventArgs e)
         {
-            OptiuneAdaugareForm adaugaForm = new OptiuneAdaugareForm();
-            adaugaForm.Show();
+            new OptiuneAdaugareForm().Show();
             this.Hide();
 
         }
 
         private void pctCauta_Click(object sender, EventArgs e)
         {
-            OptiuneCautaForm optiuneCauta = new OptiuneCautaForm();
-            optiuneCauta.Show();
+            new OptiuneCautaForm().Show();
             this.Hide();
         }
 
@@ -148,15 +148,13 @@ namespace TargDeMasiniForm
 
         private void lblDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 
         private void pictureDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 
@@ -205,6 +203,19 @@ namespace TargDeMasiniForm
                     LoginForm.infoPersoana.Password = newPassword;
                     adminPersoane.UpdatePersoana(p);
                 }
+            }
+        }
+
+        private void pictureMyCars_Click(object sender, EventArgs e)
+        {
+            List<Masina> masinileMele = adminMasini.GetMasiniUser(OptiuneInfoForm.InfoPersoana.NumeComplet);
+            if(masinileMele.Count == 0)
+            {
+                MessageBox.Show("Nu aveti masini adaugate sau achizitionate!", "Info Masini", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                new MyCarsForm(masinileMele).ShowDialog();
             }
         }
     }

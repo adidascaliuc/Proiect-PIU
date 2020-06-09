@@ -21,15 +21,13 @@ namespace TargDeMasiniForm
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm afisareForm = new OptiuneAfiseazaForm();
-            afisareForm.Show();
+            new OptiuneAfiseazaForm().Show();
             this.Hide();
         }
 
         private void pctAdauga_Click(object sender, EventArgs e)
         {
-            OptiuneAdaugareForm adaugaForm = new OptiuneAdaugareForm();
-            adaugaForm.Show();
+            new OptiuneAdaugareForm().Show();
             this.Hide();
         }
 
@@ -62,15 +60,13 @@ namespace TargDeMasiniForm
 
         private void lblDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 
         private void pictureDeconectare_Click(object sender, EventArgs e)
         {
-            PaginaStartForm startForm = new PaginaStartForm();
-            startForm.Show();
+            new PaginaStartForm().Show();
             this.Hide();
         }
 

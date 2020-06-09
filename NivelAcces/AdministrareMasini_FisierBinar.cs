@@ -30,9 +30,10 @@ namespace NivelAcces
         {
             throw new Exception("Optiunea UpdateMasina nu este implementata");
         }
-        public void StergeMasina(Masina m)
+
+        public List<Masina> GetMasiniUser(string username)
         {
-            throw new Exception("Optiunea StergeMasina nu este implementata");
+            throw new Exception("Optiunea GetMasiniUser nu este implementata");
         }
     }
 }

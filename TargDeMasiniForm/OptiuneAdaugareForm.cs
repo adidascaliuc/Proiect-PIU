@@ -189,38 +189,34 @@ namespace TargDeMasiniForm
         private void lblDeconectare_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PaginaStartForm pgnStart = new PaginaStartForm();
-            pgnStart.Show();
+            new PaginaStartForm().Show();
         }
 
 
         private void pictureDeconectare_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PaginaStartForm pgnStart = new PaginaStartForm();
-            pgnStart.Show();
+            new PaginaStartForm().Show();
         }
 
 
         private void pctAfiseaza_Click(object sender, EventArgs e)
-        {           
-                OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-                afiseazaForm.Show();
-                this.Hide();
+        {
+            new OptiuneAfiseazaForm().Show();
+            this.Hide();
         }
 
         private void pctCauta_Click(object sender, EventArgs e)
         {
-            OptiuneCautaForm cautaForm = new OptiuneCautaForm();
+            new OptiuneCautaForm().Show();
             this.Hide();
-            cautaForm.Show();
+            
 
         }
 
         private void pctModifica_Click(object sender, EventArgs e)
         {
-            OptiuneAfiseazaForm afiseazaForm = new OptiuneAfiseazaForm();
-            afiseazaForm.Show();
+            new OptiuneAfiseazaForm().Show();
             this.Hide();
         }
 
@@ -443,7 +439,7 @@ namespace TargDeMasiniForm
                         m.optiuniInt = validareChecked;
                         m.DataActualizare = DateTime.Now;
                         m.NumeProprietar = OptiuneInfoForm.InfoPersoana.NumeComplet;
-                        m.ImageLocation = pictureMasina.ImageLocation;                      
+                        m.ImageLocation = pictureMasina.ImageLocation;
                         m.istoricProprietari.Add(OptiuneInfoForm.InfoPersoana.NumeComplet);
                         m.istoricPreturi.Add(Convert.ToDouble(txtPret.Text));
                         adminMasini.AddMasina(m);

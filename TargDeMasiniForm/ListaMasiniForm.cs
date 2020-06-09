@@ -9,15 +9,24 @@ using NivelAcces;
 namespace TargDeMasiniForm
 {
     public partial class ListaMasiniForm : UserControl
-    {
+    {       
+
         public static bool inForma;
         IStocareDataMasini adminMasini = StocareFactoryMasini.GetAdministratorStocare();
         IStocareDataPersoane adminPersoane = StocareFactoryPersoane.GetAdministratorStocare();
 
         Masina masina = null;
-        public ListaMasiniForm(Masina m)
+        public ListaMasiniForm(Masina m, int modForma)
         { 
             InitializeComponent();
+            if(modForma == (int)ModAfisare.FORMAMYCARS)
+            {
+                btnCumpara.Hide();
+            }
+            else if(modForma == (int)ModAfisare.FORMAAFISARE)
+            {
+                btnCumpara.Show();
+            }
             masina = m;
             lblFirma.Text = "Firma: " + m.NumeFirma;
             lblModel.Text = "Model: " + m.Model;

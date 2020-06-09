@@ -33,3 +33,4 @@ D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CoreCom
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.csproj.CopyComplete
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.exe
 D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.pdb
+D:\GitHub\Proiect-PIU\TargDeMasiniForm\obj\Debug\TargDeMasiniForm.MyCarsForm.resources

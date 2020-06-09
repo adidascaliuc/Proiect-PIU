@@ -331,7 +331,6 @@
         private System.Windows.Forms.Panel panel1;
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroLabel lblOptiuni;
-        private MetroFramework.Controls.MetroButton btnCumpara;
         private MetroFramework.Controls.MetroButton btnModifica;
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private System.Windows.Forms.Panel panel2;
@@ -341,5 +340,6 @@
         private MetroFramework.Controls.MetroLabel lblCuloare;
         private System.Windows.Forms.PictureBox pictureCuloare;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public MetroFramework.Controls.MetroButton btnCumpara;
     }
 }

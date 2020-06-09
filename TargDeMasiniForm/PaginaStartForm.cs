@@ -19,8 +19,7 @@ namespace TargDeMasiniForm
 
         private void btnLoginSignUp_Click(object sender, EventArgs e)
         {
-            LoginForm lgnForm = new LoginForm();
-            lgnForm.ShowDialog();
+            new LoginForm().ShowDialog();
             this.Hide();
 
         }

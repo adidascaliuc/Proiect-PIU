@@ -1,2 +1,3 @@
-Dascaliuc|Adi|adi.dascaliuc|parola|90000||
+Dascaliuc|Adi|adi.dascaliuc|parola|100000||D:\GitHub\Proiect-PIU\Imagini\Masini\porcheCayenne.png
 a|a|a|12345|0||D:\GitHub\Proiect-PIU\Imagini\Forma\addPng.png
+Baciu|Emanuel|emi.baciu|12345|130000||

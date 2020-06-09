@@ -121,8 +121,11 @@
   <data name="listPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="passwordPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\passwordPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infoPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="people (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\people (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,9 +138,6 @@
   </data>
   <data name="searchPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="confirmPassword" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmPassword.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,14 +169,14 @@
   <data name="presetCarPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\presetCarPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoutPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logoutPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="searchPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\searchPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infoPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infoPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutPng1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="addPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\addPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,13 +187,16 @@
   <data name="editPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="infoCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infoCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="oraPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\oraPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="passwordPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\passwordPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logoutPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logoutPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="infoCar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\infoCar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="myCarsPng" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\myCarsPng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

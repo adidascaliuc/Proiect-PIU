@@ -52,7 +52,6 @@ namespace TargDeMasiniForm
         private void radioGraficPret_CheckedChanged(object sender, EventArgs e)
         {
             lblTitlu.Text = "Grafic Preturi";
-            //flowLayoutAfisare.Hide();
             chartPreturi.Show();
 
         }
