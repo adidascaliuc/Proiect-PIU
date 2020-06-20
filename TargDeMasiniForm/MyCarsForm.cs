@@ -1,4 +1,5 @@
-﻿using Modele;
+﻿//Nume: Dascaliuc Adi       Grupa: 3123b
+using Modele;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

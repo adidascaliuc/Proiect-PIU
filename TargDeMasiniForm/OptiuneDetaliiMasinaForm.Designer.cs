@@ -34,11 +34,11 @@
             this.lblPretCurent = new MetroFramework.Controls.MetroLabel();
             this.lblTitlu = new MetroFramework.Controls.MetroLabel();
             this.flowLayoutAfisare = new System.Windows.Forms.FlowLayoutPanel();
+            this.chartPreturi = new LiveCharts.WinForms.CartesianChart();
             this.lblProprietar = new MetroFramework.Controls.MetroLabel();
             this.radioIstoricProprietari = new MetroFramework.Controls.MetroRadioButton();
             this.radioGraficPret = new MetroFramework.Controls.MetroRadioButton();
             this.btnOk = new MetroFramework.Controls.MetroButton();
-            this.chartPreturi = new LiveCharts.WinForms.CartesianChart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).BeginInit();
             this.flowLayoutAfisare.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +103,14 @@
             this.flowLayoutAfisare.Size = new System.Drawing.Size(511, 365);
             this.flowLayoutAfisare.TabIndex = 6;
             // 
+            // chartPreturi
+            // 
+            this.chartPreturi.Location = new System.Drawing.Point(3, 3);
+            this.chartPreturi.Name = "chartPreturi";
+            this.chartPreturi.Size = new System.Drawing.Size(502, 356);
+            this.chartPreturi.TabIndex = 1;
+            this.chartPreturi.Text = "cartesianChart1";
+            // 
             // lblProprietar
             // 
             this.lblProprietar.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -151,14 +159,6 @@
             this.btnOk.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // chartPreturi
-            // 
-            this.chartPreturi.Location = new System.Drawing.Point(3, 3);
-            this.chartPreturi.Name = "chartPreturi";
-            this.chartPreturi.Size = new System.Drawing.Size(502, 356);
-            this.chartPreturi.TabIndex = 1;
-            this.chartPreturi.Text = "cartesianChart1";
-            // 
             // OptiuneDetaliiMasinaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,7 +174,7 @@
             this.Controls.Add(this.lblFirma);
             this.Controls.Add(this.pictureMasina);
             this.Name = "OptiuneDetaliiMasinaForm";
-            this.Text = "OptiuneDetaliiMasinaForm";
+            this.Text = "Car Shop";
             ((System.ComponentModel.ISupportInitialize)(this.pictureMasina)).EndInit();
             this.flowLayoutAfisare.ResumeLayout(false);
             this.flowLayoutAfisare.PerformLayout();

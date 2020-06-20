@@ -148,7 +148,6 @@
             this.lblAnFabricatie.Size = new System.Drawing.Size(88, 19);
             this.lblAnFabricatie.TabIndex = 82;
             this.lblAnFabricatie.Text = "An Fabricatie:";
-            this.lblAnFabricatie.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // lblCuloare
             // 

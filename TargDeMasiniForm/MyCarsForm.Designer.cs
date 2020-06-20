@@ -71,7 +71,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.titleMyCars);
             this.Name = "MyCarsForm";
-            this.Text = "MyCarsForm";
+            this.Text = "Car Shop";
             this.ResumeLayout(false);
 
         }

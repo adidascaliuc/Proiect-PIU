@@ -115,7 +115,7 @@ namespace TargDeMasiniForm
             }
 
             if (comboFirma.BackColor == Color.Red || comboModel.BackColor == Color.Red ||
-                cBoxAnFabricatie.BackColor == Color.Red || lblCuloare.BackColor == Color.Red ||
+                lblAnFabricatie.BackColor == Color.Red || lblCuloare.BackColor == Color.Red ||
                 lblOptiuni.BackColor == Color.Red || txtPret.BackColor == Color.Red)
             {
                 return 1;

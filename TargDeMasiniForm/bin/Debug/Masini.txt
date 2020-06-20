@@ -3,3 +3,4 @@
 3;Porche;Cayenne;2014;6;39;50000;06/03/2020 6:08:15 PM;1 2 4 32;283J8GLB01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\porcheCayenne.png;a a;50000
 4;Ford;Mustang;2011;2;57;30000;06/03/2020 7:30:46 PM;1 8 16 32;OQRRAR7H01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\fordMustangPng.png;a a;30000
 5;Volkswagen;Polo;2017;2;7;30000;06/09/2020 12:02:16 AM;1 2 4;HHB3G6OX01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\vwPoloArgintiuPng.png;Baciu Emanuel;30000|30000|30000
+6;Lexus;LS;2003;2;23;99999;06/10/2020 1:20:54 PM;1 2 4 16;0T7CVYXX01;a a;D:\GitHub\Proiect-PIU\Imagini\Masini\lexusLsPng.png;a a;99999
